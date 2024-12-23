@@ -43,6 +43,13 @@
     packages = with pkgs; [];
   };
 
+  programs.nvim = {
+    enable = false;
+    defaultEditor = true;  # Set Neovim as the default editor
+    viAlias = true;        # Alias `vi` to `nvim`
+    vimAlias = true;       # Alias `vim` to `nvim`
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
