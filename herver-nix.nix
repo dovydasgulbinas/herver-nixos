@@ -1,17 +1,17 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
+# {
+#   config,
+#   pkgs,
+#   ...
+# }: {
+#   imports = [
+#     # Include the results of the hardware scan.
+#     ./hardware-configuration.nix
+#     ./home.nix
+#   ];
 {
-  config,
-  pkgs,
-  ...
-}: {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ./home.nix
-  ];
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -45,9 +45,9 @@
 
   programs.nvim = {
     enable = false;
-    defaultEditor = true;  # Set Neovim as the default editor
-    viAlias = true;        # Alias `vi` to `nvim`
-    vimAlias = true;       # Alias `vim` to `nvim`
+    defaultEditor = true; # Set Neovim as the default editor
+    viAlias = true; # Alias `vi` to `nvim`
+    vimAlias = true; # Alias `vim` to `nvim`
   };
 
   # Allow unfree packages
@@ -59,6 +59,8 @@
     wget
     neovim
     git
+    alejandra
+    uv
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
