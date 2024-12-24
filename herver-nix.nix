@@ -12,6 +12,10 @@
 #     ./home.nix
 #   ];
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -43,11 +47,15 @@
     packages = with pkgs; [];
   };
 
-  programs.nvim = {
+  programs.neovim = {
     enable = false;
     defaultEditor = true; # Set Neovim as the default editor
     viAlias = true; # Alias `vi` to `nvim`
     vimAlias = true; # Alias `vim` to `nvim`
+  };
+
+  programs.git = {
+    config = {init = {defaultBranch = "main";};};
   };
 
   # Allow unfree packages
@@ -56,11 +64,14 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget
+    htop
+    neofetch
+    uv
+    pre-commit
+    alejandra
     neovim
     git
-    alejandra
-    uv
+    wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
