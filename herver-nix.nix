@@ -51,10 +51,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    pciutils
     lazydocker
     nodejs_23
     gnumake
     docker
+    stow
     htop
     neofetch
     uv
