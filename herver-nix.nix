@@ -34,12 +34,9 @@
     packages = with pkgs; [];
   };
 
-  programs.neovim = {
-    enable = false;
-    defaultEditor = true; # Set Neovim as the default editor
-    viAlias = true; # Alias `vi` to `nvim`
-    vimAlias = true; # Alias `vim` to `nvim`
-  };
+  programs.neovim.defaultEditor = true;
+  programs.neovim.viAlias = true;
+  programs.neovim.vimAlias = true;
 
   programs.git = {
     config = {init = {defaultBranch = "main";};};
