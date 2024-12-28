@@ -10,6 +10,7 @@
   boot.initrd.luks.devices."luks-283da75c-5170-44c9-a9ea-8fbce82f7082".device = "/dev/disk/by-uuid/283da75c-5170-44c9-a9ea-8fbce82f7082";
   networking.hostName = "herver-nix";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  hardware.enableAllFirmware = true;
 
   # Enable networking
   networking.networkmanager.enable = true;
