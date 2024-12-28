@@ -51,6 +51,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    gnumake
+    docker
     htop
     neofetch
     uv
@@ -59,7 +61,6 @@
     neovim
     git
     wget
-    docker
   ];
 
   # Docker
