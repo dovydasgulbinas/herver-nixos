@@ -9,7 +9,7 @@ in {
   networking.hostName = hostname;
 
   imports = [
-    /etc/nixos/hardware-configuration.nix
+    (/home/hermes/dotfiles/hardware-confs + "/${hostname}.nix")
     (/home/hermes/dotfiles + "/${hostname}.nix")
     /home/hermes/dotfiles/home.nix
   ];
