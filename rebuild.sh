@@ -13,7 +13,7 @@
 set -e
 
 # Edit your config
-nvim configuration.nix
+nvim "${HOSTNAME}.nix"
 
 # cd to your config dir
 pushd ~/dotfiles

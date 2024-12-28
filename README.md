@@ -11,7 +11,7 @@
 
 ### Option 2: Unlock after boot using crypttab and a keyfile
 
-    
+
     sudo dd bs=512 count=4 if=/dev/random of=/root/wd_sa510.key iflag=fullblock
     sudo chmod 400 /root/wd_sa510.key
     sudo cryptsetup luksAddKey /dev/sda /root/wd_sa510.key
@@ -19,3 +19,24 @@
     # sudo blkid device uuid for wd_sa510.key
     # /dev/sda: UUID="5785082d-0616-4506-bc25-4b67aa0698ed" TYPE="crypto_LUKS"
 
+
+add mount point config in hardware-configuration.nix
+
+```
+environment.etc.crypttab = {
+mode = "0600";
+text = ''
+  # <volume-name> <encrypted-device> [key-file] [options]
+  data_disk UUID=5785082d-0616-4506-bc25-4b67aa0698ed /root/wd_sa510.key
+'';
+};
+fileSystems."/mnt/data_disk" = {
+device = "/dev/mapper/data_disk";
+fsType = "ext4";
+options = [
+  # If you don't have this options attribute, it'll default to "defaults"
+  # boot options for fstab. Search up fstab mount options you can use
+  "nofail" # Prevent system from failing if this drive doesn't mount
+];
+};
+```

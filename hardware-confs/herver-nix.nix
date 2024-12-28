@@ -12,6 +12,27 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
+  # ======= custom ========
+
+  environment.etc.crypttab = {
+    mode = "0600";
+    text = ''
+      # <volume-name> <encrypted-device> [key-file] [options]
+      data_disk UUID=5785082d-0616-4506-bc25-4b67aa0698ed /root/wd_sa510.key
+    '';
+  };
+  fileSystems."/mnt/data_disk" = {
+    device = "/dev/mapper/data_disk";
+    fsType = "ext4";
+    options = [
+      # If you don't have this options attribute, it'll default to "defaults"
+      # boot options for fstab. Search up fstab mount options you can use
+      "nofail" # Prevent system from failing if this drive doesn't mount
+    ];
+  };
+
+  # =======================
+
   boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd"];
