@@ -6,4 +6,7 @@
     - decide where to backup
     - write timer service
 - harden security by removing root login
+- change the encrypted secondary drive key location to somewhere centralized (see hardwar conf)
 - Fix nvim issue not the default editor
+- Add automated ssh config using the homemanger
+- add ssh key mount using the homemanager
