@@ -39,6 +39,7 @@
     ];
   };
 
+  programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
   programs.neovim.viAlias = true;
   programs.neovim.vimAlias = true;
@@ -56,6 +57,7 @@
     pciutils
     lazydocker
     nodejs_23
+    borgbackup
     gnumake
     docker
     stow
