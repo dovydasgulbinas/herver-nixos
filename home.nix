@@ -18,9 +18,11 @@ in {
     home.stateVersion = "24.11";
 
     home.file = {
-      ".foorc" = {
+      ".ssh/config" = {
         text = ''
-          Hello, world!
+          Host *
+           AddKeysToAgent yes
+           IdentityFile ~/.ssh/id_ed25519_servers
         '';
       };
     };
