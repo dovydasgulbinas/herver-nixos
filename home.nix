@@ -21,11 +21,13 @@ in {
     shellAliases = {
       ll = "ls -l";
       g = "git";
+      d = "docker";
+      dcc = "docker compose";
     };
 
     oh-my-zsh = {
       enable = true;
-      plugins = ["git" "thefuck"];
+      plugins = ["git" "thefuck" "z"];
       theme = "robbyrussell";
     };
   };
