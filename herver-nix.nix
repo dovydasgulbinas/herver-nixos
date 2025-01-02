@@ -58,6 +58,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    zsh-autocomplete
     zoxide
     thefuck
     zsh
