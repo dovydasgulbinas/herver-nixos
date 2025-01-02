@@ -19,10 +19,10 @@ repos:
     hooks:
       - id: yamllint
         args: [-d, '{extends: default, rules: {line-length: {max: 120}}}'] # Optional: Customize rules
-# - repo: https://github.com/kamadorueda/alejandra
-#   rev: 3.1.0
-#   hooks:
-#     - id: alejandra
+        # - repo: https://github.com/kamadorueda/alejandra
+        #   rev: 3.1.0
+        #   hooks:
+        #     - id: alejandra
 # - repo: https://github.com/kamadorueda/alejandra
 #   rev: 3.1.0
 #   # Choose either the 'alejandra' or 'alejandra-system' hook
