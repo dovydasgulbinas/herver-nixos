@@ -12,6 +12,24 @@ in {
     (import "${home-manager}/nixos")
   ];
 
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    syntaxHighlighting.enable = true;
+    # history.size = 10000;
+
+    shellAliases = {
+      ll = "ls -l";
+      g = "git";
+    };
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = ["git" "thefuck"];
+      theme = "robbyrussell";
+    };
+  };
+
   home-manager.users.hermes = {
     # This should be the same value as `system.stateVersion` in
     # your `configuration.nix` file.

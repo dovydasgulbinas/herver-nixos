@@ -22,6 +22,10 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
+  # Enable zsh Shell more config is in home.nix
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -54,6 +58,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    zsh
     pciutils
     lazydocker
     nodejs_23
