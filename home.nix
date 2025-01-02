@@ -27,7 +27,7 @@ in {
 
     oh-my-zsh = {
       enable = true;
-      plugins = ["git" "thefuck" "z"];
+      plugins = ["git" "thefuck" "zoxide" "virtualenv"];
       theme = "robbyrussell";
     };
   };
