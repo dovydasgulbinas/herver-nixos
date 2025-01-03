@@ -11,10 +11,11 @@ in {
   imports = [
     (import "${home-manager}/nixos")
   ];
+
+  # glbal zsh settings
   programs.zsh = {
     enable = true;
-    # opt for zsh-autcompletion rather than default
-    enableCompletion = false;
+    enableCompletion = true;
     syntaxHighlighting.enable = true;
 
     shellAliases = {
@@ -42,30 +43,50 @@ in {
       ".zsh_aliases" = {source = ./sources/zsh/.zsh_aliases;};
     };
 
-    programs.zsh.initExtra = ''
-      if [ -d "$HOME/bin" ] ; then
-          PATH="$HOME/bin:$PATH"
-      fi
+    programs.zsh = {
+      enable = true;
+      # opt for zsh-autcompletion rather than default
+      enableCompletion = false;
+      syntaxHighlighting.enable = true;
 
-      if [ -d "$HOME/.local/bin" ] ; then
-          PATH="$HOME/.local/bin:$PATH"
-      fi
+      shellAliases = {
+        g = "git";
+        ll = "ls -alh";
+        d = "docker";
+        dcc = "docker compose";
+      };
 
-      if [ -f "$HOME/.zsh_aliases" ]; then
-          . "$HOME/.zsh_aliases"
-      fi
+      oh-my-zsh = {
+        enable = true;
+        plugins = ["git" "thefuck" "zoxide" "virtualenv"];
+        theme = "robbyrussell";
+      };
 
-      if [ -f "$HOME/.zsh_functions" ]; then
-          . "$HOME/.zsh_functions"
-      fi
+      initExtra = ''
+        if [ -d "$HOME/bin" ] ; then
+            PATH="$HOME/bin:$PATH"
+        fi
 
-      if [ -f "$HOME/.zsh_work" ]; then
-          . "$HOME/.zsh_work"
-      fi
+        if [ -d "$HOME/.local/bin" ] ; then
+            PATH="$HOME/.local/bin:$PATH"
+        fi
 
-      if [ -f "$HOME/.env" ]; then
-          . "$HOME/.env"
-      fi
-    '';
+        if [ -f "$HOME/.zsh_aliases" ]; then
+            . "$HOME/.zsh_aliases"
+        fi
+
+        if [ -f "$HOME/.zsh_functions" ]; then
+            . "$HOME/.zsh_functions"
+        fi
+
+        if [ -f "$HOME/.zsh_work" ]; then
+            . "$HOME/.zsh_work"
+        fi
+
+        if [ -f "$HOME/.env" ]; then
+            . "$HOME/.env"
+        fi
+      '';
+    };
   };
 }
