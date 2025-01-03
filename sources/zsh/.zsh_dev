@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Git
 alias g='git'
 alias gs="git status"  # avoids invoking ghost script
@@ -31,8 +33,7 @@ alias ptm='pytest --pdb -m'
 alias rm-pycache='find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete'
 
 alias ptcrm='rm -rf .pytest_cache && rm -rf .hypothesis'
-alias ptgc="cd /tmp/pytest-of-$USER/pytest-current"
-#
+
 # Pre-commit
 alias pp='pre-commit'
 alias pcr='pre-commit run'

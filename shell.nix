@@ -9,13 +9,12 @@ pkgs.mkShell {
     pkgs.rustup
     pkgs.rustc
     pkgs.cargo
+    pkgs.bashate
   ];
 
   shellHook = ''
-    echo "welcome to the shell!"
+    echo "DEV shell was invoked"
   '';
-
-  YOUARE = "hermes";
 
   LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath [pkgs.ncurses]}";
 }

@@ -8,5 +8,6 @@ dependencies = []
 
 [dependency-groups]
 dev = [
+    "bashate>=2.1.1",
     "pre-commit>=4.0.1",
 ]

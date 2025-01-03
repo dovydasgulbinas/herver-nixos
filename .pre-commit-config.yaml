@@ -9,6 +9,7 @@ repos:
     rev: v0.10.0.1
     hooks:
       - id: shellcheck
+        # args: [source, /dev/null]
   - repo: https://github.com/google/yamlfmt
     rev: v0.14.0 # Use the latest stable version; update as necessary
     hooks:
@@ -19,20 +20,17 @@ repos:
     hooks:
       - id: yamllint
         args: [-d, '{extends: default, rules: {line-length: {max: 120}}}'] # Optional: Customize rules
-        # - repo: https://github.com/kamadorueda/alejandra
-        #   rev: 3.1.0
-        #   hooks:
-        #     - id: alejandra
-# - repo: https://github.com/kamadorueda/alejandra
-#   rev: 3.1.0
-#   # Choose either the 'alejandra' or 'alejandra-system' hook
-#   # depending on what pre-requisites you have:
-#   hooks:
-#     # No prerequisites
-#     - id: alejandra
-
-#     # Requires Nix to be previously installed in the system
-#     - id: alejandra-nix
-
-#     # Requires Alejandra to be previously installed in the system
-#     - id: alejandra-system
+  - repo: local
+    hooks:
+      - id: bashate
+        name: bashate
+        description: This hook runs bashate for linting shell scripts
+        entry: bashate
+        language: python
+        types: [shell, zsh]
+      - id: alejandra
+        name: Alejandra
+        language: system
+        description: Run Alejandra on .nix scripts
+        entry: alejandra
+        files: \.nix$

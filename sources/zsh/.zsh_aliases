@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Navigation
 alias gdf="cd ~/dotfiles"
 alias gdl="cd ~/Downloads"
@@ -6,7 +8,7 @@ alias gpr="cd ~/Projects"
 alias gwo="cd ~/Work"
 
 alias c="clear"
-
+#!/bin/zsh
 # Shell Meta
 case "$SHELL" in
 *bash)
@@ -41,10 +43,11 @@ alias f='grep -rn -e'
 alias ff="find . -name"
 alias ffd="find . -type d -name"
 alias ll="ls -alth"
+alias la='ls -A'
+alias l='ls -CF'
 alias rmr='rm -rf'
 alias tre='tree -hpug'
 
 
 
 alias abspath='function _abspath() { echo "$(cd "$(dirname "$1")" && pwd -P)/$(basename "$1")"; }; _abspath'
-PATH="$PATH:$PATH/.local/bin"
