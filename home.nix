@@ -14,9 +14,10 @@ in {
 
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
+
+    # opt for zsh-autcompletion rather than default
+    enableCompletion = false;
     syntaxHighlighting.enable = true;
-    # history.size = 10000;
 
     shellAliases = {
       ll = "ls -l";
@@ -27,7 +28,7 @@ in {
 
     oh-my-zsh = {
       enable = true;
-      plugins = ["git" "thefuck" "z"];
+      plugins = ["git" "thefuck" "zoxide" "virtualenv"];
       theme = "robbyrussell";
     };
   };
