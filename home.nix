@@ -14,7 +14,6 @@ in {
 
   programs.zsh = {
     enable = true;
-
     # opt for zsh-autcompletion rather than default
     enableCompletion = false;
     syntaxHighlighting.enable = true;
@@ -31,6 +30,32 @@ in {
       plugins = ["git" "thefuck" "zoxide" "virtualenv"];
       theme = "robbyrussell";
     };
+
+    initExtra = ''
+      if [ -d "$HOME/bin" ] ; then
+          PATH="$HOME/bin:$PATH"
+      fi
+
+      if [ -d "$HOME/.local/bin" ] ; then
+          PATH="$HOME/.local/bin:$PATH"
+      fi
+
+      if [ -f "$HOME/.zsh_aliases" ]; then
+          . "$HOME/.zsh_aliases"
+      fi
+
+      if [ -f "$HOME/.zsh_functions" ]; then
+          . "$HOME/.zsh_functions"
+      fi
+
+      if [ -f "$HOME/.zsh_work" ]; then
+          . "$HOME/.zsh_work"
+      fi
+
+      if [ -f "$HOME/.env" ]; then
+          . "$HOME/.env"
+      fi
+    '';
   };
 
   home-manager.users.hermes = {
@@ -41,6 +66,8 @@ in {
       ".ssh/config" = {source = ./sources/ssh/config;};
       ".ssh/id_ed25519" = {source = ./sources/ssh/id_ed25519_servers;};
       ".ssh/id_ed25519.pub" = {source = ./sources/ssh/id_ed25519_servers.pub;};
+      ".zsh_functions" = {source = ./sources/zsh/.zsh_functions;};
+      ".zsh_aliases" = {source = ./sources/zsh/.zsh_aliases;};
     };
   };
 }

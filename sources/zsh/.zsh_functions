@@ -5,7 +5,6 @@ include () {
 }
 
 
-# ==========  WEATHER UTILS ==========
 wttr()
 {
   curl 'wttr.in/Laugalis?format=v2'
