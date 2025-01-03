@@ -11,6 +11,25 @@ in {
   imports = [
     (import "${home-manager}/nixos")
   ];
+  programs.zsh = {
+    enable = true;
+    # opt for zsh-autcompletion rather than default
+    enableCompletion = false;
+    syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      g = "git";
+      ll = "ls -alh";
+      d = "docker";
+      dcc = "docker compose";
+    };
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = ["git" "thefuck" "zoxide" "virtualenv"];
+      theme = "robbyrussell";
+    };
+  };
 
   home-manager.backupFileExtension = "baknix";
   home-manager.users.hermes = {
@@ -22,50 +41,31 @@ in {
       ".zsh_functions" = {source = ./sources/zsh/.zsh_functions;};
       ".zsh_aliases" = {source = ./sources/zsh/.zsh_aliases;};
     };
-    programs.zsh = {
-      enable = true;
-      # opt for zsh-autcompletion rather than default
-      enableCompletion = false;
-      syntaxHighlighting.enable = true;
 
-      shellAliases = {
-        ll = "ls -l";
-        g = "git";
-        d = "docker";
-        dcc = "docker compose";
-      };
+    programs.zsh.initExtra = ''
+      if [ -d "$HOME/bin" ] ; then
+          PATH="$HOME/bin:$PATH"
+      fi
 
-      oh-my-zsh = {
-        enable = true;
-        plugins = ["git" "thefuck" "zoxide" "virtualenv"];
-        theme = "robbyrussell";
-      };
+      if [ -d "$HOME/.local/bin" ] ; then
+          PATH="$HOME/.local/bin:$PATH"
+      fi
 
-      initExtra = ''
-        if [ -d "$HOME/bin" ] ; then
-            PATH="$HOME/bin:$PATH"
-        fi
+      if [ -f "$HOME/.zsh_aliases" ]; then
+          . "$HOME/.zsh_aliases"
+      fi
 
-        if [ -d "$HOME/.local/bin" ] ; then
-            PATH="$HOME/.local/bin:$PATH"
-        fi
+      if [ -f "$HOME/.zsh_functions" ]; then
+          . "$HOME/.zsh_functions"
+      fi
 
-        if [ -f "$HOME/.zsh_aliases" ]; then
-            . "$HOME/.zsh_aliases"
-        fi
+      if [ -f "$HOME/.zsh_work" ]; then
+          . "$HOME/.zsh_work"
+      fi
 
-        if [ -f "$HOME/.zsh_functions" ]; then
-            . "$HOME/.zsh_functions"
-        fi
-
-        if [ -f "$HOME/.zsh_work" ]; then
-            . "$HOME/.zsh_work"
-        fi
-
-        if [ -f "$HOME/.env" ]; then
-            . "$HOME/.env"
-        fi
-      '';
-    };
+      if [ -f "$HOME/.env" ]; then
+          . "$HOME/.env"
+      fi
+    '';
   };
 }
