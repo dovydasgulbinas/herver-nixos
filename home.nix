@@ -12,26 +12,6 @@ in {
     (import "${home-manager}/nixos")
   ];
 
-  # glbal zsh settings
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    syntaxHighlighting.enable = true;
-
-    shellAliases = {
-      g = "git";
-      ll = "ls -alh";
-      d = "docker";
-      dcc = "docker compose";
-    };
-
-    oh-my-zsh = {
-      enable = true;
-      plugins = ["git" "thefuck" "zoxide" "virtualenv"];
-      theme = "robbyrussell";
-    };
-  };
-
   home-manager.backupFileExtension = "baknix";
   home-manager.users.hermes = {
     home.stateVersion = "24.11";
@@ -59,7 +39,7 @@ in {
       oh-my-zsh = {
         enable = true;
         plugins = ["git" "thefuck" "zoxide" "virtualenv"];
-        theme = "robbyrussell";
+        theme = "dst";
       };
 
       initExtra = ''

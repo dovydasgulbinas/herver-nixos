@@ -52,6 +52,25 @@
     config = {init = {defaultBranch = "main";};};
   };
 
+  programs.zsh = {
+    enable = true;
+    enableCompletion = false;
+    syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      g = "git";
+      ll = "ls -alh";
+      d = "docker";
+      dcc = "docker compose";
+    };
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = ["git" "virtualenv"];
+      theme = "robbyrussell";
+    };
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
