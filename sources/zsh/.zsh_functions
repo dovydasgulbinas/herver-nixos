@@ -7,11 +7,11 @@ include () {
 
 wttr()
 {
-  curl 'wttr.in/Laugalis?format=v2'
+  curl 'wttr.in/Siauliai?format=v2'
 }
 wtts()
 {
-  curl "wttr.in/Laugalis?format=%l:+%c++%t,+💦++%h,+🚩++%w++%m"
+  curl "wttr.in/Siauliai?format=%l:+%c++%t,+💦++%h,+🚩++%w++%m"
 }
 
 moon(){

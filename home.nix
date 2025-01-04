@@ -19,6 +19,8 @@ in {
       ".ssh/config" = {source = ./sources/ssh/config;};
       ".ssh/id_ed25519" = {source = ./sources/ssh/id_ed25519_servers;};
       ".ssh/id_ed25519.pub" = {source = ./sources/ssh/id_ed25519_servers.pub;};
+      ".gitconfig" = {source = ./sources/git/.gitconfig;};
+      ".gitignore_global" = {source = ./sources/git/.gitignore_global;};
       ".zsh_functions" = {source = ./sources/zsh/.zsh_functions;};
       ".zsh_aliases" = {source = ./sources/zsh/.zsh_aliases;};
     };
