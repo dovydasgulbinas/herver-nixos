@@ -117,6 +117,15 @@
     };
   };
 
+  # TODO: add files
+  # https://search.nixos.org/options?channel=24.11&show=services.syncthing.settings.folders.%3Cname%3E.path&from=0&size=50&sort=relevance&type=packages&query=syncthing
+  # services.syncthing = {
+  #       enable = true;
+  #       user = "hermes";
+  #       dataDir = "/mnt/data_disk/cloud";    # Default folder for new synced folders
+  #       configDir = "/mnt/data_disk/host-data/herver-nix/syncthing"; # Alternative path is /home/hermes/host-data/...
+  #   };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
