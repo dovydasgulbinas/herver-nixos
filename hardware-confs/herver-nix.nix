@@ -14,6 +14,15 @@
 
   # ======= custom ========
 
+  # hdd for backups
+  fileSystems."/mnt/herbook" = {
+    device = "/dev/disk/by-uuid/c7386055-ac59-4407-b5f9-4132dba8407f";
+    fsType = "ext4";
+    options = [
+      "nofail"
+    ];
+  };
+
   environment.etc.crypttab = {
     mode = "0600";
     text = ''
