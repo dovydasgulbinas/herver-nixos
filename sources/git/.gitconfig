@@ -154,7 +154,7 @@
     whitespace = nowarn
 [core]
     pager = less -SRXF
-    autocrlf = true  # no converstions
+    autocrlf = false  # no converstions
     # autocrlf = input # all crlf -> lr
     # autocrlf = true  # use w/ windows, ignores win endings
 

@@ -22,10 +22,6 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Enable zsh Shell more config is in home.nix
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -57,6 +53,8 @@
     config = {init = {defaultBranch = "main";};};
   };
 
+  # Enable zsh Shell more config is in home.nix
+  users.defaultUserShell = pkgs.zsh;
   programs.zsh = {
     enable = true;
     enableCompletion = false;
