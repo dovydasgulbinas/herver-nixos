@@ -40,7 +40,7 @@ in {
 
       oh-my-zsh = {
         enable = true;
-        plugins = ["git" "thefuck" "zoxide" "virtualenv"];
+        plugins = ["git" "zoxide" "virtualenv"];
         theme = "dst";
       };
 

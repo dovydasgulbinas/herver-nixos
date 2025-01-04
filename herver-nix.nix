@@ -81,7 +81,6 @@
   environment.systemPackages = with pkgs; [
     zsh-autocomplete
     zoxide
-    thefuck
     zsh
     pciutils
     lazydocker
