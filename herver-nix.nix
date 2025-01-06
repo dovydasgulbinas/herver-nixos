@@ -85,9 +85,11 @@
     lazydocker
     nodejs_23
     borgbackup
+    unzip
     ripgrep
     gcc
     gnumake
+    neovim
     docker
     stow
     htop
@@ -95,7 +97,6 @@
     uv
     pre-commit
     alejandra
-    neovim
     git
     wget
   ];
