@@ -85,6 +85,7 @@
     lazydocker
     nodejs_23
     borgbackup
+    tmux
     unzip
     ripgrep
     gcc
