@@ -85,6 +85,8 @@
     lazydocker
     nodejs_23
     borgbackup
+    ripgrep
+    gcc
     gnumake
     docker
     stow
