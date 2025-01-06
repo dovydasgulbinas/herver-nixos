@@ -100,6 +100,7 @@
 
   # Docker
   virtualisation.docker.enable = true;
+  virtualisation.docker.daemon.settings = {dns = ["8.8.8.8" "1.1.1.1"];};
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
