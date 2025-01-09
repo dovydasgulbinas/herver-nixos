@@ -125,14 +125,44 @@
     };
   };
 
-  # TODO: add files
   # https://search.nixos.org/options?channel=24.11&show=services.syncthing.settings.folders.%3Cname%3E.path&from=0&size=50&sort=relevance&type=packages&query=syncthing
-  # services.syncthing = {
-  #       enable = true;
-  #       user = "hermes";
-  #       dataDir = "/mnt/data_disk/cloud";    # Default folder for new synced folders
-  #       configDir = "/mnt/data_disk/host-data/herver-nix/syncthing"; # Alternative path is /home/hermes/host-data/...
-  #   };
+  services = {
+    syncthing = {
+      enable = true;
+      group = "users";
+      user = "hermes";
+      configDir = "/mnt/data_disk/cloud/Documents/herver-nix/.config/syncthing"; # change this to /home/hermes/Documents/<host-name>/... on normal desktops
+      dataDir = "/mnt/data_disk/cloud"; # on a desktop this should be /home/hermes since all dirs are relative to home
+      overrideDevices = true; # overrides any devices added or deleted through the WebUI
+      overrideFolders = true; # overrides any folders added or deleted through the WebUI
+      settings = {
+        devices = {
+          "herdell" = {id = "DYFKBB2-GCXOYSI-HHWWAXX-67YATXX-HQUU7XS-SBM5TRI-V3AJILW-YAGCHQR";};
+          "herixel" = {id = "LIKTR5U-CWBRVZD-L6BVERY-YMWDBYG-KFJTL5D-3USURN7-GTBCRUK-MRRQNQE";};
+          "hertab" = {id = "LXOMKEX-XIW6RU6-QCQHKI3-WWP5JZQ-MY5DJLN-NEI2PJF-YOOIRX3-OSGPLQE";};
+        };
+        folders = {
+          "Desktop" = {
+            path = "/mnt/data_disk/cloud/Desktop";
+            devices = ["herdell"];
+          };
+          "Documents" = {
+            path = "/mnt/data_disk/cloud/Documents";
+            devices = ["herdell"];
+            ignorePerms = false;
+          };
+          "Shared" = {
+            path = "/mnt/data_disk/cloud/Shared";
+            devices = ["herdell" "hertab" "herixel"];
+          };
+          "Books" = {
+            path = "/mnt/data_disk/media/books";
+            devices = ["herdell" "hertab" "herixel"];
+          };
+        };
+      };
+    };
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -140,7 +170,5 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "24.11";
 }
