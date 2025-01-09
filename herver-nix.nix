@@ -135,6 +135,7 @@
       dataDir = "/mnt/data_disk/cloud"; # on a desktop this should be /home/hermes since all dirs are relative to home
       overrideDevices = true; # overrides any devices added or deleted through the WebUI
       overrideFolders = true; # overrides any folders added or deleted through the WebUI
+      guiAddress = "192.168.0.11:8384";
       settings = {
         devices = {
           "herdell" = {id = "DYFKBB2-GCXOYSI-HHWWAXX-67YATXX-HQUU7XS-SBM5TRI-V3AJILW-YAGCHQR";};
