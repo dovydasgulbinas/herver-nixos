@@ -131,7 +131,7 @@
       enable = true;
       group = "users";
       user = "hermes";
-      configDir = "/mnt/data_disk/cloud/Documents/herver-nix/.config/syncthing"; # change this to /home/hermes/Documents/<host-name>/... on normal desktops
+      configDir = "/mnt/data_disk/cloud/Documents/.host-data/herver-nix/.config/syncthing"; # change this to /home/hermes/Documents/<host-name>/... on normal desktops
       dataDir = "/mnt/data_disk/cloud"; # on a desktop this should be /home/hermes since all dirs are relative to home
       overrideDevices = true; # overrides any devices added or deleted through the WebUI
       overrideFolders = true; # overrides any folders added or deleted through the WebUI
