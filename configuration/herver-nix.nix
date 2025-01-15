@@ -85,7 +85,7 @@
     hdparm
     pciutils
     lazydocker
-    nodejs_23
+    nodejs
     borgbackup
     tmux
     unzip
