@@ -23,6 +23,11 @@ in {
       ".config/alacritty/alacritty.toml" = {source = ./sources/alacritty/alacritty.toml;};
     };
 
+    programs.neovim = {
+      withNodeJs = true;
+      withPython3 = true;
+    };
+
     programs.zsh = {
       enable = true;
       # opt for zsh-autcompletion rather than default
