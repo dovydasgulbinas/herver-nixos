@@ -11,8 +11,8 @@ in {
 
   imports = [
     # TODO: add if import if it does not exist use /etc/nixos conf
-    (/home/hermes/dotfiles/hardware-confs + "/${hostname}.nix")
-    (/home/hermes/dotfiles + "/${hostname}.nix")
+    (/home/hermes/dotfiles/hardware + "/${hostname}.nix")
+    (/home/hermes/dotfiles/configuration + "/${hostname}.nix")
     /home/hermes/dotfiles/home.nix
   ];
 }
