@@ -81,6 +81,8 @@
     ];
   };
 
+  # Install firefox.
+  programs.firefox.enable = true;
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
   programs.neovim.viAlias = true;
