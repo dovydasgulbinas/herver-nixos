@@ -76,4 +76,4 @@ git commit -am "$current"
 popd
 
 # Notify all OK!
-echo "NixOS Rebuilt OK! ${current}"
+echo "$HOST Rebuilt OK! ${current}"
