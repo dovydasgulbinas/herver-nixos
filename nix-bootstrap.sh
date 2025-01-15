@@ -29,18 +29,28 @@ while true; do
     fi
 done
 
+CONF="./configuration/${HOST}.nix"
+HW="./hardware/${HOST}.nix"
 
-cp /etc/nixos/configuration.nix "./configuration/$HOST"
-cp /etc/nixos/hardware-configuration.nix "./hardware/$HOST"
+cp /etc/nixos/configuration.nix $CONF
+cp /etc/nixos/hardware-configuration.nix $HW
 
-# Define the new value in a variable
-new_value="desired-new-value"
 
 # Use sed to replace the old value with the new value
-sed -i "s/networking\.hostName = \".*\";/networking\.hostName = \"$HOST\";/" ./configuration/$HOST.nix
+sed -i "s/networking\.hostName = \".*\";/networking\.hostName = \"$HOST\";/" $CONF
+sed -i "s|\./hardware-configuration\.nix|\.$HW|" $CONF
+
+sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.11.tar.gz home-manager
+sudo nix-channel --update
 
 
-git add "./host/$HOST" "./hardware/$HOST"
+echo "NixOS Rebuilding..."
+
+# Rebuild, output simplified errors, log trackebacks
+sudo THIS_HOSTNAME=$HOST nixos-rebuild switch -I nixos-config=configuration.nix &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
+
+
+git add "$HW" "$CONF"
 git commit -m "Added initial configuration for $HOST"
 
 popd

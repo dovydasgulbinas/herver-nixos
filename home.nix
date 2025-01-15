@@ -3,13 +3,10 @@
   pkgs,
   ...
 }: let
-  home-manager = builtins.fetchTarball {
-    url = "https://github.com/nix-community/home-manager/archive/release-24.11.tar.gz";
-    sha256 = "0b41b251gxbrfrqplp2dkxv00x8ls5x5b3n5izs4nxkcbhkjjadz";
-  };
+  stuff = "nothing";
 in {
   imports = [
-    (import "${home-manager}/nixos")
+    <home-manager/nixos>
   ];
 
   home-manager.backupFileExtension = "baknix";
@@ -23,6 +20,7 @@ in {
       ".gitignore_global" = {source = ./sources/git/.gitignore_global;};
       ".zsh_functions" = {source = ./sources/zsh/.zsh_functions;};
       ".zsh_aliases" = {source = ./sources/zsh/.zsh_aliases;};
+      ".config/alacritty/alacritty.toml" = {source = ./sources/alacritty/alacritty.toml;};
     };
 
     programs.zsh = {

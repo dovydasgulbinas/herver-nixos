@@ -4,7 +4,8 @@
   options,
   ...
 }: let
-  hostname = "herver-nix"; # to alllow per-machine config
+  hostname = "${builtins.getEnv "THIS_HOSTNAME"}";
+  # hostname = "herpc";
 in {
   networking.hostName = hostname;
   networking.nameservers = ["1.1.1.1" "1.0.0.1"];

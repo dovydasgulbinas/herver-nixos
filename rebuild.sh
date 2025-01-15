@@ -12,13 +12,38 @@
 # A rebuild script that commits on a successful build
 set -e
 
-git pull
+is_valid_response() {
+    local input="$1"
+    [[ "$input" =~ ^(y|yes|n|no|Y|YES|N|NO)$ ]]
+}
+
+# Prompt the user for yes/no input
+while true; do
+    read -p "Do you to pull latest changes from git remote? (y/n): " response
+
+    if is_valid_response "$response"; then
+        # Normalize input to lowercase
+        response=$(echo "$response" | tr '[:upper:]' '[:lower:]')
+        if [[ "$response" == "y" || "$response" == "yes" ]]; then
+        	git pull
+        	break
+        else
+            echo "Skipping git pull..."
+            break
+        fi
+        break
+    else
+        echo "Invalid input. Please enter 'y', 'yes', 'n', or 'no'."
+    fi
+done
+
+
 
 HOST="${HOSTNAME}"
-NIXCONF="host/$HOST.nix"
+NIXCONF="configuration/$HOST.nix"
 
 # Edit your config
-nvim "${NIXCONF}"
+$EDITOR "${NIXCONF}"
 
 # cd to your config dir
 pushd ~/dotfiles
@@ -40,7 +65,7 @@ git diff -U0 '*.nix'
 echo "NixOS Rebuilding..."
 
 # Rebuild, output simplified errors, log trackebacks
-sudo nixos-rebuild switch -I nixos-config="${NIXCONF}" &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
+sudo THIS_HOSTNAME=$HOST nixos-rebuild switch -I nixos-config="${NIXCONF}" &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
 
 # Get current generation metadata
 current=$(nixos-rebuild list-generations | grep current)
