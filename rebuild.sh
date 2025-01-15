@@ -65,7 +65,7 @@ git diff -U0 '*.nix'
 echo "NixOS Rebuilding..."
 
 # Rebuild, output simplified errors, log trackebacks
-sudo THIS_HOSTNAME=$HOST nixos-rebuild switch -I nixos-config="${NIXCONF}" &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
+sudo THIS_HOSTNAME=$HOST nixos-rebuild switch -I nixos-config=configuration.nix &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
 
 # Get current generation metadata
 current=$(nixos-rebuild list-generations | grep current)
