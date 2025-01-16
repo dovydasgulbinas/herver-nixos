@@ -29,6 +29,8 @@ in {
       withPython3 = true;
     };
 
+    programs.git.lfs.enable = true;
+
     programs.zsh = {
       enable = true;
       # opt for zsh-autcompletion rather than default
