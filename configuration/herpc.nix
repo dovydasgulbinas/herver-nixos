@@ -114,6 +114,10 @@
     };
   };
 
+  fonts.packages = with pkgs; [
+    (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "UbuntuMono"];})
+  ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
