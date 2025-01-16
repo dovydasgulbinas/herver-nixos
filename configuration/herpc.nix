@@ -144,6 +144,7 @@
     htop
     neofetch
     uv
+    python3Full
     pre-commit
     alejandra
     git
