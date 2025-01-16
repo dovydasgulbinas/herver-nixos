@@ -114,6 +114,7 @@
     };
   };
 
+  # font list from: https://github.com/NixOS/nixpkgs/commit/de4dbc58fdeb84694d47d6c3f7b9f04a57cc4231
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "UbuntuMono"];})
   ];
