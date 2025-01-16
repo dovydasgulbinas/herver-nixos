@@ -141,6 +141,7 @@
           "herdell" = {id = "DYFKBB2-GCXOYSI-HHWWAXX-67YATXX-HQUU7XS-SBM5TRI-V3AJILW-YAGCHQR";};
           "herixel" = {id = "LIKTR5U-CWBRVZD-L6BVERY-YMWDBYG-KFJTL5D-3USURN7-GTBCRUK-MRRQNQE";};
           "hertab" = {id = "LXOMKEX-XIW6RU6-QCQHKI3-WWP5JZQ-MY5DJLN-NEI2PJF-YOOIRX3-OSGPLQE";};
+          "herpc" = {id = "STZYLIM-J23JNCO-FX3FJI2-SEQNWPB-4C36BYK-LMO7JKT-56VWOV4-QXYBCQR";};
         };
         folders = {
           "Desktop" = {
