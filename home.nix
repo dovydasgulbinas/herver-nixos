@@ -43,7 +43,7 @@ in {
 
       oh-my-zsh = {
         enable = true;
-        plugins = ["git" "zoxide" "virtualenv"];
+        plugins = ["git" "zoxide" "virtualenv" "python"];
         theme = "dst";
       };
 

@@ -169,6 +169,49 @@
     };
   };
 
+  # https://search.nixos.org/options?channel=24.11&show=services.syncthing.settings.folders.%3Cname%3E.path&from=0&size=50&sort=relevance&type=packages&query=syncthing
+  services = {
+    syncthing = {
+      enable = true;
+      group = "users";
+      user = "hermes";
+      configDir = "/home/hermes/Documents/.host-data/herpc/.config/syncthing";
+      dataDir = "/home/hermes";
+      overrideDevices = true; # overrides any devices added or deleted through the WebUI
+      overrideFolders = true; # overrides any folders added or deleted through the WebUI
+      guiAddress = "0.0.0.0:8384";
+      settings = {
+        devices = {
+          "herdell" = {id = "DYFKBB2-GCXOYSI-HHWWAXX-67YATXX-HQUU7XS-SBM5TRI-V3AJILW-YAGCHQR";};
+          "herixel" = {id = "LIKTR5U-CWBRVZD-L6BVERY-YMWDBYG-KFJTL5D-3USURN7-GTBCRUK-MRRQNQE";};
+          "hertab" = {id = "LXOMKEX-XIW6RU6-QCQHKI3-WWP5JZQ-MY5DJLN-NEI2PJF-YOOIRX3-OSGPLQE";};
+          "herver" = {id = "F6MSVWZ-T6OMFMP-IES5HG2-DWQYQWK-GW6PIZV-OYJFWL6-O5BB3LB-7WPOWAU";};
+        };
+        folders = {
+          # "Desktop" = {
+          #   path = "/mnt/data_disk/cloud/Desktop";
+          #   devices = ["herdell"];
+          # };
+          # "Documents" = {
+          #   id="";
+          #   path = "/mnt/data_disk/cloud/Documents";
+          #   devices = ["herdell"];
+          #   ignorePerms = false;
+          # };
+          "Shared" = {
+            id = "Shared";
+            path = "/home/hermes/Shared";
+            devices = ["herdell" "hertab" "herixel" "herver"];
+          };
+          # "Books" = {
+          #   path = "/mnt/data_disk/media/books";
+          #   devices = ["herdell" "hertab" "herixel"];
+          # };
+        };
+      };
+    };
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
