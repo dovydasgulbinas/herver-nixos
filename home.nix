@@ -7,6 +7,7 @@
 in {
   imports = [
     <home-manager/nixos>
+    # ./sources/logseq/logseq.nix
   ];
 
   home-manager.backupFileExtension = "baknix";

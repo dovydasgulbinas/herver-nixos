@@ -75,6 +75,8 @@
     extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
       alacritty
+      keepassxc
+      logseq
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMHq5vwlijTqC6sjOrL9C+Al1OBY8NFXnt4EBwy4PeZZ desktops-ansible"
@@ -109,7 +111,7 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = ["git" "virtualenv"];
+      plugins = ["git"];
       theme = "robbyrussell";
     };
   };
@@ -188,29 +190,35 @@
           "herver" = {id = "F6MSVWZ-T6OMFMP-IES5HG2-DWQYQWK-GW6PIZV-OYJFWL6-O5BB3LB-7WPOWAU";};
         };
         folders = {
-          # "Desktop" = {
-          #   path = "/mnt/data_disk/cloud/Desktop";
-          #   devices = ["herdell"];
-          # };
-          # "Documents" = {
-          #   id="";
-          #   path = "/mnt/data_disk/cloud/Documents";
-          #   devices = ["herdell"];
-          #   ignorePerms = false;
-          # };
+          "Desktop" = {
+            id = "Desktop";
+            path = "/home/hermes/Desktop";
+            devices = ["herdell" "herver"];
+          };
+          "Documents" = {
+            id = "Documents";
+            path = "/home/hermes/Documents";
+            devices = ["herdell" "herver"];
+            ignorePerms = false;
+          };
           "Shared" = {
             id = "Shared";
             path = "/home/hermes/Shared";
             devices = ["herdell" "hertab" "herixel" "herver"];
           };
-          # "Books" = {
-          #   path = "/mnt/data_disk/media/books";
-          #   devices = ["herdell" "hertab" "herixel"];
-          # };
+          "Books" = {
+            id = "Books";
+            path = "/home/hermes/Books";
+            devices = ["herdell" "hertab" "herixel" "herver"];
+          };
         };
       };
     };
   };
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-27.3.11" # needed for logseq 0.10.9
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
