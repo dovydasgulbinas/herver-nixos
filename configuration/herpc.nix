@@ -117,6 +117,7 @@
   programs.neovim.viAlias = true;
   programs.neovim.vimAlias = true;
 
+  programs.git.lfs.enable = true;
   programs.git = {
     config = {init = {defaultBranch = "main";};};
   };
@@ -174,6 +175,7 @@
     python3Full
     pre-commit
     alejandra
+    git-lfs
     git
     wget
   ];
