@@ -1,6 +1,15 @@
 require "nvchad.options"
 
--- add yours here!
 
--- local o = vim.o
--- o.cursorlineopt ='both' -- to enable cursorline!
+
+local o = vim.o
+o.autoread = true
+o.cursorlineopt ='both' -- to enable cursorline!
+
+vim.opt.number = true -- Disable line numbers
+vim.opt.relativenumber = false -- Disable relative line numbers
+
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
+	pattern = "*",
+	command = "checktime",
+})
