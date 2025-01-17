@@ -11,6 +11,32 @@
     ../hardware/herpc.nix
   ];
 
+  networking.extraHosts = ''
+    192.168.52.210  gitlab.snx.lt
+    192.168.52.175  mex.snx.lt
+    192.168.6.175   mex.snx.lv
+    192.168.152.175 mex.snx.ee
+    172.30.255.229  sentry.snx.lt
+    192.168.152.210 rabbitmq.snx.ee
+    192.168.52.217  rabbitmq.snx.lt
+    192.168.52.220  rabbitmq-stg.snx.lt
+    192.168.52.220  rabbitmq-stg-n1.snx.lt
+    192.168.6.210   rabbitmq.snx.lv
+    192.168.6.210   rabbitmq-n1.snx.lv
+    192.168.6.211   rabbitmq-n2.snx.lv
+    192.168.6.212   rabbitmq-n3.snx.lv
+    192.168.152.215 rabbitmq-stg.snx.ee
+    192.168.152.213 rabbitmq-stg-n1.snx.ee
+    192.168.6.215   rabbitmq-stg.snx.lv
+    192.168.6.213   rabbitmq-stg-n1.snx.lv
+    192.168.6.214   rabbitmq-stg-n2.snx.lv
+    192.168.6.215   rabbitmq-stg-n3.snx.lv
+    192.168.52.185  asn.snx.lt
+    192.168.52.189 snxdb
+    192.168.52.164 mapper.snx.lt
+    192.168.52.162 testing.snx.lt
+  '';
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -77,6 +103,7 @@
       alacritty
       keepassxc
       logseq
+      jetbrains.pycharm-professional
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMHq5vwlijTqC6sjOrL9C+Al1OBY8NFXnt4EBwy4PeZZ desktops-ansible"
