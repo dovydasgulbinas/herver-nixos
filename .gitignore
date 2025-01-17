@@ -2,8 +2,8 @@
 /nixos-switch.log
 /tt1.*
 
-/stow/ssh/id_rsa_iv
-/stow/ssh/id_ed25519_servers
-/stow/ssh/id_ed25519_desktops
-/stow/ssh/known_hosts
-/stow/ssh/known_hosts_old
+/stow/ssh/.ssh/id_rsa_iv
+/stow/ssh/.ssh/id_ed25519_servers
+/stow/ssh/.ssh/id_ed25519_desktops
+/stow/ssh/.ssh/known_hosts
+/stow/ssh/.ssh/known_hosts_old
