@@ -12,6 +12,7 @@
 
   # ======= custom ========
 
+  # Moved from hardware configuration
   boot.initrd.kernelModules = ["amdgpu"];
 
   # hdd for backups
