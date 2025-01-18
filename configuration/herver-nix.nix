@@ -10,6 +10,38 @@
   boot.initrd.luks.devices."luks-283da75c-5170-44c9-a9ea-8fbce82f7082".device = "/dev/disk/by-uuid/283da75c-5170-44c9-a9ea-8fbce82f7082";
   networking.hostName = "herver-nix";
 
+  # ======= custom ========
+
+  boot.initrd.kernelModules = ["amdgpu"];
+
+  # hdd for backups
+  fileSystems."/mnt/herbook" = {
+    device = "/dev/disk/by-uuid/c7386055-ac59-4407-b5f9-4132dba8407f";
+    fsType = "ext4";
+    options = [
+      "nofail"
+    ];
+  };
+
+  environment.etc.crypttab = {
+    mode = "0600";
+    text = ''
+      # <volume-name> <encrypted-device> [key-file] [options]
+      data_disk UUID=5785082d-0616-4506-bc25-4b67aa0698ed /root/wd_sa510.key
+    '';
+  };
+  fileSystems."/mnt/data_disk" = {
+    device = "/dev/mapper/data_disk";
+    fsType = "ext4";
+    options = [
+      # If you don't have this options attribute, it'll default to "defaults"
+      # boot options for fstab. Search up fstab mount options you can use
+      "nofail" # Prevent system from failing if this drive doesn't mount
+    ];
+  };
+
+  # =======================
+
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   hardware.enableAllFirmware = true;
 

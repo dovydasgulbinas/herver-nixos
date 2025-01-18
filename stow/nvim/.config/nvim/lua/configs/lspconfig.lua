@@ -53,7 +53,7 @@ local servers = {
 			if vim.fn.filereadable(venv_path) == 1 then
 				config.settings.python.pythonPath = venv_path
 			else
-				config.settings.python.pythonPath = "/usr/bin/python3" -- Fallback global Python
+				config.settings.python.pythonPath = "/run/current-system/sw/bin/python" -- Fallback global Python
 			end
 		end,
 	},
