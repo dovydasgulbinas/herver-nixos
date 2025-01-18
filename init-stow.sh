@@ -1,7 +1,16 @@
 #!/usr/bin/env bash
 
-pushd $HOME/dotfiles/stow
-# stow --verbose --target=$HOME --no-folding scripts
+if [ -d "$HOME/dotfiles/stow" ]; then
+  echo "Using $HOME/dotfiles/stow"
+  pushd "$HOME/dotfiles/stow"
+elif [ -d "$HOME/Documents/dotfiles/stow" ]; then
+  echo "Using $HOME/Documents/dotfiles/stow"
+  pushd "$HOME/Documents/dotfiles/stow"
+else
+  echo "No valid stow dir found"
+  exit 1
+fi
+
 stow --verbose --target=$HOME --no-folding nvim
 stow --verbose --target=$HOME --no-folding git
 stow --verbose --target=$HOME --no-folding scripts
