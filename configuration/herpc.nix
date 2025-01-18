@@ -8,8 +8,34 @@
 }: {
   imports = [
     # Include the results of the hardware scan.
-    ../hardware/herpc.nix
+    # /etc/nixos/hardware-configuration.nix
   ];
+
+  networking.extraHosts = ''
+    192.168.52.210  gitlab.snx.lt
+    192.168.52.175  mex.snx.lt
+    192.168.6.175   mex.snx.lv
+    192.168.152.175 mex.snx.ee
+    172.30.255.229  sentry.snx.lt
+    192.168.152.210 rabbitmq.snx.ee
+    192.168.52.217  rabbitmq.snx.lt
+    192.168.52.220  rabbitmq-stg.snx.lt
+    192.168.52.220  rabbitmq-stg-n1.snx.lt
+    192.168.6.210   rabbitmq.snx.lv
+    192.168.6.210   rabbitmq-n1.snx.lv
+    192.168.6.211   rabbitmq-n2.snx.lv
+    192.168.6.212   rabbitmq-n3.snx.lv
+    192.168.152.215 rabbitmq-stg.snx.ee
+    192.168.152.213 rabbitmq-stg-n1.snx.ee
+    192.168.6.215   rabbitmq-stg.snx.lv
+    192.168.6.213   rabbitmq-stg-n1.snx.lv
+    192.168.6.214   rabbitmq-stg-n2.snx.lv
+    192.168.6.215   rabbitmq-stg-n3.snx.lv
+    192.168.52.185  asn.snx.lt
+    192.168.52.189 snxdb
+    192.168.52.164 mapper.snx.lt
+    192.168.52.162 testing.snx.lt
+  '';
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -24,6 +50,9 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
+  #networking.enableIPv6 = false;
+  # Firefox issue with slow resolution
+  #boot.kernelParams = ["ipv6.disable=1"];
   networking.networkmanager.enable = true;
 
   # Set your time zone.
@@ -74,9 +103,12 @@
     description = "hermes";
     extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
-      alacritty
+      wl-clipboard
+      spotify
+      jetbrains.pycharm-professional
       keepassxc
       logseq
+      alacritty
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMHq5vwlijTqC6sjOrL9C+Al1OBY8NFXnt4EBwy4PeZZ desktops-ansible"
@@ -90,9 +122,23 @@
   programs.neovim.viAlias = true;
   programs.neovim.vimAlias = true;
 
+  programs.git.lfs.enable = true;
   programs.git = {
     config = {init = {defaultBranch = "main";};};
   };
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+    # packages needed for lua
+    # libm.so.6
+    # libdl.so.2
+    # libgcc_s.so.1
+    # libpthread.so.0
+    # libc.so.6
+    # ld-linux-x86-64.so.2
+  ];
 
   # Enable zsh Shell more config is in home.nix
   users.defaultUserShell = pkgs.zsh;
@@ -124,6 +170,8 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    nix-index
+    dig
     bat
     zoxide
     fzf
@@ -144,8 +192,10 @@
     htop
     neofetch
     uv
+    python3Full
     pre-commit
     alejandra
+    git-lfs
     git
     wget
   ];

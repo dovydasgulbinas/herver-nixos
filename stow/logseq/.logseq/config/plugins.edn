@@ -1,0 +1,14 @@
+{:logseq-awesome-styler {:version "v3.7.1", :repo "yoyurec/logseq-awesome-styler", :effect true, :theme false}
+ :logseq-bullet-threading {:version "v1.1.4", :repo "pengx17/logseq-plugin-bullet-threading", :effect false, :theme false}
+ :logseq-chatgpt-plugin {:version "v2.0.3", :repo "debanjandhar12/logseq-chatgpt-plugin", :effect true, :theme false}
+ :logseq-drawio-plugin {:version "v1.7.0", :repo "lee88688/logseq-drawio-plugin", :effect true, :theme false}
+ :logseq-plantuml-plugin {:version "1.0.2", :repo "cofcool/logseq-plantuml-plugin", :effect false, :theme false}
+ :logseq-markdown-table {:version "v1.8.1", :repo "haydenull/logseq-plugin-markdown-table", :effect false, :theme false}
+ :logseq-journals-calendar {:version "v0.11.0", :repo "xyhp915/logseq-journals-calendar", :effect false, :theme false}
+ :logseq-vim-shortcuts {:version "v0.1.20", :repo "vipzhicheng/logseq-plugin-vim-shortcuts", :effect true, :theme false}
+ :logseq-agenda {:version "v3.9.2", :repo "haydenull/logseq-plugin-agenda", :effect true, :theme false}
+ :logseq-mermaid-plugin {:version "v2.0.3", :repo "benjypng/logseq-mermaid-plugin", :effect true, :theme false}
+ :logseq-tabs {:version "v1.19.4", :repo "pengx17/logseq-plugin-tabs", :effect true, :theme false}
+ :logseq-get-youtube-captions {:version "v1.3.0", :repo "briansunter/logseq-get-youtube-captions", :effect true, :theme false}
+ :logseq-time-recorder {:version "v0.4.2", :repo "5hir0kur0/logseq-time-recorder", :effect false, :theme false}
+ :logseq-pomodoro-timer {:version "1.0.1", :repo "sawhney17/logseq-pomodoro-plugin", :effect false, :theme false}}
