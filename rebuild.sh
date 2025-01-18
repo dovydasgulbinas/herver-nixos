@@ -37,6 +37,16 @@ while true; do
     fi
 done
 
+# cd to your config dir
+if [ -d "$HOME/dotfiles" ]; then
+  pushd "$HOME/dotfiles"
+elif [ -d "$HOME/Documents/dotfiles" ]; then
+  pushd "$HOME/Documents/dotfiles"
+else
+  echo "No valid dotfile dir found"
+  popd
+  exit 1
+fi
 
 
 HOST="${HOSTNAME}"
@@ -45,8 +55,6 @@ NIXCONF="configuration/$HOST.nix"
 # Edit your config
 $EDITOR "${NIXCONF}"
 
-# cd to your config dir
-pushd ~/dotfiles
 
 # Early return if no changes were detected (thanks @singiamtel!)
 if git diff --quiet '*.nix'; then

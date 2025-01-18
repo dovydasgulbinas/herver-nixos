@@ -16,7 +16,7 @@ alias eba="vim ~/.bash_aliases && sb"
 alias ebd="vim ~/.bash_dev && sb"
 alias ebw='vim ~/.bash_work && sb'
 alias ebs='vim ~/.env_secrets && sb'
-alias edf="cd ~/.dotfiles && nvim ."
+alias edf="z ~/Documents/dotfiles && nvim ."
 
 
 # KDE Plasma

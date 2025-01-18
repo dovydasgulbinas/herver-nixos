@@ -50,6 +50,9 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
+  networking.enableIPv6 = false;
+  # Firefox issue with slow resolution
+  boot.kernelParams = ["ipv6.disable=1"];
   networking.networkmanager.enable = true;
 
   # Set your time zone.
@@ -100,10 +103,11 @@
     description = "hermes";
     extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
-      alacritty
+      spotify
+      jetbrains.pycharm-professional
       keepassxc
       logseq
-      jetbrains.pycharm-professional
+      alacritty
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMHq5vwlijTqC6sjOrL9C+Al1OBY8NFXnt4EBwy4PeZZ desktops-ansible"
