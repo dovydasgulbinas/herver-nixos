@@ -8,7 +8,7 @@
 }: {
   imports = [
     # Include the results of the hardware scan.
-    ../hardware/herpc.nix
+    # /etc/nixos/hardware-configuration.nix
   ];
 
   networking.extraHosts = ''
@@ -127,6 +127,19 @@
     config = {init = {defaultBranch = "main";};};
   };
 
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+    # packages needed for lua
+    # libm.so.6
+    # libdl.so.2
+    # libgcc_s.so.1
+    # libpthread.so.0
+    # libc.so.6
+    # ld-linux-x86-64.so.2
+  ];
+
   # Enable zsh Shell more config is in home.nix
   users.defaultUserShell = pkgs.zsh;
   programs.zsh = {
@@ -157,6 +170,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    nix-index
     dig
     bat
     zoxide

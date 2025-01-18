@@ -12,15 +12,11 @@ alias gwo="cd ~/Work"
 alias c="clear"
 
 alias sb='source ~/.zshrc'
-alias eba="vim ~/.bash_aliases && sb"
-alias ebd="vim ~/.bash_dev && sb"
-alias ebw='vim ~/.bash_work && sb'
+alias eba="vim ~/.zsh_aliases && sb"
+alias ebw='vim ~/.zsh_work && sb'
 alias ebs='vim ~/.env_secrets && sb'
+
 alias edf="z ~/Documents/dotfiles && nvim ."
-
-
-# KDE Plasma
-alias kde-rr='killall plasmashell && kstart plasmashell'
 
 # Vim
 alias vim='nvim'
