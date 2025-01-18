@@ -103,6 +103,7 @@
     description = "hermes";
     extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
+      wl-clipboard
       spotify
       jetbrains.pycharm-professional
       keepassxc
