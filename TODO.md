@@ -5,5 +5,5 @@
 - setup backups using borg
     - decide where to backup
     - write timer service
-- harden security by removing root login
+- Create secrets container for dotfiles and symlink all the secrets to it while execluting
 - change the encrypted secondary drive key location to somewhere centralized (see hardwar conf) + ssh keyz

@@ -170,6 +170,11 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    python312Full
+    python312Packages.pyodbc
+    unixODBCDrivers.msodbcsql18
+    unixODBCDrivers.psql
+    unixODBC
     nix-index
     dig
     bat

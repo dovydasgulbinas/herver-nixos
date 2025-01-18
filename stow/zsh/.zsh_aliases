@@ -18,10 +18,11 @@ alias ebs='vim ~/.env_secrets && sb'
 
 alias edf="z ~/Documents/dotfiles && nvim ."
 
+# nix
+alias nxs="nix-shell --command zsh --impure"
+
 # Vim
-alias vim='nvim'
-alias vi='nvim'
-alias v="nvim ."
+alias v="nvim"
 
 # Misc
 alias pass="keepassxc-cli"
@@ -41,10 +42,9 @@ alias abspath='function _abspath() { echo "$(cd "$(dirname "$1")" && pwd -P)/$(b
 ## Git
 alias g='git'
 alias gs="git status"  # avoids invoking ghost script
-alias gh-prv='gh pr view --web'
 alias groot='cd $(git rev-parse --show-toplevel)'
-alias sbdir='$(git rev-parse --show-toplevel)/.sandbox'
-
+alias gsb='$(git rev-parse --show-toplevel)/.sandbox'
+alias gh-prv='gh pr view --web'
 
 # Python Development
 alias uvr='uv run'
@@ -58,7 +58,6 @@ alias pt='pytest'
 alias ptk='pytest --pdb -k'
 alias ptm='pytest --pdb -m'
 alias rm-pycache='find . -type f -name "*.py[co]" -delete -o -type d -name __pycache__ -delete'
-
 alias ptcrm='rm -rf .pytest_cache && rm -rf .hypothesis'
 
 # Pre-commit
