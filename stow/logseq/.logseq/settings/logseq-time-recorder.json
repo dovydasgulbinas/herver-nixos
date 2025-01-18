@@ -1,0 +1,5 @@
+{
+  "defaultTimestampFormat": "long",
+  "blockTemplate": "{{{time-recorder}}}",
+  "disabled": false
+}

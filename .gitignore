@@ -7,3 +7,8 @@
 /stow/ssh/.ssh/id_ed25519_desktops
 /stow/ssh/.ssh/known_hosts
 /stow/ssh/.ssh/known_hosts_old
+
+
+/stow/logseq/.logseq/plugins/*
+/stow/logseq/.logseq/graphs/*
+/stow/logseq/.logseq/settings/logseq-chatgpt-plugin.json

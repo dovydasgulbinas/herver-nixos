@@ -14,6 +14,8 @@ fi
 stow --verbose --target=$HOME --no-folding nvim
 stow --verbose --target=$HOME --no-folding git
 stow --verbose --target=$HOME --no-folding scripts
+stow --verbose --target=$HOME --no-folding keepassxc
+stow --verbose --target=$HOME --no-folding logseq
 stow --verbose --target=$HOME --no-folding zsh
 stow --verbose --target=$HOME --no-folding ssh
 popd
