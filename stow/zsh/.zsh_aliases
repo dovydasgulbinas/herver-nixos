@@ -20,6 +20,8 @@ alias edf="z ~/Documents/dotfiles && nvim ."
 
 # nix
 alias nxs="nix-shell --command zsh --impure"
+export NIXPKGS_ALLOW_UNFREE=1
+alias nxs="nix-shell --impure"
 
 # Vim
 alias v="nvim"

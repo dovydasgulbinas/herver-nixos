@@ -6,10 +6,19 @@
   pkgs,
   ...
 }: {
-  imports = [
-    # Include the results of the hardware scan.
-    # /etc/nixos/hardware-configuration.nix
-  ];
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
+
+  # nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+  #     "steam"
+  #     "steam-original"
+  #     "steam-unwrapped"
+  #     "steam-run"
+  #   ];
 
   networking.extraHosts = ''
     192.168.52.210  gitlab.snx.lt

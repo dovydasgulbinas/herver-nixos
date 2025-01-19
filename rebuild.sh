@@ -17,6 +17,18 @@ is_valid_response() {
     [[ "$input" =~ ^(y|yes|n|no|Y|YES|N|NO)$ ]]
 }
 
+
+# cd to your config dir
+if [ -d "$HOME/dotfiles" ]; then
+  pushd "$HOME/dotfiles"
+elif [ -d "$HOME/Documents/dotfiles" ]; then
+  pushd "$HOME/Documents/dotfiles"
+else
+  echo "No valid dotfile dir found"
+  popd
+  exit 1
+fi
+
 # Prompt the user for yes/no input
 while true; do
     read -p "Do you to pull latest changes from git remote? (y/n): " response
@@ -34,20 +46,10 @@ while true; do
         break
     else
         echo "Invalid input. Please enter 'y', 'yes', 'n', or 'no'."
+        popd
+        exit 1
     fi
 done
-
-# cd to your config dir
-if [ -d "$HOME/dotfiles" ]; then
-  pushd "$HOME/dotfiles"
-elif [ -d "$HOME/Documents/dotfiles" ]; then
-  pushd "$HOME/Documents/dotfiles"
-else
-  echo "No valid dotfile dir found"
-  popd
-  exit 1
-fi
-
 
 HOST="${HOSTNAME}"
 NIXCONF="configuration/$HOST.nix"
@@ -81,7 +83,28 @@ current=$(nixos-rebuild list-generations | grep current)
 # Commit all changes witih the generation metadata
 git commit -am "$current"
 
-popd
 
 # Notify all OK!
 echo "$HOST Rebuilt OK! ${current}"
+#
+# Prompt the user for yes/no input
+while true; do
+    read -p "Do you want to push changes git remote? (y/n): " response
+
+    if is_valid_response "$response"; then
+        # Normalize input to lowercase
+        response=$(echo "$response" | tr '[:upper:]' '[:lower:]')
+        if [[ "$response" == "y" || "$response" == "yes" ]]; then
+        	git push
+        	break
+        else
+            echo "Skipping push pull..."
+            break
+        fi
+        break
+    else
+        echo "Invalid input. Please enter 'y', 'yes', 'n', or 'no'."
+        popd
+        exit 1
+    fi
+done
