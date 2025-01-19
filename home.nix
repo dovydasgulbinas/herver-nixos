@@ -28,6 +28,10 @@ in {
 
     programs.git.lfs.enable = true;
 
+    programs.ghostty.enableBashIntegration = true;
+    programs.ghostty.enableZshIntegration = true;
+    programs.firefox.enableGnomeExtensions = true;
+
     programs.zsh = {
       enable = true;
       # opt for zsh-autcompletion rather than default
