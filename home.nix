@@ -18,6 +18,7 @@ in {
       # ".ssh/id_ed25519" = {source = ./sources/ssh/id_ed25519_servers;};
       # ".ssh/id_ed25519.pub" = {source = ./sources/ssh/id_ed25519_servers.pub;};
       ".config/alacritty/alacritty.toml" = {source = ./sources/alacritty/alacritty.toml;};
+      # ".config/ghostty".source = ./stow/ghostty;
     };
 
     programs.neovim = {

@@ -112,6 +112,7 @@
     description = "hermes";
     extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
+      ghostty
       wl-clipboard
       spotify
       jetbrains.pycharm-professional
