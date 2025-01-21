@@ -113,6 +113,8 @@
     description = "hermes";
     extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
+      gnome-pomodoro
+      discord
       pika-backup
       inkscape
       ghostty
