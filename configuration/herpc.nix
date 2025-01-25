@@ -113,6 +113,7 @@
     description = "hermes";
     extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
+      davinci-resolve
       gnome-pomodoro
       discord
       pika-backup
