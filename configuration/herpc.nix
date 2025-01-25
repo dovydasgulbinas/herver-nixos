@@ -54,6 +54,37 @@
   networking.hostName = "herpc"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  # GPU
+  # https://wiki.nixos.org/wiki/AMD_GPU
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  systemd.tmpfiles.rules = let
+    rocmEnv = pkgs.symlinkJoin {
+      name = "rocm-combined";
+      paths = with pkgs.rocmPackages; [
+        rocblas
+        hipblas
+        clr
+      ];
+    };
+  in [
+    "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
+  ];
+
+  hardware.graphics.extraPackages = with pkgs; [
+    amdvlk
+    rocmPackages.clr.icd
+  ];
+  # For 32 bit applications
+  hardware.graphics.extraPackages32 = with pkgs; [
+    driversi686Linux.amdvlk
+  ];
+
+  systemd.packages = with pkgs; [lact];
+  systemd.services.lactd.wantedBy = ["multi-user.target"];
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -186,6 +217,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    lact
     python312Full
     python312Packages.pyodbc
     unixODBCDrivers.msodbcsql18
