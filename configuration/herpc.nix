@@ -14,13 +14,6 @@
     gamescopeSession.enable = true;
   };
 
-  # nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-  #     "steam"
-  #     "steam-original"
-  #     "steam-unwrapped"
-  #     "steam-run"
-  #   ];
-
   networking.extraHosts = ''
     192.168.52.210  gitlab.snx.lt
     192.168.52.175  mex.snx.lt
@@ -218,6 +211,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    nh
     lact
     python312Full
     python312Packages.pyodbc
@@ -253,6 +247,16 @@
     git
     wget
   ];
+
+  # Automatic updating
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.dates = "weekly";
+
+  # Automatic cleanup
+  nix.gc.automatic = true;
+  nix.gc.dates = "daily";
+  nix.gc.options = "--delete-older-than 14d";
+  nix.settings.auto-optimise-store = true;
 
   # Docker
   virtualisation.docker.enable = true;
