@@ -252,6 +252,9 @@
   system.autoUpgrade.enable = true;
   system.autoUpgrade.dates = "weekly";
 
+  # Experimental Features
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
   # Automatic cleanup
   nix.gc.automatic = true;
   nix.gc.dates = "daily";
