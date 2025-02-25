@@ -1,77 +1,89 @@
--- load defaults i.e lua_lsp
-require("nvchad.configs.lspconfig").defaults()
+local configs = require "nvchad.configs.lspconfig"
 
-local lspconfig = require "lspconfig"
+local mason_registry = require "mason-registry"
 
-local nvlsp = require "nvchad.configs.lspconfig"
+local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
+  .. "/node_modules/@vue/language-server"
 
 local servers = {
-	html = {},
-	bashls = {},
+  lua_ls = {
+    settings = {
+      Lua = {
+        runtime = { version = "LuaJIT" },
+        diagnostics = {
+          globals = { "vim" }, -- Prevents 'undefined vim' warnings
+        },
+        workspace = {
+          library = vim.api.nvim_get_runtime_file("", true), -- Load Neovim runtime files
+        },
+        telemetry = { enable = false },
+      },
+    },
+  },
+  html = {},
+  bashls = {},
+  dockerls = {},
+  rnix = {},
   cssls = {},
-	dockerls = {},
-	rnix = {},
-	-- ts_ls = {
-	-- 	{
-	-- 		init_options = {
-	-- 			plugins = {
-	-- 				{
-	-- 					name = "@vue/typescript-plugin",
-	-- 					location = "/home/hermes/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server",
-	-- 					languages = { "javascript", "typescript", "vue" },
-	-- 				},
-	-- 			},
-	-- 		},
-	-- 		filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-	-- 	},
-	-- },
-	--
-	-- volar = {
-	-- 	init_options = {
-	-- 		vue = {
-	-- 			hybridMode = false,
-	-- 		},
-	-- 	},
-	-- },
+  ltex = {
+    settings = {
+      ltex = { language = "en-US" },
+    },
+    filetypes = { "markdown", "tex", "latex", "text", "lr" },
+  },
+  ts_ls = {
+    {
+      init_options = {
+        plugins = {
+          {
+            name = "@vue/typescript-plugin",
+            location = vue_language_server_path,
+            languages = { "javascript", "typescript", "vue" },
+          },
+        },
+      },
+      filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+    },
+  },
 
-	pyright = {
-		settings = {
-			filetypes = { "python" },
-			python = {
-				analysis = {
-					autoSearchPaths = true,
-					typeCheckingMode = "strict",
-					autoImportCompletions = true,
-					useLibraryCodeForTypes = true,
-				},
-			},
-		},
+  volar = {
+    init_options = {
+      vue = {
+        hybridMode = false,
+      },
+    },
+  },
 
-		before_init = function(_, config)
-			-- This function sets the Python path dynamically based on the presence of a .venv directory
-			local venv_path = vim.fn.getcwd() .. "/.venv/bin/python"
-			if vim.fn.filereadable(venv_path) == 1 then
-				config.settings.python.pythonPath = venv_path
-			else
-				config.settings.python.pythonPath = "/run/current-system/sw/bin/python" -- Fallback global Python
-			end
-		end,
-	},
+  pyright = {
+    settings = {
+      filetypes = { "python" },
+      python = {
+        analysis = {
+          autoSearchPaths = true,
+          typeCheckingMode = "strict",
+          autoImportCompletions = true,
+          useLibraryCodeForTypes = true,
+        },
+      },
+    },
+
+    before_init = function(_, config)
+      -- This function sets the Python path dynamically based on the presence of a .venv directory
+      local venv_path = vim.fn.getcwd() .. "/.venv/bin/python"
+      if vim.fn.filereadable(venv_path) == 1 then
+        config.settings.python.pythonPath = venv_path
+      else
+        config.settings.python.pythonPath = "/usr/bin/python3" -- Fallback global Python
+      end
+    end,
+  },
 }
 
+-- Dynamically attack capbilities to all configured servers
+for name, opts in pairs(servers) do
+  opts.on_init = configs.on_init
+  opts.on_attach = configs.on_attach
+  opts.capabilities = configs.capabilities
 
--- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = nvlsp.on_attach,
-    on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
-  }
+  require("lspconfig")[name].setup(opts)
 end
-
--- configuring single server, example: typescript
--- lspconfig.ts_ls.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
--- }

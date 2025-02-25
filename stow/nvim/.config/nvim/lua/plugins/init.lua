@@ -1,19 +1,7 @@
 return {
-	{
-		"NeogitOrg/neogit",
-		lazy = false,
-		dependencies = {
-			"nvim-lua/plenary.nvim", -- required
-			"sindrets/diffview.nvim", -- optional - Diff integration
-			-- Only one of these is needed.
-			"nvim-telescope/telescope.nvim", -- optional
-		},
-		config = true,
-	},
-
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    event = 'BufWritePre', -- uncomment for format on save
     opts = require "configs.conform",
   },
 
@@ -25,14 +13,21 @@ return {
     end,
   },
 
-
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "typescript",
+        "javascript",
+        "python",
+        "nix",
+        "yaml",
+      },
+    },
+  },
 }
