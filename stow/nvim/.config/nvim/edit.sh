@@ -1,5 +1,8 @@
 #!/bin/bash
 git pull
+# pushd ~/Documents/dotfiles
+# nix-shell shell.nix
+# popd
 
 pushd "$HOME/.config/nvim"
 
