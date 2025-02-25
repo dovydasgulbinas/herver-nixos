@@ -1,7 +1,7 @@
 #!/bin/bash
+git pull
 
 pushd "$HOME/.config/nvim"
-git pull
 
 nvim .
 
