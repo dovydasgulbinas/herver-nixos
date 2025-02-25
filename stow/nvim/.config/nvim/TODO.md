@@ -1,0 +1,3 @@
+- [ ] fix the mappings using the new format https://nvchad.com/docs/config/mappings
+- [ ] Fix the debugger issues
+- [ ] investigate the equivalent for `require("core.utils").load_mappings "dap"` found in plugins/myplugins.lua
