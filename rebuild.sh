@@ -11,6 +11,7 @@
 
 # A rebuild script that commits on a successful build
 set -e
+# nix-shell
 
 is_valid_response() {
     local input="$1"
@@ -55,7 +56,7 @@ HOST="${HOSTNAME}"
 NIXCONF="configuration/$HOST.nix"
 
 # Edit your config
-$EDITOR "${NIXCONF}"
+nvim "${NIXCONF}"
 
 
 # Early return if no changes were detected (thanks @singiamtel!)

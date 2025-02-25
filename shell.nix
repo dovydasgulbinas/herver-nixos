@@ -10,6 +10,8 @@ pkgs.mkShell {
     pkgs.rustc
     pkgs.cargo
     pkgs.bashate
+    pkgs.git
+    pkgs.neovim
   ];
 
   shellHook = ''
