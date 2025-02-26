@@ -8,6 +8,12 @@ map("n", "<leader>gs", function()
   dev_python.git_stage_current_buffer()
 end, { desc = "Git stage current file" })
 map("n", "<leader>gb", "<cmd> Gitsigns blame <cr>", { desc = "Git Gitsigns blame the whole buffer" })
+map(
+  "n",
+  "<leader>q",
+  ":delmarks a-zA-Z0-9<CR>:bufdo bdelete<CR>",
+  { desc = "Cleanup marks and buffers", noremap = true, silent = true }
+)
 
 -- tab settings
 map("n", "<leader>tt", "<cmd> tabNext <cr>", { desc = "Tab go to Next" })
