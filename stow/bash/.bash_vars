@@ -1,0 +1,6 @@
+export EDITOR="nvim"
+export DOTF_DIR="$HOME/.dotfiles"
+
+# Go Development: vanilla
+export GOROOT="/usr/local/go"
+export GOPATH="$HOME/go"

@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+include () {
+    [[ -f "$1" ]] && source "$1"
+}
+
+
+# ==========  WEATHER UTILS ==========
+wttr()
+{
+  curl 'wttr.in/Laugalis?format=v2'
+}
+wtts()
+{
+  curl "wttr.in/Laugalis?format=%l:+%c++%t,+💦++%h,+🚩++%w++%m"
+}
+
+moon(){
+ curl wttr.in/Moon
+}    
+
+
+joke() {
+  JOKES=$(curl -s --max-time 2 "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&format=txt&type=single" || true)
+  if [ "$JOKES" != "" ]; then
+  echo -e "$JOKES\n"
+  fi
+}
