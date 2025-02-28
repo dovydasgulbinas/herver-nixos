@@ -1,5 +1,11 @@
 # herver-nixos setup
 
+installation:
+
+	git clone https://github.com/dovydasgulbinas/herver-nixos.git ~/dotfiles && cd ~/dotfiles && ./stow-link.sh
+
+
+
 ## TODO:
     - [ ] Currently ssh keys are picked by using ~/.ssh/config which is very nixy
     - [ ] Create export script:

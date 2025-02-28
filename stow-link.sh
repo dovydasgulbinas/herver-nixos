@@ -13,6 +13,7 @@ fi
 
 stow --verbose --target=$HOME --no-folding ghostty
 stow --verbose --target=$HOME  nvim
+stow --verbose --target=$HOME --no-folding alacritty
 stow --verbose --target=$HOME --no-folding git
 stow --verbose --target=$HOME --no-folding scripts
 stow --verbose --target=$HOME --no-folding keepassxc
