@@ -12,7 +12,14 @@ map(
   "n",
   "<leader>q",
   ":delmarks a-zA-Z0-9<CR>:bufdo bdelete<CR>",
-  { desc = "Cleanup marks and buffers", noremap = true, silent = true }
+  { desc = "Cleanup marks and buffers", noremap = true }
+)
+
+map(
+  "n",
+  "<leader>yp",
+  ":let @+ = expand('%:p')<cr>",
+  { desc = "Yank current buffer path (absolute)", noremap = true, silent = true }
 )
 
 -- tab settings
