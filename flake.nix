@@ -21,6 +21,7 @@
       url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
+    home-manager.url = "github:nix-community/home-manager";
   };
 
   outputs = inputs @ {
@@ -32,6 +33,7 @@
     homebrew-core,
     homebrew-cask,
     homebrew-bundle,
+    home-manager,
     ...
   }: let
     configuration = {
@@ -122,6 +124,7 @@
     darwinConfigurations = {
       herbook = nix-darwin.lib.darwinSystem {
         modules = [
+          home-manager.darwinModules.home-manager
           mac-app-util.darwinModules.default
           configuration
           nix-homebrew.darwinModules.nix-homebrew
