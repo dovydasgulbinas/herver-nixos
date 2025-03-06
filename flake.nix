@@ -36,6 +36,7 @@
     home-manager,
     ...
   }: let
+    homeManagerConfig = import ./modules/shared/default.nix;
     configuration = {
       pkgs,
       config,
@@ -44,6 +45,7 @@
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages = [
+        pkgs.nil
         pkgs.typescript-language-server
         pkgs.vue-language-server
         pkgs.pyright
@@ -56,6 +58,8 @@
         pkgs.stow
         pkgs.age
         pkgs.chezmoi
+        pkgs.ripgrep
+        pkgs.fzf
       ];
       homebrew = {
         enable = true;
@@ -125,6 +129,7 @@
       herbook = nix-darwin.lib.darwinSystem {
         modules = [
           home-manager.darwinModules.home-manager
+          homeManagerConfig
           mac-app-util.darwinModules.default
           configuration
           nix-homebrew.darwinModules.nix-homebrew

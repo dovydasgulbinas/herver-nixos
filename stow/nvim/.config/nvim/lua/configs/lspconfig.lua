@@ -23,7 +23,11 @@ local servers = {
   html = {},
   bashls = {},
   dockerls = {},
-  rnix = {},
+  rnix = {
+    cmd = { "nil" },  -- path to the nix-lsp executable
+    filetypes = {"nix", "nix-os"}
+    -- root_dir = lspconfig.util.root_pattern("default.nix", "flake.nix")
+  },
   cssls = {},
   ltex = {
     settings = {

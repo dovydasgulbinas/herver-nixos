@@ -1,4 +1,8 @@
-# font-family = "FiraCode Nerd Font"
-font-size = 11
-window-decoration = false
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 14
+window-decoration = true
+
+keybind = alt+left=unbind
+keybind = alt+right=unbind
+macos-option-as-alt = true
 
