@@ -1,9 +1,10 @@
 local configs = require "nvchad.configs.lspconfig"
 
-local mason_registry = require "mason-registry"
-
-local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
-  .. "/node_modules/@vue/language-server"
+-- TODO: add a fallback to mason package here if vue or local is missing
+-- local mason_registry = require "mason-registry"
+-- local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
+--   .. "/node_modules/@vue/language-server"
+local vue_language_server_path = "~/.nix-profile/bin/vue-language-server"
 
 local servers = {
   lua_ls = {

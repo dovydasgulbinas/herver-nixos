@@ -1,5 +1,10 @@
 # TODO.md
 
+
+- [ ] add update script and continue 24:00
+- [ ] add dock config settings 00:00
+    https://www.youtube.com/watch?v=Z8BL8mdzWHI
+
 - Fix the LD issue https://nix.dev/guides/faq.html
 - Create unatended boot using usb stick
 - setup backups using borg
