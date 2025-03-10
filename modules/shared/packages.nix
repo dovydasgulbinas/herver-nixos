@@ -23,7 +23,12 @@ with pkgs; [
   neofetch
   # openssh
   sqlite
+  litecli
+  pgcli
   wget
+  hurl
+  httpie
+  bruno
   ripgrep
   zip
 
@@ -53,6 +58,7 @@ with pkgs; [
   nodejs
   nil
   ltex-ls
+  bash-language-server
   lua-language-server
   typescript-language-server
   vue-language-server

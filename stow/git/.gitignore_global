@@ -18,3 +18,7 @@
 __pycache__
 .venv
 .mypy_cache
+tt1.py
+.devdocs/*
+Makefile.dev
+Session.vim
