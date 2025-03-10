@@ -2,7 +2,7 @@
 
 
 # Directory to search for private SSH keys
-SEARCH_DIR=${1:-~/Documents/dotfiles/stow/ssh/.ssh/}
+SEARCH_DIR=${1:-~/dotfiles/stow/ssh/.ssh/}
 pushd $SEARCH_DIR
 
 

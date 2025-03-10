@@ -16,6 +16,7 @@ with pkgs; [
   alacritty
   aspell
   aspellDicts.en
+  aspellDicts.lt
   bash-completion
   btop
   coreutils
