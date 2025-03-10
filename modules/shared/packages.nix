@@ -53,6 +53,7 @@ with pkgs; [
   nodejs
   nil
   ltex-ls
+  lua-language-server
   typescript-language-server
   vue-language-server
   alejandra
