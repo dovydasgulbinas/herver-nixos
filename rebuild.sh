@@ -22,8 +22,6 @@ is_valid_response() {
 # cd to your config dir
 if [ -d "$HOME/dotfiles" ]; then
   pushd "$HOME/dotfiles"
-elif [ -d "$HOME/Documents/dotfiles" ]; then
-  pushd "$HOME/Documents/dotfiles"
 else
   echo "No valid dotfile dir found"
   popd

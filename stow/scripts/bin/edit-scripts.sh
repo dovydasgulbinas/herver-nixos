@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 
-pushd $HOME/Documents/dotfiles/stow
+pushd "$HOME/dotfiles/stow" || exit
 
 $EDITOR .
 
-stow --verbose --target=$HOME --no-folding scripts
-popd
+stow --verbose --target="$HOME" --no-folding scripts
+popd || exit

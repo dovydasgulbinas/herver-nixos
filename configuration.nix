@@ -5,6 +5,8 @@
   ...
 }: let
   hostname = "${builtins.getEnv "THIS_HOSTNAME"}";
+  user = "hermes";
+  dotdir = "/home/${user}/dotfiles";
 in {
   networking.hostName = hostname;
   networking.nameservers = ["1.1.1.1" "8.8.8.8"];
@@ -12,7 +14,7 @@ in {
   imports = [
     # DO NOT USE the copied harware conf, use what system has
     /etc/nixos/hardware-configuration.nix
-    (/home/hermes/Documents/dotfiles/configuration + "/${hostname}.nix")
-    /home/hermes/Documents/dotfiles/home.nix
+    "${dotdir}/configuration/${hostname}.nix"
+    "${dotdir}/home.nix"
   ];
 }

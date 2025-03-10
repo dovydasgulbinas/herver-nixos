@@ -1,8 +1,8 @@
 #!/bin/bash
 # cd to your config dir
-DOT_DIR="$HOME/Documents/dotfiles"
+DOT_DIR="$HOME/dotfiles"
 mkdir -p $DOT_DIR
-pushd DOT_DIR 
+pushd "$DOT_DIR" || exit
 
 echo "Please enter hostname for this machine:"
 read HOST
