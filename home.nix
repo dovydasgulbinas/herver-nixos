@@ -7,18 +7,13 @@
 in {
   imports = [
     <home-manager/nixos>
-    # ./sources/logseq/logseq.nix
   ];
 
   home-manager.backupFileExtension = "baknix";
   home-manager.users.hermes = {
     home.stateVersion = "24.11";
     home.file = {
-      # ".ssh/config" = {source = ./sources/ssh/config;};
-      # ".ssh/id_ed25519" = {source = ./sources/ssh/id_ed25519_servers;};
-      # ".ssh/id_ed25519.pub" = {source = ./sources/ssh/id_ed25519_servers.pub;};
-      ".config/alacritty/alacritty.toml" = {source = ./sources/alacritty/alacritty.toml;};
-      # ".config/ghostty".source = ./stow/ghostty;
+      ".config/alacritty/alacritty.toml" = {source = ./stow/alacritty/.config/alacritty/alacritty.toml;};
     };
 
     programs.neovim = {
