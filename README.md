@@ -4,6 +4,9 @@ installation:
 
 	git clone https://github.com/dovydasgulbinas/herver-nixos.git ~/dotfiles && cd ~/dotfiles && ./stow-link.sh
 
+change the remote origin from https to ssh:
+    
+    git remote set-url origin git@github.com/dovydasgulbinas/herver-nixos.git
 
 ## OSX installation
 
