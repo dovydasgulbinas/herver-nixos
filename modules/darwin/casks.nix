@@ -22,6 +22,7 @@ _: [
 
   # Productivity Tools
   "proton-drive"
+  "libreoffice"
 
   # Browsers yeah!
   "firefox"

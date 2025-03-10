@@ -1,5 +1,10 @@
 {pkgs}:
 with pkgs; [
+  # shared packages
+
+  # Office & Productivity
+  libqalculate
+
   # SA unixODBCDrivers.msodbcsql18
   unixODBCDrivers.psql
   unixODBC
@@ -29,6 +34,7 @@ with pkgs; [
 
   # Cloud-related tools and SDKs
   docker
+  lazydocker
 
   # Media-related packages
   dejavu_fonts
@@ -47,6 +53,7 @@ with pkgs; [
   nodejs
   nil
   ltex-ls
+  lua-language-server
   typescript-language-server
   vue-language-server
   alejandra

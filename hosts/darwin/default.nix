@@ -60,6 +60,7 @@ in {
     stateVersion = 6;
 
     defaults = {
+      screencapture.location = "/Users/${user}/Pictures/Screenshots";
       NSGlobalDomain = {
         AppleShowAllExtensions = true;
         ApplePressAndHoldEnabled = false;
