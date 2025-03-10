@@ -6,7 +6,7 @@ installation:
 
 change the remote origin from https to ssh:
     
-    git remote set-url origin git@github.com/dovydasgulbinas/herver-nixos.git
+    git remote set-url origin git@github.com:dovydasgulbinas/herver-nixos.git
 
 ## OSX installation
 
