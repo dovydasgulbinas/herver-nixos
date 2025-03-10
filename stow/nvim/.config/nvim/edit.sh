@@ -1,6 +1,6 @@
 #!/bin/bash
-git pull
-# pushd ~/Documents/dotfiles
+pushd ~/Documents/dotfiles
+# git pull
 # nix-shell shell.nix
 # popd
 

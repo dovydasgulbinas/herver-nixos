@@ -144,10 +144,6 @@ if [ -f "$HOME/.bash_work" ]; then
     . "$HOME/.bash_work"
 fi
 
-if [ -f "$HOME/.bash_fun" ]; then
-    . "$HOME/.bash_fun"
-fi
-
 if [ -f "$HOME/.env_secrets" ]; then
     . "$HOME/.env_secrets"
 fi
