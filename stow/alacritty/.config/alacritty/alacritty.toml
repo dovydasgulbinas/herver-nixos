@@ -46,7 +46,7 @@ foreground = "#ebdbb2"
 TERM = "xterm-256color"
 
 [font]
-size = 9.0
+size = 12
 
 [font.bold]
 family = "JetBrainsMono Nerd Font Mono"
@@ -72,13 +72,12 @@ style = "Regular"
 x = 0
 y = 0
 
-
 [selection]
 save_to_clipboard = true
 semantic_escape_chars = ''',│`|:"' ()[]{}<>	'''
 
 [terminal.shell]
-program = "/usr/bin/tmux"
+program = "/run/current-system/sw/bin/tmux"
 args = ["-u", "new-session", "-A", "-s", "main"]
 
 [window]
