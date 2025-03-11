@@ -171,6 +171,7 @@
       guiAddress = "0.0.0.0:8384";
       settings = {
         devices = {
+          "herbook" = {id = "LRALR6C-3TSPKUG-MLBQGIL-U3L3CYK-EDJQR4S-B27AI3K-CYEMTQR-Q2FDOAI";};
           "herdell" = {id = "DYFKBB2-GCXOYSI-HHWWAXX-67YATXX-HQUU7XS-SBM5TRI-V3AJILW-YAGCHQR";};
           "herixel" = {id = "LIKTR5U-CWBRVZD-L6BVERY-YMWDBYG-KFJTL5D-3USURN7-GTBCRUK-MRRQNQE";};
           "hertab" = {id = "LXOMKEX-XIW6RU6-QCQHKI3-WWP5JZQ-MY5DJLN-NEI2PJF-YOOIRX3-OSGPLQE";};
@@ -183,7 +184,7 @@
           };
           "Documents" = {
             path = "/mnt/data_disk/cloud/Documents";
-            devices = ["herdell"];
+            devices = ["herdell" "herbook"];
             ignorePerms = false;
           };
           "Shared" = {
