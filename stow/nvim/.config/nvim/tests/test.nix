@@ -1,26 +1,14 @@
 {
   config,
   pkgs,
-  
   options,
-  
   ...
-}:     let
-  hostname =           "${builtins.getEnv "THIS_HOSTNAME"}";
+}: let
+  hostname = "${builtins.getEnv "THIS_HOSTNAME"}";
 in {
-  networking.hostName  = hostname;
+  networking.hostName = hostname;
 
-  networking.nameservers = ["1.1.1.1"      "8.8.8.8"];
-
-
-
-
-
-
-
-
-
-
+  networking.nameservers = ["1.1.1.1" "8.8.8.8"];
 
   imports = [
     /etc/nixos/hardware-configuration.nix
