@@ -43,9 +43,10 @@ with pkgs; [
   lazydocker
 
   # Media-related packages
-  dejavu_fonts
+  imagemagick
   ffmpeg
   fd
+  dejavu_fonts
   font-awesome
   hack-font
   noto-fonts

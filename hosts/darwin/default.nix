@@ -66,6 +66,13 @@ in {
         ApplePressAndHoldEnabled = false;
         AppleICUForce24HourTime = true;
         AppleInterfaceStyle = "Dark";
+        AppleMetricUnits = 1;
+        AppleMeasurementUnits = "Centimeters";
+        AppleTemperatureUnit = "Celsius";
+
+        # AppleLanguages = ["en" "lt"];
+        # AppleLocale = "en_US";
+        AppleKeyboardUIMode = 3; # Allow switching layouts with Caps L
 
         KeyRepeat = 2;
         InitialKeyRepeat = 15;

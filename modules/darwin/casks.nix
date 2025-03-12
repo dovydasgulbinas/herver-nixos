@@ -21,6 +21,7 @@ _: [
   "spotify"
 
   # Productivity Tools
+  "tomatobar"
   "proton-drive"
   "libreoffice"
 
