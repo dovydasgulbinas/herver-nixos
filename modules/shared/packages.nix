@@ -4,6 +4,7 @@ with pkgs; [
 
   # Office & Productivity
   libqalculate
+  protonmail-desktop
 
   # SA unixODBCDrivers.msodbcsql18
   unixODBCDrivers.psql
