@@ -1,5 +1,6 @@
 _: [
   # Development Tools
+  "cursor"
   "Tunnelblick"
   "ghostty"
   "homebrew/cask/docker"

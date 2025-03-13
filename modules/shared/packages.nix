@@ -74,6 +74,7 @@ with pkgs; [
   fzf
 
   # Text and terminal utilities
+  zsh-autocomplete
   mkalias
   chezmoi
   stow

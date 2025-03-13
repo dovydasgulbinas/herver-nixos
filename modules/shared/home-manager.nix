@@ -9,10 +9,19 @@
   email = "dovydas.gulbinas@protonmail.com";
 in {
   # Shared shell configuration
+  neovim = {
+    withNodeJs = true;
+    withPython3 = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+  };
+
   zsh = {
     enable = true;
     autocd = true;
-    enableCompletion = true;
+    enableCompletion = false;
+    syntaxHighlighting.enable = true;
 
     oh-my-zsh = {
       enable = true;
@@ -26,6 +35,7 @@ in {
       d = "docker";
       dcc = "docker compose";
       v = "nvim";
+      # vim = "nvim";
       search = "rg -p --glob '!node_modules/*'  $@";
     };
 
