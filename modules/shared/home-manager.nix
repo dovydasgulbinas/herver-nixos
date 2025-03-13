@@ -228,7 +228,7 @@ in {
   tmux = {
     enable = true;
     terminal = "tmux-256color";
-    prefix = "C-Space";
+    prefix = "C-b";
     escapeTime = 10;
     historyLimit = 50000;
     baseIndex = 1;
@@ -273,18 +273,15 @@ in {
       }
     ];
     extraConfig = ''
-      set -gu default-command
-      set -g default-shell "$SHELL"
-
       # https://github.com/dreamsofcode-io/tmux/blob/main/tmux.conf
       # https://www.youtube.com/watch?v=DzNmUNvnB04
       # set-option -sa terminal-overrides ",xterm*:Tc"
 
-      set-option -g default-shell $SHELL
+      # set-option -g default-shell $SHELL
       set -g mouse on
       set -s set-clipboard on
 
-      unbind C-b
+      # unbind C-b
       # https://github.com/christoomey/vim-tmux-navigator/issues/9
       # bind C-l send-keys 'C-l'
       # unbind C-l  # allow ctrl+l to clear the screen
