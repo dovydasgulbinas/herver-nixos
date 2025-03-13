@@ -273,6 +273,8 @@ in {
       }
     ];
     extraConfig = ''
+      set -gu default-command
+      set -g default-shell "$SHELL"
 
       # https://github.com/dreamsofcode-io/tmux/blob/main/tmux.conf
       # https://www.youtube.com/watch?v=DzNmUNvnB04
