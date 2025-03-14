@@ -327,6 +327,10 @@ in {
 
       bind '"' split-window -v -c "#{pane_current_path}"
       bind % split-window -h -c "#{pane_current_path}"
+
+      # these lines must be last
+      set -gu default-command
+      set -g default-shell "$SHELL"
     '';
   };
 }
