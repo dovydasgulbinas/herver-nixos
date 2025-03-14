@@ -2,6 +2,8 @@ font-family = "JetBrainsMono Nerd Font Mono"
 font-size = 14
 window-decoration = true
 
+
+background-opacity = 1
 keybind = alt+left=unbind
 keybind = alt+right=unbind
 macos-option-as-alt = true
