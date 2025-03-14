@@ -66,6 +66,7 @@ with pkgs; [
   typescript-language-server
   vue-language-server
   alejandra
+  black
   pyright
   neovim
   ripgrep
