@@ -38,6 +38,7 @@ in {
         ll = "ls -alh";
         d = "docker";
         dcc = "docker compose";
+        vim = "nvim";
       };
 
       oh-my-zsh = {

@@ -35,7 +35,7 @@ in {
       d = "docker";
       dcc = "docker compose";
       v = "nvim";
-      # vim = "nvim";
+      vim = "nvim";
       search = "rg -p --glob '!node_modules/*'  $@";
     };
 

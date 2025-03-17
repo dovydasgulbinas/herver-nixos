@@ -14,10 +14,10 @@
   },
   "externals": [],
   "pinnedToolbarItems": [
-    "logseq-agenda:Agenda3",
     "logseq-journals-calendar:open-calendar",
     "logseq-pomodoro-timer:pomodoro_timer",
     "logseq-journals-calendar:goto-today",
-    "logseq-pomodoro-timer:pomodoro_pause"
+    "logseq-pomodoro-timer:pomodoro_pause",
+    "logseq-agenda:Agenda3"
   ]
 }

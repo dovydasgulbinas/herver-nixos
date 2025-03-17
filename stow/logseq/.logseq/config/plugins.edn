@@ -6,10 +6,12 @@
  :logseq-markdown-table {:version "v1.8.1", :repo "haydenull/logseq-plugin-markdown-table", :effect false, :theme false}
  :logseq-journals-calendar {:version "v0.11.0", :repo "xyhp915/logseq-journals-calendar", :effect false, :theme false}
  :logseq-vim-shortcuts {:version "v0.1.20", :repo "vipzhicheng/logseq-plugin-vim-shortcuts", :effect true, :theme false}
- :logseq-agenda {:version "v3.9.2", :repo "haydenull/logseq-plugin-agenda", :effect true, :theme false}
+ :logseq-agenda {:version "v3.13.1", :repo "haydenull/logseq-plugin-agenda", :effect true, :theme false}
  :logseq-mermaid-plugin {:version "v2.0.3", :repo "benjypng/logseq-mermaid-plugin", :effect true, :theme false}
  :logseq-tabs {:version "v1.19.4", :repo "pengx17/logseq-plugin-tabs", :effect true, :theme false}
  :logseq-get-youtube-captions {:version "v1.3.0", :repo "briansunter/logseq-get-youtube-captions", :effect true, :theme false}
  :logseq-time-recorder {:version "v0.4.2", :repo "5hir0kur0/logseq-time-recorder", :effect false, :theme false}
  :logseq-pomodoro-timer {:version "1.0.1", :repo "sawhney17/logseq-pomodoro-plugin", :effect false, :theme false}
- :logseq-archive-webpage {:version "v0.2.0", :repo "patmigliaccio/logseq-archive-webpage", :effect true, :theme false}}
+ :logseq-archive-webpage {:version "v0.2.0", :repo "patmigliaccio/logseq-archive-webpage", :effect true, :theme false}
+ :logseq-todo-exploder {:version "1.0.3", :repo "sawhney17/logseq-todo-exploder", :effect true, :theme false}
+ :logseq-todo-plugin {:version "v1.22.0", :repo "ahonn/logseq-plugin-todo", :effect true, :theme false}}
