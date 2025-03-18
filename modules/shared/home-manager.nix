@@ -37,6 +37,7 @@ in {
       v = "nvim";
       vim = "nvim";
       search = "rg -p --glob '!node_modules/*'  $@";
+      fo = "fzf | xargs -r open";
     };
 
     initExtraFirst = ''
@@ -56,6 +57,7 @@ in {
       export EDITOR="nvim"
       export ALTERNATE_EDITOR="vim"
       # export VISUAL=""
+
 
       alias nix-shell='nix-shell --run $SHELL'
       nix() {
@@ -95,6 +97,9 @@ in {
       if [ -f "$HOME/.env" ]; then
           . "$HOME/.env"
       fi
+
+
+      source <(fzf --zsh)
     '';
   };
 
