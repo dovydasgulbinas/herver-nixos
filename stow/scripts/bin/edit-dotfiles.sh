@@ -1,12 +1,13 @@
 #!/usr/bin/env zsh
 
+set -e
 
 pushd "$HOME/dotfiles" || exit
 git pull
 
 # ask for user password
 sudo -v
-$EDITOR .
+$EDITOR
 
 pushd "$HOME/dotfiles/stow" || exit
 stow --verbose --target=$HOME --no-folding scripts
