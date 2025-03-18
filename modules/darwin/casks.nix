@@ -1,4 +1,7 @@
 _: [
+  # Graphics
+  "pixelorama"
+
   # Development Tools
   "cursor"
   "Tunnelblick"
