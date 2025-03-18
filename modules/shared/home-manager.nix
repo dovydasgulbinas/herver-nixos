@@ -37,7 +37,7 @@ in {
       v = "nvim";
       vim = "nvim";
       search = "rg -p --glob '!node_modules/*'  $@";
-      fo = "fzf | xargs -r open";
+      fo = "open \"$(fzf)\"";
     };
 
     initExtraFirst = ''
