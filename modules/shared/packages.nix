@@ -55,7 +55,7 @@ with pkgs; [
   meslo-lgs-nf
 
   # IDE
-  # Node.js development tools
+  xmlstarlet
   nodePackages.npm # globally install npm
   nodePackages.prettier
   nodejs
