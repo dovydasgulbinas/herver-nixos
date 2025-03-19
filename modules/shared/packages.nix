@@ -56,11 +56,14 @@ with pkgs; [
 
   # IDE
   xmlstarlet
+  # tailwindcss
+  nodePackages.tailwindcss
   nodePackages.npm # globally install npm
   nodePackages.prettier
   nodejs
   nil
   ltex-ls
+  tailwindcss-language-server
   bash-language-server
   lua-language-server
   typescript-language-server
