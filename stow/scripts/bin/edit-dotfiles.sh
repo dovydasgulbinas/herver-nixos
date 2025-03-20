@@ -7,7 +7,7 @@ git pull
 
 # ask for user password
 sudo -v
-$EDITOR
+$EDITOR ./modules/shared/packages.nix
 
 pushd "$HOME/dotfiles/stow" || exit
 stow --verbose --target=$HOME --no-folding scripts

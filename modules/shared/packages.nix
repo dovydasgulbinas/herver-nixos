@@ -57,7 +57,7 @@ with pkgs; [
 
   # IDE
   xmlstarlet
-  # tailwindcss
+  nixpacks
   nodePackages.tailwindcss
   nodePackages.npm # globally install npm
   nodePackages.prettier
