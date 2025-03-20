@@ -5,6 +5,7 @@ with pkgs; [
   # Office & Productivity
   libqalculate
   qrencode
+  # krita
   #  protonmail-bridge
 
   # SA unixODBCDrivers.msodbcsql18

@@ -1,5 +1,6 @@
 _: [
   # Graphics
+  "krita"
   "pixelorama"
 
   # Development Tools
