@@ -14,6 +14,7 @@ TEL:+37060243562
 EMAIL:lygus@pm.me
 URL:https://dovydas.xyz
 ADR:;;Žemaitės g. 60;Šiauliai;Šiaulių m. sav.;76301;Lithuania
+LOGO;MEDIATYPE=image/gif:https://dovydas.xyz/favicon.ico
 END:VCARD
 EOF
 
