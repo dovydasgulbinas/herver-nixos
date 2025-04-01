@@ -11,7 +11,9 @@
  :logseq-tabs {:version "v1.19.4", :repo "pengx17/logseq-plugin-tabs", :effect true, :theme false}
  :logseq-get-youtube-captions {:version "v1.3.0", :repo "briansunter/logseq-get-youtube-captions", :effect true, :theme false}
  :logseq-time-recorder {:version "v0.4.2", :repo "5hir0kur0/logseq-time-recorder", :effect false, :theme false}
- :logseq-pomodoro-timer {:version "1.0.1", :repo "sawhney17/logseq-pomodoro-plugin", :effect false, :theme false}
+ :logseq-pomodoro-timer {:version "1.0.3", :repo "sawhney17/logseq-pomodoro-plugin", :effect false, :theme false}
  :logseq-archive-webpage {:version "v0.2.0", :repo "patmigliaccio/logseq-archive-webpage", :effect true, :theme false}
  :logseq-todo-exploder {:version "1.0.3", :repo "sawhney17/logseq-todo-exploder", :effect true, :theme false}
- :logseq-todo-plugin {:version "v1.22.0", :repo "ahonn/logseq-plugin-todo", :effect true, :theme false}}
+ :logseq-todo-plugin {:version "v1.22.0", :repo "ahonn/logseq-plugin-todo", :effect true, :theme false}
+ :logseq-pdf-export-plugin {:version "2.2.10", :repo "sawhney17/logseq-pdf-export", :effect true, :theme false}
+ :logseq-mind-map {:version "v1.8.0", :repo "b-yp/logseq-mind-map", :effect true, :theme false}}

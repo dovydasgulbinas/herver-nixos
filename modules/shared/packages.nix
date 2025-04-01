@@ -13,6 +13,7 @@ with pkgs; [
   unixODBC
 
   # General packages for development and system management
+  moreutils
   inetutils
   gnumake
   keepassxc

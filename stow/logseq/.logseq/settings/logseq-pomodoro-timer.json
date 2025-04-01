@@ -1,6 +1,6 @@
 {
-  "pomodoroLength": "25",
+  "pomodoroLength": "30",
   "breakLength": "5",
-  "AutomaticallyStartBreakAfterPomodoro": true,
+  "AutomaticallyStartBreakAfterPomodoro": false,
   "disabled": false
 }

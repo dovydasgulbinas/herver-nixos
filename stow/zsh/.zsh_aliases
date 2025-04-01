@@ -126,6 +126,8 @@ alias af-txbc='afgbc && tmux attach-session -t afbc || tmux new-session -s afbc'
 alias envim='cd ~/.config/nvim/ && nvim .'
 alias gmason='cd ~/.local/share/nvim/mason'
 alias chfile='sha256sum --check'
+alias ht="hurl test.hurl | xmlstarlet fo > tmp.test.hurl.xml && bat tmp.test.hurl.xml"
+alias fxml="xmlstarlet fo --indent-spaces 2"
 
 
 if [ -d "$HOME/development/android-studio/bin" ] ; then
