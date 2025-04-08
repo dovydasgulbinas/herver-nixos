@@ -28,6 +28,9 @@ map("n", "<leader>tn", "<cmd> tabNext <cr>", { desc = "Tab go to Next" })
 map("n", "<leader>tp", "<cmd> tabprevious <cr>", { desc = "Tab go to previous" })
 map("n", "<leader>td", "<cmd> Telescope diagnostics <cr>", { desc = "LSP Telescope LSP diagnostics" })
 
+
+-- Code Navigation
+
 -- Python Development Mappings
 map("n", "<leader>pf", function()
   dev_python.run_flake8_on_current_file()
