@@ -15,8 +15,9 @@ alias sb='source ~/.zshrc'
 alias eba="vim ~/.zsh_aliases && sb"
 alias ebw='vim ~/.zsh_work && sb'
 alias ebs='vim ~/.env_secrets && sb'
+alias ebf='nvim ~/.zsh_functions && sb'
 
-alias edf="z ~/Documents/dotfiles && nvim ."
+alias edf="z ~/dotfiles && nvim ."
 
 # nix
 alias nxs="nix-shell --command zsh --impure"
