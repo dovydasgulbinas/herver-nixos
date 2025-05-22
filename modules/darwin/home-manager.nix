@@ -26,9 +26,16 @@ in {
     enable = true;
     casks = pkgs.callPackage ./casks.nix {};
     brews = [
+      "poetry"
       "msodbcsql18"
       "mssql-tools18"
     ];
+    extraConfig = ''
+      module Utils
+        ENV['HOMEBREW_ACCEPT_EULA']='y'
+      end
+      brew "mssql-tools"
+    '';
 
     onActivation.cleanup = "zap";
     onActivation.autoUpdate = true;

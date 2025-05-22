@@ -1,6 +1,7 @@
 {pkgs}:
 with pkgs; [
   # shared packages
+  # SKIP 3
 
   # Office & Productivity
   libqalculate
@@ -95,6 +96,7 @@ with pkgs; [
   unzip
 
   # Python packages
+  # poetry
   python3
   uv
 ]

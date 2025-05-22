@@ -46,6 +46,7 @@
     ai = add -i
     sp = stash --patch
     ca = commit --amend
+    cm = commit -m
     chx = checkout --
     ftree = ls-tree --full-tree -r --name-only HEAD
 
@@ -153,7 +154,8 @@
 [apply]
     whitespace = nowarn
 [core]
-    pager = less -SRXF
+    # pager = less -SRXF
+    pager = bat --wrap=never --paging=auto --style=changes,header
     autocrlf = false  # no converstions
     # autocrlf = input # all crlf -> lr
     # autocrlf = true  # use w/ windows, ignores win endings

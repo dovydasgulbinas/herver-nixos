@@ -18,7 +18,8 @@
 __pycache__
 .venv
 .mypy_cache
-tt1.py
+tt?.py
 .devdocs/*
+devdocs/*
 Makefile.dev
 Session.vim
