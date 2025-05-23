@@ -198,7 +198,30 @@
         };
       };
     };
+
+    samba = {
+      settings = {
+        "tm_share" = {
+          "path" = "/mnt/data_disk/tm_share";
+          "valid users" = "hermes";
+          "public" = "no";
+          "writeable" = "yes";
+          "force user" = "username";
+          "fruit:aapl" = "yes";
+          "fruit:time machine" = "yes";
+          "vfs objects" = "catia fruit streams_xattr";
+        };
+      };
+    };
   };
+
+  services.samba-wsdd = {
+    enable = true;
+    openFirewall = true;
+  };
+
+  networking.firewall.enable = true;
+  networking.firewall.allowPing = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
