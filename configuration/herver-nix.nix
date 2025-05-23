@@ -206,7 +206,7 @@
           "valid users" = "hermes";
           "public" = "no";
           "writeable" = "yes";
-          "force user" = "username";
+          "force user" = "hermes";
           "fruit:aapl" = "yes";
           "fruit:time machine" = "yes";
           "vfs objects" = "catia fruit streams_xattr";
