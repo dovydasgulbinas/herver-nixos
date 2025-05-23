@@ -67,6 +67,7 @@ with pkgs; [
   nodejs
   nil
   ltex-ls
+  dockerfile-language-server-nodejs
   tailwindcss-language-server
   bash-language-server
   lua-language-server
