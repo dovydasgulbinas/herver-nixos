@@ -98,6 +98,7 @@ with pkgs; [
 
   # Python packages
   # poetry
+  python312Packages.python-dotenv
   python3
   uv
 ]

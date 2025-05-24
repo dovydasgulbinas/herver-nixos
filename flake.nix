@@ -11,6 +11,7 @@
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
     };
+    mac-app-util.url = "github:hraban/mac-app-util";
     homebrew-bundle = {
       url = "github:homebrew/homebrew-bundle";
       flake = false;
@@ -40,6 +41,7 @@
     self,
     darwin,
     nix-homebrew,
+    mac-app-util,
     homebrew-bundle,
     homebrew-core,
     homebrew-cask,
@@ -102,8 +104,22 @@
           inherit system;
           specialArgs = inputs;
           modules = [
-            home-manager.darwinModules.home-manager
             nix-homebrew.darwinModules.nix-homebrew
+            mac-app-util.darwinModules.default
+            home-manager.darwinModules.home-manager
+            (
+              {
+                pkgs,
+                config,
+                inputs,
+                ...
+              }: {
+                # To enable it for all users:
+                home-manager.sharedModules = [
+                  mac-app-util.homeManagerModules.default
+                ];
+              }
+            )
             {
               nix-homebrew = {
                 inherit user;
