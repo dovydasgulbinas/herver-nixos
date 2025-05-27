@@ -9,7 +9,7 @@ DIRS_TO_CLEAN=(
 # List of Git repositories to auto-commit and push
 GIT_REPOS=(
     "$HOME/dotfiles"
-    "$HOME/Documents/Taxes/Gyvuliu Ukis"
+    "$HOME/Documents/Taxes"
 )
 # ==================================
 
