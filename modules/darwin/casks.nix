@@ -4,7 +4,7 @@ _: [
   "pixelorama"
 
   # Development Tools
-  "cursor"
+  # "cursor"
   "Tunnelblick"
   "ghostty"
   "homebrew/cask/docker"
@@ -26,10 +26,9 @@ _: [
   "spotify"
 
   # Productivity Tools
-  "tomatobar"
+  # "tomatobar"
   "proton-drive"
   "libreoffice"
-  "sweet-home3d"
 
   # Browsers yeah!
   "firefox"

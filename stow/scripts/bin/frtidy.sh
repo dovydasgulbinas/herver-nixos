@@ -40,7 +40,7 @@ for REPO in "${GIT_REPOS[@]}"; do
         echo "Processing Git repo: $REPO"
         cd "$REPO" || continue
         git add .
-        git commit -m "Auto commit" && echo "✅ Commit created"
+        git commit -m "Auto Cleanup Commit" && echo "✅ Commit created"
         git push && echo "✅ Pushed to remote"
         echo ""
     else
