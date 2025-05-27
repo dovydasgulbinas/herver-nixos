@@ -29,6 +29,7 @@ _: [
   "tomatobar"
   "proton-drive"
   "libreoffice"
+  "sweet-home3d"
 
   # Browsers yeah!
   "firefox"

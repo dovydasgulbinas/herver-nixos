@@ -21,6 +21,9 @@ __pycache__
 tt?.py
 .devdocs/*
 devdocs/*
+.devconf/*
+devconf/*
 Makefile.dev
 Session.vim
 .env-*
+
