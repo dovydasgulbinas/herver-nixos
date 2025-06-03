@@ -24,6 +24,10 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+    localstack = {
+      url = "github:localstack/localstack";
+      flake = false;
+    };
     homebrew-mssql-release = {
       url = "github:Microsoft/homebrew-mssql-release";
       flake = false;
@@ -39,6 +43,7 @@
   };
   outputs = {
     self,
+    localstack,
     darwin,
     nix-homebrew,
     mac-app-util,
@@ -129,6 +134,7 @@
                   "homebrew/homebrew-cask" = homebrew-cask;
                   "homebrew/homebrew-bundle" = homebrew-bundle;
                   "Microsoft/homebrew-mssql-release" = homebrew-mssql-release;
+                  "localstack/tap" = localstack;
                 };
                 mutableTaps = false;
                 autoMigrate = true;

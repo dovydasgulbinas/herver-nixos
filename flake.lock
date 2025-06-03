@@ -256,6 +256,22 @@
         "type": "github"
       }
     },
+    "localstack": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1748943227,
+        "narHash": "sha256-k7nq1oVDbWULzRlEQkIYBQMcCw2PdGili1/vdFDngp4=",
+        "owner": "localstack",
+        "repo": "localstack",
+        "rev": "0b05553b91109d168977934048024c2b9daa6738",
+        "type": "github"
+      },
+      "original": {
+        "owner": "localstack",
+        "repo": "localstack",
+        "type": "github"
+      }
+    },
     "mac-app-util": {
       "inputs": {
         "cl-nix-lite": "cl-nix-lite",
@@ -419,6 +435,7 @@
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
         "homebrew-mssql-release": "homebrew-mssql-release",
+        "localstack": "localstack",
         "mac-app-util": "mac-app-util",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_6",

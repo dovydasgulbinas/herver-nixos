@@ -26,18 +26,19 @@ in {
     enable = true;
     casks = pkgs.callPackage ./casks.nix {};
     brews = [
+      "localstack"
       "poetry"
-      "msodbcsql18"
-      "mssql-tools18"
+      # "msodbcsql18"
+      # "mssql-tools18"
     ];
-    extraConfig = ''
-      module Utils
-        ENV['HOMEBREW_ACCEPT_EULA']='y'
-      end
-      brew "mssql-tools"
-    '';
+    # extraConfig = ''
+    #   module Utils
+    #     ENV['HOMEBREW_ACCEPT_EULA']='y'
+    #   end
+    #   brew "mssql-tools"
+    # '';
 
-    onActivation.cleanup = "zap";
+    onActivation.cleanup = "none";
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
 

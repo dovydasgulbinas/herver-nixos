@@ -43,6 +43,9 @@ with pkgs; [
   gnupg
   libfido2
 
+  # Corporate
+  #localstack
+
   # Cloud-related tools and SDKs
   docker
   lazydocker
