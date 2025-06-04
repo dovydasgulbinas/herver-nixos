@@ -27,7 +27,7 @@ in {
     casks = pkgs.callPackage ./casks.nix {};
     brews = [
       "localstack"
-      "poetry"
+      # "poetry"
       # "msodbcsql18"
       # "mssql-tools18"
     ];
