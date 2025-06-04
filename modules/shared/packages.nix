@@ -100,7 +100,7 @@ with pkgs; [
   unzip
 
   # Python packages
-  # poetry
+  poetry
   python312Packages.python-dotenv
   python3
   uv
