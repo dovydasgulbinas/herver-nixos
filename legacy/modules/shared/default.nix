@@ -63,6 +63,10 @@ in {
       if [ -f "$HOME/.env" ]; then
           . "$HOME/.env"
       fi
+
+      if [ -f "$HOME/.env" ]; then
+          . "$HOME/.env-secrets"
+      fi
     '';
   };
 }
