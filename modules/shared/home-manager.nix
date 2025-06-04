@@ -98,6 +98,10 @@ in {
           . "$HOME/.env"
       fi
 
+      if [ -f "$HOME/.env-secrets" ]; then
+          . "$HOME/.env-secrets"
+      fi
+
 
       source <(fzf --zsh)
     '';
