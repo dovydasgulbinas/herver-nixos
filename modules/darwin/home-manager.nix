@@ -97,7 +97,6 @@ in {
         {path = "/Applications/Firefox.app";}
         {path = "/Applications/Ghostty.app";}
         {path = "/Applications/Logseq.app";}
-        # {path = "${pkgs.alacritty}/Applications/Alacritty.app";}
         {path = "${pkgs.keepassxc}/Applications/KeePassXC.app";}
         {path = "${pkgs.jetbrains.pycharm-professional}/Applications/PyCharm.app";}
         {path = "/System/Applications/Calendar.app";}
@@ -108,7 +107,7 @@ in {
         {
           path = "${config.users.users.${user}.home}/Documents/";
           section = "others";
-          options = "--sort name --view grid --display folder";
+          options = "--sort name --view list --display folder";
         }
         {
           path = "${config.users.users.${user}.home}/Downloads/";
@@ -116,9 +115,9 @@ in {
           options = "--sort dateadded --view fan --display folder";
         }
         {
-          path = "${config.users.users.${user}.home}/.local/share/";
+          path = "${config.users.users.${user}.home}";
           section = "others";
-          options = "--sort name --view grid --display folder";
+          options = "--sort name --view list --display folder";
         }
       ];
     };

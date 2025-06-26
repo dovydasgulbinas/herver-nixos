@@ -18,7 +18,6 @@ with pkgs; [
   inetutils
   gnumake
   keepassxc
-  alacritty
   aspell
   aspellDicts.en
   aspellDicts.lt
