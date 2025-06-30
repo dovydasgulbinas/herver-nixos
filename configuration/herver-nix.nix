@@ -237,6 +237,15 @@
           "force user" = "hermes";
           "force group" = "1000";
         };
+
+        home_media = {
+          path = "/mnt/data_disk/media";
+          browseable = true;
+          writable = true;
+          "force user" = "hermes";
+          "force group" = "1000";
+          "valid users" = ["hermes"];
+        };
       };
     };
   };
