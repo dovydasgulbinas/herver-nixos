@@ -245,6 +245,8 @@
           "force user" = "hermes";
           "force group" = "1000";
           "valid users" = ["hermes"];
+          "vfs objects" = "catia fruit streams_xattr";
+          "fruit:aapl" = "yes";
         };
       };
     };
