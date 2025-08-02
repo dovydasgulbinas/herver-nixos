@@ -26,7 +26,7 @@ in {
     enable = true;
     casks = pkgs.callPackage ./casks.nix {};
     brews = [
-      "localstack"
+      # "localstack"
       # "poetry"
       # "msodbcsql18"
       # "mssql-tools18"
@@ -38,7 +38,8 @@ in {
     #   brew "mssql-tools"
     # '';
 
-    onActivation.cleanup = "none";
+    # https://mynixos.com/nix-darwin/option/homebrew.onActivation.cleanup
+    onActivation.cleanup = "uninstall";
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
 

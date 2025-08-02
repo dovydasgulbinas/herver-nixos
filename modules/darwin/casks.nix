@@ -1,7 +1,7 @@
 _: [
   # Graphics
-  "krita"
-  "pixelorama"
+  # "krita"
+  # "pixelorama"
 
   # Development Tools
   # "cursor"

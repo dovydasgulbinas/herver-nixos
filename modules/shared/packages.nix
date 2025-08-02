@@ -6,7 +6,6 @@ with pkgs; [
   # Office & Productivity
   libqalculate
   qrencode
-  # krita
   #  protonmail-bridge
 
   # SA unixODBCDrivers.msodbcsql18
@@ -33,7 +32,7 @@ with pkgs; [
   wget
   hurl
   httpie
-  bruno
+  # bruno
   ripgrep
   zip
 

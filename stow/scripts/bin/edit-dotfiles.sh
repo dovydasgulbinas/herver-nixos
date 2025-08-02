@@ -22,7 +22,7 @@ stow --verbose --target=$HOME --no-folding ideavim
 # stow --verbose --target=$HOME --no-folding ssh
 popd || exit
 
-nix run .#build-switch
+sudo nix run .#build-switch
 git add -i
 git commit
 git push
