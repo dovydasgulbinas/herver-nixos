@@ -15,5 +15,5 @@ stow --verbose --target=$HOME --no-folding scripts
 stow --verbose --target=$HOME --no-folding keepassxc
 stow --verbose --target=$HOME logseq  # i dont want to create many symlinks for plugins
 stow --verbose --target=$HOME --no-folding zsh
-stow --verbose --target=$HOME --no-folding ssh
+# stow --verbose --target=$HOME --no-folding ssh
 popd || exit
