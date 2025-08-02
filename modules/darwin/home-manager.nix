@@ -98,7 +98,7 @@ in {
         {path = "/Applications/Ghostty.app";}
         {path = "/Applications/Logseq.app";}
         {path = "${pkgs.keepassxc}/Applications/KeePassXC.app";}
-        {path = "${pkgs.jetbrains.pycharm-professional}/Applications/PyCharm.app";}
+        # {path = "${pkgs.jetbrains.pycharm-professional}/Applications/PyCharm.app";}
         {path = "/System/Applications/Calendar.app";}
         {path = "/System/Applications/Mail.app";}
         {path = "/Applications/Spotify.app";}

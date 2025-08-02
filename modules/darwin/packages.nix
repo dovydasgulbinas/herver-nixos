@@ -4,7 +4,7 @@ with pkgs; let
 in
   shared-packages
   ++ [
-    jetbrains.pycharm-professional
+    # jetbrains.pycharm-professional
     fswatch
     dockutil
   ]

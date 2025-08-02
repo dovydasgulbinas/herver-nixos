@@ -63,18 +63,18 @@ with pkgs; [
   # IDE
   xmlstarlet
   nixpacks
-  nodePackages.tailwindcss
-  nodePackages.npm # globally install npm
-  nodePackages.prettier
-  nodejs
+  # nodePackages.tailwindcss
+  # nodePackages.npm # globally install npm
+  # nodePackages.prettier
+  # nodejs
+  # dockerfile-language-server-nodejs
   nil
   ltex-ls
-  dockerfile-language-server-nodejs
-  tailwindcss-language-server
+  # tailwindcss-language-server
   bash-language-server
   lua-language-server
-  typescript-language-server
-  vue-language-server
+  # typescript-language-server
+  # vue-language-server
   alejandra
   black
   pyright

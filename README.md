@@ -10,17 +10,43 @@ change the remote origin from https to ssh:
 
 ## OSX installation
 
-install rosseta 2:
+1. install rosseta 2:
 
     softwareupdate --install-rosetta
+
+2. Install nix
+    visit the official docs
+
+
+3. Fix nix partiion permissions
+
+```
+sudo chown -R root:nixbld /nix
+sudo chmod 0755 /nix
+```
+
+4. Add flake support and certs
+
+    	echo "experimental-features = nix-command flakes" | sudo tee -a ~/.config/nix/nix.conf 
+        echo "ssl-cert-file = /etc/ssl/cert.pem" | sudo tee -a ~/.config/nix/nix.conf 
+
+5.  Restart the Daemon
+
+	sudo launchctl kickstart -k system/org.nixos.nix-daemon
+
+6. Install flake
+
+	nix run .#build-switch
 
 init chezmoi:
 
    chezmoi init dovydasgulbinas --apply
 
+
 init nix flakes and nixos dawrin command:
 
     nix flake init -t nix-darwin --extra-experimental-features "nix-command flakes"
+    # if first fails:  echo "experimental-features = nix-command flakes" | sudo tee -a /etc/nix/nix.conf && sudo launchctl kickstart -k system/org.nixos.nix-daemon
     nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake ~/.config/nix#herbook
 
 search for packages

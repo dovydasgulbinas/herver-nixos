@@ -58,6 +58,7 @@ in {
 
   system = {
     stateVersion = 6;
+    # primaryUser = "root";
 
     defaults = {
       screencapture.location = "/Users/${user}/Pictures/Screenshots";
