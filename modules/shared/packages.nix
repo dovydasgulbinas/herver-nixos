@@ -32,7 +32,7 @@ with pkgs; [
   wget
   hurl
   httpie
-  # bruno
+  bruno
   ripgrep
   zip
 
