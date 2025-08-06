@@ -28,10 +28,10 @@
       url = "github:localstack/localstack";
       flake = false;
     };
-    homebrew-mssql-release = {
-      url = "github:Microsoft/homebrew-mssql-release";
-      flake = false;
-    };
+    # homebrew-mssql-release = {
+    #   url = "github:Microsoft/homebrew-mssql-release";
+    #   flake = false;
+    # };
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -50,7 +50,7 @@
     homebrew-bundle,
     homebrew-core,
     homebrew-cask,
-    homebrew-mssql-release,
+    # homebrew-mssql-release,
     home-manager,
     nixpkgs,
     disko,
@@ -133,8 +133,8 @@
                   "homebrew/homebrew-core" = homebrew-core;
                   "homebrew/homebrew-cask" = homebrew-cask;
                   "homebrew/homebrew-bundle" = homebrew-bundle;
-                  "Microsoft/homebrew-mssql-release" = homebrew-mssql-release;
                   "localstack/tap" = localstack;
+                  # "Microsoft/homebrew-mssql-release" = homebrew-mssql-release;
                 };
                 mutableTaps = false;
                 autoMigrate = true;
