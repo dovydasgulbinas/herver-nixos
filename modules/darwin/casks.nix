@@ -20,6 +20,7 @@ _: [
 
   # Utility Tools
   "syncthing-app"
+  "syncthing"
   "logseq"
 
   # Entertainment Tools
