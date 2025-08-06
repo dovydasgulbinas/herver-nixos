@@ -19,8 +19,8 @@ _: [
   "zoom"
 
   # Utility Tools
-  # "syncthing-app"
-  "syncthing"
+  "syncthing-app"
+  # "syncthing"
   "logseq"
 
   # Entertainment Tools
