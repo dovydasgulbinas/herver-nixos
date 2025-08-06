@@ -1,5 +1,11 @@
 # TODO.md
+# TODO
 
+## Macbook
+
+- [ ] Try removing `hraban/mac-app-util` since the home manager does the trampolines also
+
+# Linux
 
 - [ ] add update script and continue 24:00
 - [ ] add dock config settings 00:00

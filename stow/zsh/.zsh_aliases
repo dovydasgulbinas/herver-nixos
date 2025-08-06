@@ -40,6 +40,15 @@ alias tre='tree -hpug'
 
 alias abspath='function _abspath() { echo "$(cd "$(dirname "$1")" && pwd -P)/$(basename "$1")"; }; _abspath'
 
+alias ft='function _ft() {
+  local result
+  result=$(rg --color=always --line-number --no-heading "$1" | fzf --ansi)
+  [ -z "$result" ] && return
+  local file=$(echo "$result" | cut -d: -f1)
+  local line=$(echo "$result" | cut -d: -f2)
+  nvim +"$line" "$file"
+}; _ft'
+
 # DEV ALIASES ==============
 
 ## Git

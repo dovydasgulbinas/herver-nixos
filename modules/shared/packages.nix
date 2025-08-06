@@ -69,11 +69,11 @@ with pkgs; [
   # dockerfile-language-server-nodejs
   nil
   ltex-ls
-  # tailwindcss-language-server
+  tailwindcss-language-server
   bash-language-server
   lua-language-server
-  # typescript-language-server
-  # vue-language-server
+  typescript-language-server
+  vue-language-server
   alejandra
   black
   pyright
