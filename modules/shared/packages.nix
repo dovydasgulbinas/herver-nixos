@@ -63,7 +63,6 @@ with pkgs; [
   xmlstarlet
   nixpacks
   nodePackages.tailwindcss
-  # nodePackages.npm # globally install npm
   nodePackages.prettier
   nodejs
   dockerfile-language-server-nodejs

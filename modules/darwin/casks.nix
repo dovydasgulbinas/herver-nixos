@@ -19,7 +19,7 @@ _: [
   "zoom"
 
   # Utility Tools
-  "syncthing-app"
+  # "syncthing-app"
   "syncthing"
   "logseq"
 
