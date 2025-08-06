@@ -5,8 +5,7 @@ set -e
 pushd "$HOME/dotfiles" || exit
 git pull
 
-# ask for user password
-sudo -v
+# sudo -v
 $EDITOR ./modules/shared/packages.nix
 
 pushd "$HOME/dotfiles/stow" || exit
