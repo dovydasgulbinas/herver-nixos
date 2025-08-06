@@ -64,8 +64,8 @@ with pkgs; [
   nixpacks
   # nodePackages.tailwindcss
   # nodePackages.npm # globally install npm
-  # nodePackages.prettier
-  # nodejs
+  nodePackages.prettier
+  nodejs
   dockerfile-language-server-nodejs
   nil
   ltex-ls
