@@ -45,7 +45,7 @@ with pkgs; [
   #localstack
 
   # Cloud-related tools and SDKs
-  docker
+  # docker
   lazydocker
 
   # Media-related packages
@@ -66,7 +66,7 @@ with pkgs; [
   # nodePackages.npm # globally install npm
   # nodePackages.prettier
   # nodejs
-  # dockerfile-language-server-nodejs
+  dockerfile-language-server-nodejs
   nil
   ltex-ls
   tailwindcss-language-server

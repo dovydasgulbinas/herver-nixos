@@ -7,7 +7,8 @@ _: [
   # "cursor"
   "Tunnelblick"
   "ghostty"
-  "homebrew/cask/docker"
+  # "homebrew/cask/docker-desktop"
+  "docker-desktop"
   "visual-studio-code"
 
   # Communication Tools
@@ -18,7 +19,7 @@ _: [
   "zoom"
 
   # Utility Tools
-  "syncthing"
+  "syncthing-app"
   "logseq"
 
   # Entertainment Tools

@@ -25,12 +25,12 @@ in {
   homebrew = {
     enable = true;
     casks = pkgs.callPackage ./casks.nix {};
-    brews = [
-      # "localstack"
-      # "poetry"
-      # "msodbcsql18"
-      # "mssql-tools18"
-    ];
+    # brews = [
+    #   "localstack"
+    #   "poetry"
+    #   "msodbcsql18"
+    #   "mssql-tools18"
+    # ];
     # extraConfig = ''
     #   module Utils
     #     ENV['HOMEBREW_ACCEPT_EULA']='y'
@@ -39,7 +39,7 @@ in {
     # '';
 
     # https://mynixos.com/nix-darwin/option/homebrew.onActivation.cleanup
-    onActivation.cleanup = "uninstall";
+    onActivation.cleanup = "zap";
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
 
@@ -104,6 +104,7 @@ in {
         {path = "/System/Applications/Mail.app";}
         {path = "/Applications/Spotify.app";}
         {path = "/Applications/Signal.app";}
+        {path = "/Applications/Docker.app";}
         {path = "/System/Applications/Launchpad.app";}
         {
           path = "${config.users.users.${user}.home}/Documents/";
