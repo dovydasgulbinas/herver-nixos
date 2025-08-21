@@ -1,5 +1,21 @@
 #!/usr/bin/env bash
 
+makeqr() {
+    if [[ -z "$1" ]]; then
+        echo "Usage: makeqr <url>"
+        return 1
+    fi
+
+    # Strip protocol, slashes, and dots
+    local name
+    name=$(echo "$1" | sed -E 's#https?://##; s#[/.]##g')
+
+    qrencode -t SVG -s 10 -o "${name}.svg" "$1"
+    qrencode -t PNG -s 10 -o "${name}.png" "$1"
+
+    echo "Created: ${name}.svg and ${name}.png"
+}
+
 include () {
     [[ -f "$1" ]] && source "$1"
 }

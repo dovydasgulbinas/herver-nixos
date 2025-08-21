@@ -5,11 +5,11 @@ _: [
 
   # Development Tools
   # "cursor"
-  "Tunnelblick"
+  # "Tunnelblick"
   "ghostty"
   # "homebrew/cask/docker-desktop"
   "docker-desktop"
-  "visual-studio-code"
+  # "visual-studio-code"
 
   # Communication Tools
   "microsoft-teams"
@@ -19,6 +19,7 @@ _: [
   "zoom"
 
   # Utility Tools
+  "onedrive"
   "syncthing-app"
   # "syncthing"
   "logseq"
