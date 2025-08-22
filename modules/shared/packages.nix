@@ -11,6 +11,7 @@ with pkgs; [
   # SA unixODBCDrivers.msodbcsql18
   unixODBCDrivers.psql
   unixODBC
+  uwsgi
 
   # General packages for development and system management
   moreutils
