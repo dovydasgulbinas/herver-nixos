@@ -25,12 +25,13 @@ in {
   homebrew = {
     enable = true;
     casks = pkgs.callPackage ./casks.nix {};
-    # brews = [
-    #   "localstack"
-    #   "poetry"
-    #   "msodbcsql18"
-    #   "mssql-tools18"
-    # ];
+    brews = [
+      "uwsgi"
+      # "localstack"
+      # "poetry"
+      # "msodbcsql18"
+      # "mssql-tools18"
+    ];
     # extraConfig = ''
     #   module Utils
     #     ENV['HOMEBREW_ACCEPT_EULA']='y'
@@ -42,7 +43,6 @@ in {
     onActivation.cleanup = "uninstall";
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
-
     # onActivation.cleanup = "uninstall";
 
     # These app IDs are from using the mas CLI app
