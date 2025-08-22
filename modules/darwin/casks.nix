@@ -5,7 +5,7 @@ _: [
 
   # Development Tools
   # "cursor"
-  "Tunnelblick"
+  # "Tunnelblick"
   "ghostty"
   # "homebrew/cask/docker-desktop"
   "docker-desktop"
@@ -16,7 +16,7 @@ _: [
   "discord"
   "slack"
   "signal"
-  "zoom"
+  # "zoom"
 
   # Utility Tools
   "onedrive"
