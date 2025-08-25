@@ -33,6 +33,9 @@ for DIR in "${DIRS_TO_CLEAN[@]}"; do
     fi
 done
 
+
+
+
 echo ""
 echo "==== Git Auto-Commit & Push ===="
 
@@ -51,3 +54,7 @@ done
 
 echo "✅ Done."
 
+
+echo ""
+echo "==== Update and rebuild the system ===="
+nix flake update && sudo nix run .#build-switch

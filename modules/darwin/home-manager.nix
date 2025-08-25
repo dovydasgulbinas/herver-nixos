@@ -26,7 +26,10 @@ in {
     enable = true;
     casks = pkgs.callPackage ./casks.nix {};
     brews = [
+      # Work Specific
       "uwsgi"
+      "freetype"
+      "imagemagick"
       # "localstack"
       # "poetry"
       # "msodbcsql18"
