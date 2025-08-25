@@ -30,6 +30,7 @@ in {
       "uwsgi"
       "freetype"
       "imagemagick"
+      "zbar"
       # "localstack"
       # "poetry"
       # "msodbcsql18"
