@@ -50,7 +50,7 @@ with pkgs; [
   lazydocker
 
   # Media-related packages
-  imagemagick
+  # imagemagick
   ffmpeg
   fd
   dejavu_fonts
