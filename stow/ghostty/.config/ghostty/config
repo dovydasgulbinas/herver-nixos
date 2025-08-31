@@ -8,3 +8,6 @@ keybind = alt+left=unbind
 keybind = alt+right=unbind
 macos-option-as-alt = true
 term=xterm-256color
+
+# theme = dark:catppuccin-frappe,light:catppuccin-latte
+theme = catppuccin-frappe

@@ -6,6 +6,7 @@ with pkgs; [
   # Office & Productivity
   libqalculate
   qrencode
+  drawio
   #  protonmail-bridge
 
   # SA unixODBCDrivers.msodbcsql18
