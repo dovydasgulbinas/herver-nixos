@@ -15,6 +15,8 @@ with pkgs; [
   # uwsgi
 
   # General packages for development and system management
+
+  # openssh
   moreutils
   inetutils
   gnumake
@@ -27,16 +29,18 @@ with pkgs; [
   coreutils
   killall
   neofetch
-  # openssh
+  zip
+  wget
+
+  # development # TODO: move the separate dev file and exclude from servers
   sqlite
   litecli
   pgcli
-  wget
   hurl
   httpie
   bruno
   ripgrep
-  zip
+  jetbrains.pycharm-professional
 
   # Encryption and security tools
   age
