@@ -55,6 +55,8 @@ done
 echo "✅ Done."
 
 
+pushd ~/dotfiles
 echo ""
 echo "==== Update and rebuild the system ===="
 nix flake update && sudo nix run .#build-switch
+popd
