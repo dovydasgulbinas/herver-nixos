@@ -62,6 +62,7 @@ alias gh-prv='gh pr view --web'
 alias uvr='uv run'
 alias a-dotenv='source .env || true'
 alias aenv="source .venv/bin/activate"
+alias tt1="aenv && python tt1.py"
 alias ienv="python -m venv .venv"
 alias aenv-deactivate="source *env*/bin/deactivate"
 alias http-srv="python -m http.server"
