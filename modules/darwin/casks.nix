@@ -4,7 +4,7 @@ _: [
   # "pixelorama"
 
   # Development Tools
-  # "cursor"
+  "cursor"
   # "Tunnelblick"
   "ghostty"
   # "homebrew/cask/docker-desktop"

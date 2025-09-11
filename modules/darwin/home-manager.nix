@@ -27,6 +27,7 @@ in {
     casks = pkgs.callPackage ./casks.nix {};
     brews = [
       # Work Specific
+      "codex"
       "uwsgi"
       "freetype"
       "imagemagick"
