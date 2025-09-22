@@ -80,8 +80,6 @@ with pkgs; [
   typescript-language-server
   vue-language-server
   alejandra
-  black
-  pyright
   neovim
   ripgrep
   tmux
@@ -108,4 +106,7 @@ with pkgs; [
   python312Packages.python-dotenv
   python3
   uv
+  basedpyright
+  # pyright
+  black
 ]
