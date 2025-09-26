@@ -71,7 +71,8 @@ with pkgs; [
   nodePackages.tailwindcss
   nodePackages.prettier
   nodejs
-  dockerfile-language-server-nodejs
+  # dockerfile-language-server-nodejs # deprecated name
+  dockerfile-language-server
   nil
   ltex-ls
   tailwindcss-language-server
