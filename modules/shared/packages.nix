@@ -110,4 +110,5 @@ with pkgs; [
   basedpyright
   # pyright
   black
+  ruff
 ]
