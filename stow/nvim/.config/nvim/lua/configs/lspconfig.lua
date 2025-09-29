@@ -51,13 +51,13 @@ local servers = {
     },
   },
 
-  volar = {
-    init_options = {
-      vue = {
-        hybridMode = false,
-      },
-    },
-  },
+  -- volar = {
+  --   init_options = {
+  --     vue = {
+  --       hybridMode = false,
+  --     },
+  --   },
+  -- },
 
   ruff = {
     init_options = {
