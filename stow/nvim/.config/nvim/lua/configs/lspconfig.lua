@@ -59,6 +59,25 @@ local servers = {
     },
   },
 
+  ruff = {
+    init_options = {
+      settings = {
+        -- Tell Ruff to fix things automatically
+        args = { "--fix" },
+      },
+    },
+    on_attach = function(client, bufnr)
+      -- Optional: format on save
+      local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+      buf_set_option("formatexpr", "v:lua.vim.lsp.formatexpr()")
+
+      -- Keymap for formatting manually
+      vim.keymap.set("n", "<leader>fr", function()
+        vim.lsp.buf.format { async = true }
+      end, { buffer = bufnr })
+    end,
+  },
+
   basedpyright = {
     settings = {
       filetypes = { "python" },
@@ -71,7 +90,6 @@ local servers = {
         },
       },
     },
-
     before_init = function(_, config)
       -- This function sets the Python path dynamically based on the presence of a .venv directory
       local venv_path = vim.fn.getcwd() .. "/.venv/bin/python"
@@ -92,3 +110,6 @@ for name, opts in pairs(servers) do
 
   require("lspconfig")[name].setup(opts)
 end
+
+
+vim.lsp.enable('ruff')

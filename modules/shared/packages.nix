@@ -105,7 +105,6 @@ with pkgs; [
   poetry
   poetryPlugins.poetry-plugin-export
   python312Packages.python-dotenv
-  python313Packages.python-lsp-ruff
   python3
   uv
   basedpyright
