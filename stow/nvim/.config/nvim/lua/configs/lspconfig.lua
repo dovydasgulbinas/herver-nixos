@@ -108,8 +108,8 @@ for name, opts in pairs(servers) do
   opts.on_attach = configs.on_attach
   opts.capabilities = configs.capabilities
 
-  require("lspconfig")[name].setup(opts)
+  vim.lsp.config(name, opts)
+  vim.lsp.enable(name)
 end
 
 
-vim.lsp.enable('ruff')
