@@ -102,8 +102,8 @@ with pkgs; [
   unzip
 
   # Python packages
-  poetry
-  poetryPlugins.poetry-plugin-export
+  # poetry
+  # poetryPlugins.poetry-plugin-export
   python312Packages.python-dotenv
   python3
   uv
