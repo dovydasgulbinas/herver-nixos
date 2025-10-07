@@ -15,12 +15,28 @@ map(
   { desc = "Cleanup marks and buffers", noremap = true }
 )
 
+
+-- yank code snipets and line number
+map("v", "<leader>cr", function()
+  local start_line = vim.fn.line("v")
+  local end_line = vim.fn.line(".")
+  if start_line > end_line then
+    start_line, end_line = end_line, start_line
+  end
+  local file = vim.fn.expand("%")
+  local text = string.format("%s:%d-%d", file, start_line, end_line)
+  vim.fn.setreg("+", text) -- copy to system clipboard
+  vim.notify("📋 Copied: " .. text)
+end, { desc = "Copy relative file path + line range" })
+
+
 map(
   "n",
-  "<leader>yp",
+  "<leader>cf",
   ":let @+ = expand('%:p')<cr>",
-  { desc = "Yank current buffer path (absolute)", noremap = true, silent = true }
+  { desc = "Copy absolute file path", noremap = true, silent = true }
 )
+
 
 -- tab settings
 map("n", "<leader>tt", "<cmd> tabNext <cr>", { desc = "Tab go to Next" })
