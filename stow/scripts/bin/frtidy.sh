@@ -4,6 +4,7 @@
 # List of directories whose contents may be deleted
 DIRS_TO_CLEAN=(
     "$HOME/Downloads"
+    "$HOME/Desktop"
 )
 
 # List of Git repositories to auto-commit and push
