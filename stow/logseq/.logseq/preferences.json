@@ -4,22 +4,24 @@
     "mode": "dark",
     "light": null,
     "dark": {
-      "name": "Awesome Styler Dark",
-      "url": "lsp://logseq.io/logseq-awesome-styler/dist/assets/awesomeStylerExt.css",
-      "description": "Dark customizable theme theme with extra stuff",
+      "name": "Default Dark Theme",
+      "url": null,
+      "description": "Logseq default dark theme.",
       "mode": "dark",
-      "pid": "logseq-awesome-styler",
-      "selected": false
+      "selected": true,
+      "group-first": true,
+      "group-desc": "dark themes"
     }
   },
   "externals": [],
   "pinnedToolbarItems": [
-    "logseq-journals-calendar:open-calendar",
     "logseq-pomodoro-timer:pomodoro_timer",
     "logseq-journals-calendar:goto-today",
     "logseq-pomodoro-timer:pomodoro_pause",
     "logseq-agenda:Agenda3",
     "logseq-pdf-export-plugin:logseq-pdf-export-plugin",
-    "logseq-todo-plugin:logseq-plugin-todo"
+    "logseq-todo-plugin:logseq-plugin-todo",
+    "logseq-file-manager:logseq-plugin-file-manager",
+    "logseq-journals-calendar:open-calendar"
   ]
 }
