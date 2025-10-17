@@ -28,7 +28,7 @@ in {
     brews = [
       # Work Specific
       "codex"
-      "uwsgi"
+      # "uwsgi"
       "freetype"
       "imagemagick"
       "zbar"
