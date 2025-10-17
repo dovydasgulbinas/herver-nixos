@@ -4,7 +4,7 @@
   "backgroundColorOfContainerLight": "#ffffff",
   "backgroundColorOfContainerDark": "#000000",
   "hotkey": null,
-  "keepOpenOnSelect": false,
+  "keepOpenOnSelect": true,
   "showWeekNumbers": true,
   "showIsoWeeknumbers": true,
   "disabled": false

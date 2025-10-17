@@ -14,5 +14,5 @@
   "lightSecondaryBackgroundColor": "#f7f7f7",
   "darkPrimaryBackgroundColor": "#023643",
   "darkSecondaryBackgroundColor": "#002B37",
-  "disabled": false
+  "disabled": true
 }

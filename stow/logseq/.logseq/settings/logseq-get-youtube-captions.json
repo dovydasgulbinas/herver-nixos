@@ -1,6 +1,6 @@
 {
   "youtubeCaptionLanguage": "en",
-  "blockSize": 1000,
+  "blockSize": "333",
   "includeTimestamps": true,
   "indentCaptions": true,
   "disabled": false

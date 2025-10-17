@@ -18,10 +18,10 @@
     "logseq-pomodoro-timer:pomodoro_timer",
     "logseq-journals-calendar:goto-today",
     "logseq-pomodoro-timer:pomodoro_pause",
-    "logseq-agenda:Agenda3",
     "logseq-pdf-export-plugin:logseq-pdf-export-plugin",
     "logseq-todo-plugin:logseq-plugin-todo",
     "logseq-file-manager:logseq-plugin-file-manager",
-    "logseq-journals-calendar:open-calendar"
+    "logseq-journals-calendar:open-calendar",
+    "logseq-agenda:Agenda3"
   ]
 }
