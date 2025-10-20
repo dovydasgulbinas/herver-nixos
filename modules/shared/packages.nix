@@ -82,11 +82,13 @@ with pkgs; [
   vue-language-server
   alejandra
   neovim
-  ripgrep
   tmux
-  zoxide
-  bat
   fzf
+  zoxide # cd replacement
+  ripgrep # grep replacement
+  eza # ls replacement
+  fd # find replacement
+  bat # cat replacement
 
   # Text and terminal utilities
   zsh-autocomplete
