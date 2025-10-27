@@ -1,5 +1,5 @@
 #!/bin/bash
-pushd ~/Documents/dotfiles
+pushd ~/dotfiles
 # git pull
 # nix-shell shell.nix
 # popd

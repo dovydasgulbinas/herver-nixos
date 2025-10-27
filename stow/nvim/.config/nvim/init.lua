@@ -39,20 +39,21 @@ vim.schedule(function()
 end)
 
 
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
 
+--  Code Folding Options --
+-- opt.foldmethod = "expr"
+-- opt.foldexpr = "nvim_treesitter#foldexpr()"
+
+-- Opens fold under cursor
+-- vim.api.nvim_create_autocmd("CursorMoved", {
+--   pattern = "*",
+--   callback = function()
+--     if vim.fn.foldclosed(".") ~= -1 then
+--       vim.cmd("normal! zo")
+--     end
+--   end,
+-- })
 
 -- vim.opt.foldlevel = 99
 -- vim.opt.foldlevelstart = 99
 -- vim.opt.foldenable = true
-
--- Opens fold under cursor
-vim.api.nvim_create_autocmd("CursorMoved", {
-  pattern = "*",
-  callback = function()
-    if vim.fn.foldclosed(".") ~= -1 then
-      vim.cmd("normal! zo")
-    end
-  end,
-})
