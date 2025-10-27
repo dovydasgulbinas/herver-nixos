@@ -19,4 +19,6 @@
  :logseq-link-preview {:version "v2.3.0", :repo "pengx17/logseq-plugin-link-preview", :effect true, :theme false}
  :logseq-kanban-plugin {:version "v3.8.1", :repo "hkgnp/logseq-kanban-plugin", :effect true, :theme false}
  :logseq-move-block {:version "v1.1.0", :repo "vipzhicheng/logseq-plugin-move-block", :effect true, :theme false}
- :logseq-agenda {:version "v3.13.1", :repo "haydenull/logseq-plugin-agenda", :effect true, :theme false}}
+ :logseq-agenda {:version "v3.13.1", :repo "haydenull/logseq-plugin-agenda", :effect true, :theme false}
+ :logseq-awesome-props {:version "v1.10.0", :repo "yoyurec/logseq-awesome-props", :effect true, :theme false}
+ :logseq-tidy-blocks-plugin {:version "v.1.2.1", :repo "vyleung/logseq-tidy-blocks-plugin", :effect true, :theme false}}

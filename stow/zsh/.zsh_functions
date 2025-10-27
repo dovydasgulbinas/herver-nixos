@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+# Fuzzy search through history
+fzf-history-widget() {
+  local selected
+  selected=$(history -n -r 1 | fzf --tac +s --no-sort --height 40% --reverse --prompt="History> ") || return
+  print -z "$selected"
+}
+zle -N fzf-history-widget
+bindkey '^R' fzf-history-widget
+
 makeqr() {
     if [[ -z "$1" ]]; then
         echo "Usage: makeqr <url>"

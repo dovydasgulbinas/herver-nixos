@@ -89,6 +89,7 @@ with pkgs; [
   eza # ls replacement
   fd # find replacement
   bat # cat replacement
+  yazi
 
   # Text and terminal utilities
   zsh-autocomplete

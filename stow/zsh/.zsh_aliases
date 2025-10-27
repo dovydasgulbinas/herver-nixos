@@ -26,19 +26,34 @@ alias nxs="nix-shell --impure"
 
 # Vim
 alias v="nvim"
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
 
 # Misc
 alias pass="keepassxc-cli"
 alias f='grep -rn -e'
-alias ff="find . -name"
 alias ffd="find . -type d -name"
-alias ll="ls -alth"
+# alias ll="ls -alth"
+alias ll="eza -alh"
 alias la='ls -A'
 alias l='ls -CF'
 alias rmr='rm -rf'
 alias tre='tree -hpug'
 
 alias abspath='function _abspath() { echo "$(cd "$(dirname "$1")" && pwd -P)/$(basename "$1")"; }; _abspath'
+
+# fzf + nvim file search
+# alias ff="find . -name"
+function ff() {
+  local file
+  file=$(fzf --height 40% --border --preview 'bat --style=numbers --color=always {} | head -100') || return
+  nvim "$file"
+}
 
 alias ft='function _ft() {
   local result
