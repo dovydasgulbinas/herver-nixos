@@ -13,6 +13,7 @@ return {
   },
   config = function()
     require("aerial").setup({
+      backends = { "lsp", "treesitter", "markdown" },
       layout = {
         preserve_equality = true,
       },
@@ -22,6 +23,8 @@ return {
         "Constructor",
         "Function",
         "Method",
+        "Variable",
+        "Constant"
       },
       close_on_select = true,
       nav = {

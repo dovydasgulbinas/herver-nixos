@@ -110,12 +110,14 @@ in {
   git = {
     enable = true;
     ignores = ["*.swp"];
-    userName = name;
-    userEmail = email;
     lfs = {
       enable = true;
     };
-    extraConfig = {
+    settings = {
+      user = {
+        name = name;
+        email = email;
+      };
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
       core = {
