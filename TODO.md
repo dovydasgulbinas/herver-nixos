@@ -20,3 +20,21 @@
     - write timer service
 - Create secrets container for dotfiles and symlink all the secrets to it while execluting
 - change the encrypted secondary drive key location to somewhere centralized (see hardwar conf) + ssh keyz
+
+
+- [ ] Currently ssh keys are picked by using ~/.ssh/config which is very nixy
+- [ ] Create export script:
+    - `/root/wd_sa510.key`
+    - `/root/hardware-configuration.nix`
+
+```bash
+cd /etc/nixos
+sudo mkdir .git
+sudo chown hermes:users .git
+git config --global init.defaultBranch main
+git config --global user.name "Dovydas Gulbinas"
+git config --global user.email "dovydas.gulbinas@protonmail.com"
+git config --global --add safe.directory /etc/nixos
+git init
+```
+

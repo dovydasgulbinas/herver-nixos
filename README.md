@@ -78,23 +78,6 @@ get darwin nix documentation:
     darwin-help
 
 
-## TODO:
-    - [ ] Currently ssh keys are picked by using ~/.ssh/config which is very nixy
-    - [ ] Create export script:
-        - `/root/wd_sa510.key`
-        - `/root/hardware-configuration.nix`
-    - [x] Root username is also not nixy, see `helpers/01_...sh`
-    ```bash
-    cd /etc/nixos
-    sudo mkdir .git
-    sudo chown hermes:users .git
-    git config --global init.defaultBranch main
-    git config --global user.name "Dovydas Gulbinas"
-    git config --global user.email "dovydas.gulbinas@protonmail.com"
-    git config --global --add safe.directory /etc/nixos
-    git init
-    ```
-
 ## [Luks Encryption](https://nixos.wiki/wiki/Full_Disk_Encryption) on secondary drive:
 
 ### Option 2: Unlock after boot using crypttab and a keyfile
