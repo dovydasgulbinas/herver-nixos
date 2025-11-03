@@ -45,11 +45,20 @@ in {
         . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
         . /nix/var/nix/profiles/default/etc/profile.d/nix.sh
       fi
+      # TODO: Add zsh var opts https://mynixos.com/nix-darwin/option/programs.zsh.variables
 
       # Define variables for directories
       export PATH=$HOME/.pnpm-packages/bin:$HOME/.pnpm-packages:$PATH
       export PATH=$HOME/.npm-packages/bin:$HOME/bin:$PATH
       export PATH=$HOME/.local/share/bin:$PATH
+
+      # Work python
+      MAGICK_HOME='/opt/homebrew/opt/imagemagick'
+      ZBAR_HOME='/opt/homebrew/opt/zbar'
+
+      export PATH="$MAGICK_HOME/bin:$PATH"
+      export CPATH="$ZBAR_HOME/include:$CPATH"
+      export DYLD_LIBRARY_PATH="$ZBAR_HOME/lib:$MAGICK_HOME/lib:$DYLD_LIBRARY_PATH"
 
       # Remove history data we don't want to see
       export HISTIGNORE="pwd:ls:cd:z"
