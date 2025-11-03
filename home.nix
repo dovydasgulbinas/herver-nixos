@@ -11,7 +11,7 @@ in {
 
   home-manager.backupFileExtension = "baknix";
   home-manager.users.hermes = {
-    home.stateVersion = "24.11";
+    home.stateVersion = "25.05";
     home.file = {
       ".config/alacritty/alacritty.toml" = {source = ./stow/alacritty/.config/alacritty/alacritty.toml;};
     };

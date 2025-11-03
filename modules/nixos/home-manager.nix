@@ -34,7 +34,7 @@ in {
     homeDirectory = "/home/${user}";
     packages = pkgs.callPackage ./packages.nix {};
     file = shared-files // import ./files.nix {inherit user;};
-    stateVersion = "24.11";
+    stateVersion = "25.05";
   };
 
   # Use a dark theme
