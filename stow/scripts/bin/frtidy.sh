@@ -11,7 +11,7 @@ DIRS_TO_CLEAN=(
 GIT_REPOS=(
     "$HOME/dotfiles"
     "$HOME/Documents/Taxes"
-    "$HOME/Documents/00 Herhus"
+    # "$HOME/Documents/00 Herhus"  # TODO: enable lfs
 )
 # ==================================
 
