@@ -62,7 +62,7 @@ with pkgs; [
   font-awesome
   hack-font
   noto-fonts
-  noto-fonts-emoji
+  noto-fonts-color-emoji
   meslo-lgs-nf
 
   # IDE
