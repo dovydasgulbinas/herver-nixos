@@ -61,7 +61,7 @@ in {
     primaryUser = "hermes";
 
     defaults = {
-      screencapture.location = "/Users/${user}/Pictures/Screenshots";
+      screencapture.location = "/Users/${user}/Downloads/Screenshots";
       NSGlobalDomain = {
         AppleShowAllExtensions = true;
         ApplePressAndHoldEnabled = false;
@@ -87,7 +87,7 @@ in {
         show-recents = false;
         launchanim = true;
         orientation = "bottom";
-        tilesize = 48;
+        tilesize = 64;
       };
 
       finder = {

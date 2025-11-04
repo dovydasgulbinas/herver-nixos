@@ -28,12 +28,9 @@ in {
     brews = [
       # Work Specific
       "codex"
-      # "uwsgi"
       "freetype"
       "imagemagick"
       "zbar"
-      # "localstack"
-      # "poetry"
       # "msodbcsql18"
       # "mssql-tools18"
     ];
@@ -100,8 +97,8 @@ in {
     dock = {
       enable = true;
       entries = [
-        {path = "/Applications/Firefox.app";}
         {path = "/Applications/Ghostty.app";}
+        {path = "/Applications/Firefox.app";}
         {path = "/Applications/Logseq.app";}
         {path = "${pkgs.keepassxc}/Applications/KeePassXC.app";}
         # {path = "${pkgs.jetbrains.pycharm-professional}/Applications/PyCharm.app";}
@@ -109,7 +106,6 @@ in {
         {path = "/System/Applications/Mail.app";}
         {path = "/Applications/Spotify.app";}
         {path = "/Applications/Signal.app";}
-        {path = "/Applications/Docker.app";}
         {path = "/System/Applications/Launchpad.app";}
         {
           path = "${config.users.users.${user}.home}/Documents/";
@@ -118,6 +114,11 @@ in {
         }
         {
           path = "${config.users.users.${user}.home}/Downloads/";
+          section = "others";
+          options = "--sort dateadded --view fan --display folder";
+        }
+        {
+          path = "${config.users.users.${user}.home}/Downloads/Screenshots";
           section = "others";
           options = "--sort dateadded --view fan --display folder";
         }
