@@ -38,6 +38,8 @@ in {
       vim = "nvim";
       search = "rg -p --glob '!node_modules/*'  $@";
       fo = "open \"$(fzf)\"";
+      nx-build = "nix run .\#build";
+      nx-build-switch = "nix run .\#build-switch";
     };
 
     initContent = lib.mkBefore ''
