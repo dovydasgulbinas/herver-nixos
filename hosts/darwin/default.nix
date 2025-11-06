@@ -87,13 +87,14 @@ in {
         show-recents = false;
         launchanim = true;
         orientation = "bottom";
-        tilesize = 64;
+        tilesize = 48;
       };
 
       finder = {
-        _FXShowPosixPathInTitle = false;
+        _FXShowPosixPathInTitle = true;
         FXPreferredViewStyle = "clmv";
         ShowPathbar = true;
+        ShowStatusBar = true;
         AppleShowAllFiles = true;
       };
 
