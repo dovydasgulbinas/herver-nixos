@@ -146,12 +146,11 @@ alias ts-down='sudo tailscale down'
 alias m='make'
 alias md='make -f Makefile.dev'
 
-alias afg='cd ~/Desktop/af-root'
-alias afgbc='cd ~/Desktop/af-root/af-block-calculator'
 alias tx-new='tmux new-session -d -s'
-alias txa='tmux a -t main'
+alias txa='function _txa() {
+  tmux a -t "${1:-main}"
+}; _txa'
 
-alias af-txbc='afgbc && tmux attach-session -t afbc || tmux new-session -s afbc'
 alias envim='cd ~/.config/nvim/ && nvim .'
 alias gmason='cd ~/.local/share/nvim/mason'
 alias chfile='sha256sum --check'

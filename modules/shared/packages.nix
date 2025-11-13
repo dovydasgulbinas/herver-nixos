@@ -33,6 +33,9 @@ with pkgs; [
   wget
 
   # development # TODO: move the separate dev file and exclude from servers
+  awscli2
+  #  SSM is needed for interactive execution in AWS
+  ssm-session-manager-plugin
   sqlite
   litecli
   pgcli
@@ -40,7 +43,7 @@ with pkgs; [
   httpie
   bruno
   ripgrep
-  jetbrains.pycharm-professional
+  # jetbrains.pycharm-professional
 
   # Encryption and security tools
   age
