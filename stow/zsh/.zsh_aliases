@@ -55,6 +55,14 @@ function ff() {
   nvim "$file"
 }
 
+function pdfunlock() {
+    if [ $# -ne 3 ]; then
+        echo "Usage: pdfunlock <input.pdf> <password> <output.pdf>"
+        return 1
+    fi
+    qpdf --password="$2" --decrypt "$1" "$3"
+}
+
 alias ft='function _ft() {
   local result
   result=$(rg --color=always --line-number --no-heading "$1" | fzf --ansi)

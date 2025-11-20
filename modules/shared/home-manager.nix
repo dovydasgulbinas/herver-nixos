@@ -61,6 +61,9 @@ in {
       export PATH="$MAGICK_HOME/bin:$PATH"
       export CPATH="$ZBAR_HOME/include:$CPATH"
       export DYLD_LIBRARY_PATH="$ZBAR_HOME/lib:$MAGICK_HOME/lib:$DYLD_LIBRARY_PATH"
+      # static linking paths
+      # export CPATH="${pkgs.gettext}/include:$ZBAR_HOME/include:$CPATH"
+      # export DYLD_LIBRARY_PATH="${pkgs.gettext}/lib:$ZBAR_HOME/lib:$MAGICK_HOME/lib:$DYLD_LIBRARY_PATH"
 
       # Remove history data we don't want to see
       export HISTIGNORE="pwd:ls:cd:z"

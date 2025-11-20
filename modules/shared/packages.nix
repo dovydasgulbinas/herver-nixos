@@ -12,7 +12,7 @@ with pkgs; [
   # SA unixODBCDrivers.msodbcsql18
   unixODBCDrivers.psql
   unixODBC
-  # uwsgi
+  uwsgi
 
   # General packages for development and system management
 
@@ -49,6 +49,7 @@ with pkgs; [
   age
   gnupg
   libfido2
+  dbeaver-bin
 
   # Corporate
   #localstack
@@ -59,6 +60,7 @@ with pkgs; [
 
   # Media-related packages
   # imagemagick
+  qpdf
   ffmpeg
   fd
   dejavu_fonts
@@ -113,6 +115,7 @@ with pkgs; [
   python312Packages.python-dotenv
   python3
   uv
+  gettext
   basedpyright
   # pyright
   black
