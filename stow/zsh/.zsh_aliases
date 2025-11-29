@@ -72,6 +72,61 @@ alias ft='function _ft() {
   nvim +"$line" "$file"
 }; _ft'
 
+function gch() {
+
+  git fetch
+  # Make sure we're in a git repo
+  git rev-parse --is-inside-work-tree >/dev/null 2>&1 || {
+    echo "Not inside a git repository."
+    return 1
+  }
+
+  local selection branch ref
+
+  # List local (refs/heads) and remote (refs/remotes) branches
+  # Format: "<short-name> <full-ref>"
+  selection=$(
+    git for-each-ref \
+      --sort=-committerdate \
+      --format='%(refname:short) %(refname)' \
+      refs/heads refs/remotes \
+      | rg -v 'HEAD$' \
+      | fzf --prompt='Branch> ' \
+            --height=40% \
+            --reverse \
+            --preview 'git log --oneline --graph --decorate --color=always --max-count=20 -- {1}' \
+            --preview-window=right:60%:wrap
+  ) || return 0  # allow ESC without error
+
+  # Nothing selected
+  [ -z "$selection" ] && return 0
+
+  branch=${selection%% *}  # first field: short name (e.g. "main" or "origin/feature-x")
+  ref=${selection#* }      # second field: full ref (e.g. "refs/heads/main" or "refs/remotes/origin/feature-x")
+
+  # Decide what to do based on whether it's local or remote
+  if [[ "$ref" == refs/heads/* ]]; then
+    # Local branch – just switch
+    git switch "$branch"
+  elif [[ "$ref" == refs/remotes/* ]]; then
+    # Remote branch – create/switch to a local tracking branch
+    # short remote branch name looks like "origin/feature-x"
+    local remote_name=${branch%%/*}
+    local branch_name=${branch#*/}
+
+    # If local branch with that name already exists, just switch to it
+    if git show-ref --verify --quiet "refs/heads/$branch_name"; then
+      git switch "$branch_name"
+    else
+      git switch -c "$branch_name" --track "$remote_name/$branch_name"
+      git pull
+    fi
+  else
+    echo "Unknown ref type: $ref"
+    return 1
+  fi
+}
+
 # DEV ALIASES ==============
 
 ## Git

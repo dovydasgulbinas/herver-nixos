@@ -4,6 +4,7 @@ with pkgs; [
   # SKIP 3
 
   # Office & Productivity
+  flameshot
   libqalculate
   qrencode
   drawio
@@ -43,7 +44,7 @@ with pkgs; [
   httpie
   bruno
   ripgrep
-  # jetbrains.pycharm-professional
+  jetbrains.pycharm-professional
 
   # Encryption and security tools
   age
