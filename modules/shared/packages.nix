@@ -34,6 +34,7 @@ with pkgs; [
   wget
 
   # development # TODO: move the separate dev file and exclude from servers
+  gitleaks
   awscli2
   #  SSM is needed for interactive execution in AWS
   ssm-session-manager-plugin
@@ -72,7 +73,8 @@ with pkgs; [
   meslo-lgs-nf
 
   # IDE
-  xmlstarlet
+  opencode
+  # xmlstarlet
   nixpacks
   nodePackages.tailwindcss
   nodePackages.prettier

@@ -27,7 +27,7 @@ in {
     casks = pkgs.callPackage ./casks.nix {};
     brews = [
       # Work Specific
-      "codex"
+      # "codex"
       "freetype"
       "imagemagick"
       "zbar"
@@ -45,7 +45,6 @@ in {
     onActivation.cleanup = "uninstall";
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
-    # onActivation.cleanup = "uninstall";
 
     # These app IDs are from using the mas CLI app
     # mas = mac app store
@@ -100,7 +99,7 @@ in {
         {path = "/Applications/Firefox.app";}
         {path = "/Applications/Logseq.app";}
         {path = "${pkgs.keepassxc}/Applications/KeePassXC.app";}
-        # {path = "${pkgs.jetbrains.pycharm-professional}/Applications/PyCharm.app";}
+        {path = "${pkgs.jetbrains.pycharm-professional}/Applications/PyCharm.app";}
         {path = "/System/Applications/Calendar.app";}
         {path = "/System/Applications/Mail.app";}
         {path = "/Applications/Spotify.app";}

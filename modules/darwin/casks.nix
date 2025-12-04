@@ -9,6 +9,7 @@ _: [
   # "homebrew/cask/docker-desktop"
   "docker-desktop"
   # "visual-studio-code"
+  "codex"
 
   # Communication Tools
   "microsoft-teams"
