@@ -58,6 +58,9 @@ echo "✅ Done."
 
 
 pushd ~/dotfiles
+echo "==== Bumping neovim packages ===="
+nvim --headless "+Lazy! update" "+Lazy log" +qa
+
 echo ""
 echo "==== Update and rebuild the system ===="
 nix flake update && sudo nix run .#build-switch
