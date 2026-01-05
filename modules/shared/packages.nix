@@ -8,12 +8,15 @@ with pkgs; [
   libqalculate
   qrencode
   drawio
+  pandoc
   #  protonmail-bridge
 
   # SA unixODBCDrivers.msodbcsql18
   unixODBCDrivers.psql
   unixODBC
   uwsgi
+  gobject-introspection
+  glib
 
   # General packages for development and system management
 
