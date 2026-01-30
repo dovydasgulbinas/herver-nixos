@@ -27,10 +27,11 @@ in {
     casks = pkgs.callPackage ./casks.nix {};
     brews = [
       # Work Specific
-      # "codex"
       "freetype"
       "imagemagick"
       "zbar"
+      "weasyprint"
+      "esphome"
       # "msodbcsql18"
       # "mssql-tools18"
     ];

@@ -9,6 +9,7 @@ with pkgs; [
   qrencode
   drawio
   pandoc
+  diff-pdf
   #  protonmail-bridge
 
   # SA unixODBCDrivers.msodbcsql18
@@ -66,6 +67,7 @@ with pkgs; [
   # Media-related packages
   # imagemagick
   qpdf
+  poppler-utils # used for cli pdfinfo tool
   ffmpeg
   fd
   dejavu_fonts

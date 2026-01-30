@@ -61,6 +61,7 @@ in {
       export PATH="$MAGICK_HOME/bin:$PATH"
       export CPATH="$ZBAR_HOME/include:$CPATH"
       export DYLD_LIBRARY_PATH="$ZBAR_HOME/lib:$MAGICK_HOME/lib:$DYLD_LIBRARY_PATH"
+      export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib:$DYLD_FALLBACK_LIBRARY_PATH
       # static linking paths
       # export CPATH="${pkgs.gettext}/include:$ZBAR_HOME/include:$CPATH"
       # export DYLD_LIBRARY_PATH="${pkgs.gettext}/lib:$ZBAR_HOME/lib:$MAGICK_HOME/lib:$DYLD_LIBRARY_PATH"
