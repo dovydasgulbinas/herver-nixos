@@ -1,5 +1,54 @@
 #!/usr/bin/env bash
 
+git_new_branch() {
+  if [ -z "$1" ]; then
+    echo "❌ Branch name required"
+    echo "Usage: git_new_branch <new-branch-name>"
+    return 1
+  fi
+
+  local NEW_BRANCH="$1"
+  local BASE_BRANCH
+  local REPO_ROOT
+  local DEV_DOCS_DIR
+
+  # Check if branch already exists locally
+  if git show-ref --verify --quiet "refs/heads/$NEW_BRANCH"; then
+    echo "⚠️  Branch '$NEW_BRANCH' already exists. Nothing to do."
+    return 0
+  fi
+
+  # Detect main / master
+  if git show-ref --verify --quiet refs/heads/main; then
+    BASE_BRANCH="main"
+  elif git show-ref --verify --quiet refs/heads/master; then
+    BASE_BRANCH="master"
+  else
+    echo "❌ Neither 'main' nor 'master' branch found"
+    return 1
+  fi
+
+  # Find repo root
+  REPO_ROOT=$(git rev-parse --show-toplevel) || {
+    echo "❌ Not inside a git repository"
+    return 1
+  }
+
+  DEV_DOCS_DIR="$REPO_ROOT/.devdocs/$NEW_BRANCH"
+
+  set -e
+
+  git checkout "$BASE_BRANCH"
+  git pull origin "$BASE_BRANCH"
+  git checkout -b "$NEW_BRANCH"
+
+  mkdir -p "$DEV_DOCS_DIR"
+
+  echo "✅ Successfully created branch '$NEW_BRANCH' from '$BASE_BRANCH'"
+  echo "📁 Dev docs directory created at: $DEV_DOCS_DIR"
+}
+alias new-task="git_new_branch"
+
 # Fuzzy search through history
 fzf-history-widget() {
   local selected

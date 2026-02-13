@@ -25,7 +25,7 @@ in {
 
     oh-my-zsh = {
       enable = true;
-      plugins = ["git" "zoxide" "virtualenv" "python"];
+      plugins = ["git" "zoxide" "virtualenv" "python" "fzf" "zsh-interactive-cd"];
       theme = "amuse";
     };
 
