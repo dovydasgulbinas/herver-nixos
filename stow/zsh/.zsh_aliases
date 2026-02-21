@@ -72,6 +72,17 @@ alias ft='function _ft() {
   nvim +"$line" "$file"
 }; _ft'
 
+
+function git_todos() {
+    base_branch=${1:-master}
+    git diff -U0 --no-color --pretty=format: -G "TODO|FIXME" "$base_branch" \
+        | grep -Ei "TODO|FIXME" \
+        | grep '^+' \
+        | grep -v '^+++' \
+        | sed 's/^+//'
+}
+
+
 function gch() {
 
   git fetch

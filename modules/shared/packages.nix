@@ -49,7 +49,7 @@ with pkgs; [
   httpie
   bruno
   ripgrep
-  jetbrains.pycharm-professional
+  jetbrains.pycharm
 
   # Encryption and security tools
   age
