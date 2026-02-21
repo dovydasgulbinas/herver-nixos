@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-WORKROOT="$HOME/Documents/Work"
+# WORKROOT="$HOME/Documents/Work"
+WORKROOT="$HOME/Library/CloudStorage/OneDrive-UABBiuroBaltic/Projects"
 
 usage() {
     cat <<EOF
