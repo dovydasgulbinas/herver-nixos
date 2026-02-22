@@ -2,7 +2,8 @@
 set -euo pipefail
 
 # WORKROOT="$HOME/Documents/Work"
-WORKROOT="$HOME/Library/CloudStorage/OneDrive-UABBiuroBaltic/Projects"
+# WORKROOT="$HOME/Library/CloudStorage/OneDrive-UABBiuroBaltic/Projects"
+WORKROOT="$HOME/Library/CloudStorage/ProtonDrive-dovydas.gulbinas@protonmail.com-folder/Work"
 
 usage() {
     cat <<EOF

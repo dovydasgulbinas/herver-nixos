@@ -34,6 +34,12 @@ sudo chmod 0755 /nix
 
 	sudo launchctl kickstart -k system/org.nixos.nix-daemon
 
+init nix flakes and nixos dawrin command:
+
+    nix flake init -t nix-darwin --extra-experimental-features "nix-command flakes"
+    # if first fails:  echo "experimental-features = nix-command flakes" | sudo tee -a /etc/nix/nix.conf && sudo launchctl kickstart -k system/org.nixos.nix-daemon
+    nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake ~/.config/nix#herbook
+
 6. Install flake
 
 	nix run .#build-switch
@@ -42,12 +48,6 @@ init chezmoi:
 
    chezmoi init dovydasgulbinas --apply
 
-
-init nix flakes and nixos dawrin command:
-
-    nix flake init -t nix-darwin --extra-experimental-features "nix-command flakes"
-    # if first fails:  echo "experimental-features = nix-command flakes" | sudo tee -a /etc/nix/nix.conf && sudo launchctl kickstart -k system/org.nixos.nix-daemon
-    nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake ~/.config/nix#herbook
 
 search for packages
     
@@ -76,6 +76,11 @@ search a nix package:
 get darwin nix documentation:
     
     darwin-help
+
+stow the files:
+
+     ./projectctl.sh link
+
 
 
 ## [Luks Encryption](https://nixos.wiki/wiki/Full_Disk_Encryption) on secondary drive:
