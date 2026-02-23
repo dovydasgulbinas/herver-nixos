@@ -2,7 +2,7 @@
 
 installation:
 
-	git clone https://github.com/dovydasgulbinas/herver-nixos.git ~/dotfiles && cd ~/dotfiles && ./stow-link.sh
+    git clone https://github.com/dovydasgulbinas/herver-nixos.git ~/dotfiles && cd ~/dotfiles && ./stow-link.sh
 
 change the remote origin from https to ssh:
     
@@ -10,13 +10,26 @@ change the remote origin from https to ssh:
 
 ## OSX installation
 
+0. Migrate the Old machine to new one using `Migration Assitant.app`
+
 1. install rosseta 2:
 
     softwareupdate --install-rosetta
 
 2. Install nix
-    visit the official docs
 
+    # from  the official docs https://nixos.org/download/#nix-install-macos
+    sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
+    ## use --daemon flag
+
+2.1 Verify Installation
+
+    nix-shell -p nix-info --run "nix-info -m"
+
+2.1.1 Start the daemon if issues:
+
+    sudo launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist 2>/dev/null || true
+    sudo launchctl kickstart -k system/org.nixos.nix-daemon
 
 3. Fix nix partiion permissions
 

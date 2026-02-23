@@ -8,6 +8,9 @@ git pull
 # sudo -v
 $EDITOR ./modules/shared/packages.nix
 
+
+sudo nix --extra-experimental-features 'nix-command flakes' run .#build-switch
+
 pushd "$HOME/dotfiles/stow" || exit
 stow --verbose --target=$HOME --no-folding scripts
 stow --verbose --target=$HOME --no-folding ghostty
@@ -21,7 +24,6 @@ stow --verbose --target=$HOME --no-folding ideavim
 # stow --verbose --target=$HOME --no-folding ssh
 popd || exit
 
-sudo nix run .#build-switch
 git add -i
 git commit
 git push
