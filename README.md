@@ -26,46 +26,47 @@ change the remote origin from https to ssh:
 
     nix-shell -p nix-info --run "nix-info -m"
 
-2.1.1 Start the daemon if issues:
+2.1.1 (when issues) Start the daemon:
 
     sudo launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist 2>/dev/null || true
     sudo launchctl kickstart -k system/org.nixos.nix-daemon
 
-3. Fix nix partiion permissions
+Run the installation script:
+
+    cd ~/dotfiles/stow/scripts/edit-dotfiles.sh
+    ./edit-dotfiles.sh
+
+
+### OSX Installation Troubleshooting (optional)
+
+Fix nix partiion permissions:
 
 ```
 sudo chown -R root:nixbld /nix
 sudo chmod 0755 /nix
 ```
 
-4. Add flake support and certs
+Add flake support and certs
 
     	echo "experimental-features = nix-command flakes" | sudo tee -a ~/.config/nix/nix.conf 
         echo "ssl-cert-file = /etc/ssl/cert.pem" | sudo tee -a ~/.config/nix/nix.conf 
 
-5.  Restart the Daemon
+Restart the Daemon
 
 	sudo launchctl kickstart -k system/org.nixos.nix-daemon
 
-init nix flakes and nixos dawrin command:
 
-    nix flake init -t nix-darwin --extra-experimental-features "nix-command flakes"
-    # if first fails:  echo "experimental-features = nix-command flakes" | sudo tee -a /etc/nix/nix.conf && sudo launchctl kickstart -k system/org.nixos.nix-daemon
-    nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake ~/.config/nix#herbook
+Install flake
 
-6. Install flake
-
-	nix run .#build-switch
+	sudo nix run .#build-switch
 
 init chezmoi:
 
    chezmoi init dovydasgulbinas --apply
 
-
 search for packages
     
     nix search nixpkgs tmux
-
 
 verify nix installation:
 
@@ -93,7 +94,6 @@ get darwin nix documentation:
 stow the files:
 
      ./projectctl.sh link
-
 
 
 ## [Luks Encryption](https://nixos.wiki/wiki/Full_Disk_Encryption) on secondary drive:

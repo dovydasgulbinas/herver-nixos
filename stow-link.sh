@@ -7,6 +7,7 @@ else
   exit 1
 fi
 
+stow --verbose --target=$HOME --no-folding stow
 stow --verbose --target=$HOME --no-folding ghostty
 stow --verbose --target=$HOME  nvim
 # stow --verbose --target=$HOME --no-folding alacritty
