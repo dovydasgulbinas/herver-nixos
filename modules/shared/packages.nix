@@ -4,7 +4,7 @@ with pkgs; [
   # SKIP 3
 
   # Office & Productivity
-  flameshot
+  # flameshot
   libqalculate
   qrencode
   drawio
@@ -55,7 +55,7 @@ with pkgs; [
   age
   gnupg
   libfido2
-  dbeaver-bin
+  # dbeaver-bin
 
   # Corporate
   #localstack
