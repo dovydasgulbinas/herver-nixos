@@ -110,7 +110,6 @@
           specialArgs = inputs;
           modules = [
             nix-homebrew.darwinModules.nix-homebrew
-            mac-app-util.darwinModules.default
             home-manager.darwinModules.home-manager
             (
               {
