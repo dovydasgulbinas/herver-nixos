@@ -36,6 +36,7 @@ function y() {
 
 # Misc
 alias pass="keepassxc-cli"
+alias t="tmux"
 alias f='grep -rn -e'
 alias ffd="find . -type d -name"
 # alias ll="ls -alth"

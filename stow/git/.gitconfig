@@ -51,6 +51,7 @@
     ftree = ls-tree --full-tree -r --name-only HEAD
 
     sync=!git pull && git status && git add -i && git commit && git push
+    diff-release=!git diff $(git describe --tags --abbrev=0) master  
 
 
     #BETTER VERSIONS OF BASIC COMMANDS
