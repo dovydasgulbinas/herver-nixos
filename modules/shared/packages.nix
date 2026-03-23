@@ -12,9 +12,9 @@ with pkgs; [
   diff-pdf
   #  protonmail-bridge
 
-  # SA unixODBCDrivers.msodbcsql18
-  unixODBCDrivers.psql
-  unixODBC
+  # SA unixodbcDrivers.msodbcsql18
+  unixodbcDrivers.psql
+  unixodbc
   uwsgi
   gobject-introspection
   glib

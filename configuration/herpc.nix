@@ -215,9 +215,9 @@
     lact
     python312Full
     python312Packages.pyodbc
-    unixODBCDrivers.msodbcsql18
-    unixODBCDrivers.psql
-    unixODBC
+    unixodbcDrivers.msodbcsql18
+    unixodbcDrivers.psql
+    unixodbc
     nix-index
     dig
     bat
