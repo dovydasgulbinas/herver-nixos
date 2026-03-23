@@ -33,7 +33,7 @@ with pkgs; [
   btop
   coreutils
   killall
-  neofetch
+  fastfetch
   zip
   wget
 
