@@ -76,6 +76,8 @@ with pkgs; [
   noto-fonts
   noto-fonts-color-emoji
   meslo-lgs-nf
+  liberation_ttf
+  noto-fonts-cjk-sans
 
   # IDE
   opencode
@@ -84,7 +86,6 @@ with pkgs; [
   nodePackages.tailwindcss
   nodePackages.prettier
   nodejs
-  # dockerfile-language-server-nodejs # deprecated name
   dockerfile-language-server
   nil
   ltex-ls
@@ -118,14 +119,12 @@ with pkgs; [
   unzip
 
   # Python packages
-  # poetry
   # poetryPlugins.poetry-plugin-export
   python312Packages.python-dotenv
   python3
   uv
   gettext
   basedpyright
-  # pyright
   black
   ruff
 ]
