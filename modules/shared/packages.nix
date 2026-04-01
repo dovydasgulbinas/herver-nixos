@@ -5,6 +5,7 @@ with pkgs; [
 
   # Office & Productivity
   # flameshot
+  yt-dlp
   libqalculate
   qrencode
   drawio
