@@ -84,8 +84,8 @@ with pkgs; [
   opencode
   # xmlstarlet
   nixpacks
-  nodePackages.tailwindcss
-  nodePackages.prettier
+  tailwindcss
+  prettier
   nodejs
   dockerfile-language-server
   nil
