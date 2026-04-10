@@ -71,6 +71,9 @@ with pkgs; [
   poppler-utils # used for cli pdfinfo tool
   ffmpeg
   fd
+
+  fontconfig
+  liberation_ttf
   dejavu_fonts
   font-awesome
   hack-font
