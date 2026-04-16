@@ -10,6 +10,7 @@ _: [
   "docker-desktop"
   # "visual-studio-code"
   "codex"
+  "codex-app"
 
   # Communication Tools
   "microsoft-teams"
@@ -19,8 +20,8 @@ _: [
   # "zoom"
 
   # Utility Tools
-  "onedrive"
-  "syncthing-app"
+  # "onedrive"
+  # "syncthing-app"
   # "syncthing"
   "logseq"
 
