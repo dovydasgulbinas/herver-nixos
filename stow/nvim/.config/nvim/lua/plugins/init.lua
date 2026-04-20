@@ -34,5 +34,10 @@ return {
         "hurl",
       },
     },
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+      pcall(require, "nvim-treesitter.query_predicates")
+      require("configs.treesitter_compat").setup()
+    end,
   },
 }
