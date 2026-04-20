@@ -43,7 +43,7 @@ in {
     # '';
 
     # https://mynixos.com/nix-darwin/option/homebrew.onActivation.cleanup
-    onActivation.cleanup = "uninstall";
+    onActivation.cleanup = "zap";
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
 

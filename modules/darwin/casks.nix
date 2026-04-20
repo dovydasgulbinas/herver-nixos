@@ -11,10 +11,11 @@ _: [
   # "visual-studio-code"
   "codex"
   "codex-app"
+  "claude-code"
 
   # Communication Tools
   "microsoft-teams"
-  "discord"
+  # "discord"
   "slack"
   "signal"
   # "zoom"
