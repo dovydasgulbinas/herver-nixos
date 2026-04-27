@@ -1,26 +1,141 @@
+" ============================================================
+" IdeaVim Configuration
+" Migrated from NvChad/Neovim config
+" ============================================================
+
+" --- Leader ---
 let mapleader = ' '
-set nu
-set commentary
+
+" --- Basic Options ---
+set number
 " set relativenumber
+set scrolloff=8
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
 
+" --- IdeaVim Plugins ---
+set commentary
+set surround
+set highlightedyank
+set NERDTree
+set easymotion
+set which-key
+set argtextobj
+set matchit
+
+" --- Which-key settings ---
+set notimeout
+let g:WhichKey_ShowVimActions = "true"
+
+" ============================================================
+" KEYMAPS
+" ============================================================
+
+" --- Escape & Command Mode ---
+inoremap jk <Esc>
+noremap ; :
+
+" --- Save ---
+nmap <C-s> <Action>(SaveAll)
+
+" ============================================================
+" TABS / BUFFERS
+" ============================================================
+nmap <leader>tn <Action>(NextTab)
+nmap <leader>tt <Action>(NextTab)
+nmap <leader>tp <Action>(PreviousTab)
+nmap <leader>q  <Action>(CloseContent)
+
+" ============================================================
+" FILE / SEARCH
+" ============================================================
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fw <Action>(FindInPath)
+nmap <leader>b  <Action>(Switcher)
+nmap <leader>e  <Action>(ActivateProjectToolWindow)
+
+" --- Copy File Path ---
+nmap <leader>cf <Action>(CopyAbsolutePath)
+nmap <leader>cr <Action>(CopyContentRootPath)
+
+" ============================================================
+" CODE NAVIGATION
+" ============================================================
+nmap gd         <Action>(GotoDeclaration)
+nmap gi         <Action>(GotoImplementation)
+nmap gr         <Action>(FindUsages)
+nmap <leader>gr <Action>(FindUsages)
+nmap <leader>gt <Action>(GotoTest)
+
+" --- Code Outline (Aerial equivalent) ---
+nmap <leader>cc <Action>(ActivateStructureToolWindow)
+nmap <leader>cs <Action>(FileStructurePopup)
+
+" ============================================================
+" DIAGNOSTICS / ERRORS
+" ============================================================
+nmap <leader>td <Action>(ActivateProblemsViewToolWindow)
+nmap [d         <Action>(GotoPreviousError)
+nmap ]d         <Action>(GotoNextError)
+
+" ============================================================
+" LSP-LIKE ACTIONS
+" ============================================================
+nmap K          <Action>(QuickJavaDoc)
+nmap gh         <Action>(ShowErrorDescription)
+nmap <C-k>      <Action>(ParameterInfo)
+
+" ============================================================
+" GIT (Neogit / Gitsigns equivalent)
+" ============================================================
+nmap <leader>gn <Action>(ActivateVersionControlToolWindow)
+nmap <leader>gs <Action>(Git.Add)
+nmap <leader>gb <Action>(Annotate)
+nmap <leader>gc <Action>(CheckinProject)
+nmap <leader>gp <Action>(Vcs.Push)
+nmap <leader>gl <Action>(Vcs.Show.Log)
+nmap <leader>gd <Action>(Compare.SameVersion)
+
+" ============================================================
+" DEBUGGING (DAP equivalent)
+" ============================================================
+nmap <leader>db  <Action>(ToggleLineBreakpoint)
+nmap <leader>dus <Action>(ActivateDebugToolWindow)
+nmap <leader>dpr <Action>(DebugClass)
+nmap <leader>dc  <Action>(Resume)
+nmap <leader>ds  <Action>(StepOver)
+nmap <leader>di  <Action>(StepInto)
+nmap <leader>do  <Action>(StepOut)
+nmap <leader>de  <Action>(EvaluateExpression)
+
+" ============================================================
+" FORMATTING / REFACTORING
+" ============================================================
+nmap <leader>fr <Action>(ReformatCode)
+nmap <leader>rn <Action>(RenameElement)
+nmap <leader>ra <Action>(ShowIntentionActions)
+nmap <leader>rf <Action>(RefactoringMenu)
+
+" ============================================================
+" PYTHON / RUN
+" Note: <leader>pf (flake8), <leader>pm (mypy), <leader>pp (pre-commit)
+" are best set up as External Tools in PyCharm (Settings > Tools > External Tools)
+" and bound via Settings > Keymap
+" ============================================================
+nmap <leader>pr <Action>(RunClass)
+nmap <leader>pt <Action>(ChooseRunConfiguration)
+nmap <leader>pi <Action>(Inspections.RunInspections)
+
+" ============================================================
+" IDE-SPECIFIC
+" ============================================================
 if has('ide')
-  " mappings and options that exist only in IdeaVim
-  map <leader>ff <Action>(GotoFile)
-  map <leader>fw <Action>(FindInPath)
-  map <leader>b <Action>(Switcher)
-  map <leader>gr <Action>(FindUsages)
-  xmap / <Plug>Commentary
+  xmap gc <Plug>Commentary
+  xmap /  <Plug>Commentary
 
-  if &ide =~? 'intellij idea'
-    if &ide =~? 'community'
-      " some mappings and options for IntelliJ IDEA Community Edition
-    elseif &ide =~? 'ultimate'
-      " some mappings and options for IntelliJ IDEA Ultimate Edition
-    endif
-  elseif &ide =~? 'pycharm'
-    " PyCharm specific mappings and options
+  if &ide =~? 'pycharm'
+    nmap <leader>pm <Action>(Inspections.RunInspections)
   endif
-else
-  " some mappings for Vim/Neovim
-  " nnoremap <leader>f <cmd>Telescope find_files<cr>
 endif
