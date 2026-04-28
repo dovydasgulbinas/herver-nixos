@@ -4,7 +4,7 @@ with pkgs; [
   # SKIP 3
 
   # Office & Productivity
-  # flameshot
+  flameshot
   yt-dlp
   libqalculate
   qrencode
