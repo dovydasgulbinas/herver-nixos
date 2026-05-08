@@ -43,6 +43,7 @@ git_new_branch() {
   git checkout -b "$NEW_BRANCH"
 
   mkdir -p "$DEV_DOCS_DIR"
+  git push
 
   echo "✅ Successfully created branch '$NEW_BRANCH' from '$BASE_BRANCH'"
   echo "📁 Dev docs directory created at: $DEV_DOCS_DIR"

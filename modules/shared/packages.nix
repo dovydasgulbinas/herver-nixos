@@ -4,6 +4,8 @@ with pkgs; [
   # SKIP 3
 
   # Office & Productivity
+  fortune
+  cowsay
   flameshot
   yt-dlp
   libqalculate
