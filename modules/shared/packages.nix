@@ -39,6 +39,7 @@ with pkgs; [
   fastfetch
   zip
   wget
+  nmap
 
   # development # TODO: move the separate dev file and exclude from servers
   gitleaks
