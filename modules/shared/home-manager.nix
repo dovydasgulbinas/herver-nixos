@@ -355,6 +355,10 @@ in {
       bind '"' split-window -v -c "#{pane_current_path}"
       bind % split-window -h -c "#{pane_current_path}"
 
+      # Show tmux window names (e.g. editor, server) instead of pane titles/hostnames
+      set -g window-status-format "#I. #W"
+      set -g window-status-current-format "#I. #W"
+
       # these lines must be last
       set -gu default-command
       set -g default-shell "$SHELL"
