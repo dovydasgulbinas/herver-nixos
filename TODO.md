@@ -5,7 +5,7 @@
 
 
 - [ ] Add zsh varibales instead of the init script https://mynixos.com/nix-darwin/option/programs.zsh.variables
-- [ ] Try removing `hraban/mac-app-util` since the home manager does the trampolines also
+- [x] Removed `hraban/mac-app-util`; home-manager trampolines are sufficient
 
 # Linux
 
@@ -37,4 +37,3 @@ git config --global user.email "dovydas.gulbinas@protonmail.com"
 git config --global --add safe.directory /etc/nixos
 git init
 ```
-

@@ -35,6 +35,7 @@ function y() {
 }
 
 # Misc
+export LESS='-R'
 alias pass="keepassxc-cli"
 alias t="tmux"
 alias f='grep -rn -e'

@@ -42,6 +42,7 @@ with pkgs; [
   nmap
 
   # development # TODO: move the separate dev file and exclude from servers
+  redis
   gitleaks
   awscli2
   #  SSM is needed for interactive execution in AWS

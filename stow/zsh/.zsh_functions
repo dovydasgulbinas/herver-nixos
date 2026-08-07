@@ -123,3 +123,16 @@ del() {
         mv -- "$F" ~/.Trash/"$F-$(exec date '+%F-%T')"
     done
 }
+
+
+jsonbeautify() {
+  local input
+  input="$(pbpaste)" || return 1
+
+  if [[ -z "$input" ]]; then
+    echo "Clipboard is empty" >&2
+    return 1
+  fi
+
+  jq -C . <<<"$input"
+}
