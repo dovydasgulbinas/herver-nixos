@@ -16,5 +16,11 @@ def ak_visas(pirmi10: str) -> int:
     return f"{pirmi10}{ak_kontrolinis(pirmi10)}"
 
 
-print(ak_visas("3930303333"))
-print(ak_visas("3940218114"))
+# print(ak_visas("3930303333"))
+# print(ak_visas("3940218114"))
+print(ak_visas("3940213333"))  # 39402133333
+ Mano Super -0 Pasas 
+ Mano Super -0 Pasas
+
+# POST
+ ManoSuper -0 Pasas

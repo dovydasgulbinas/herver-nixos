@@ -8,8 +8,10 @@ alias gpr="cd ~/Projects"
 alias gdc="cd ~/Documents"
 alias gpj="cd ~/Documents/Projects"
 alias gwo="cd ~/Work"
+alias gno="cd ~/Documents/Notebooks/Obsidian/Main"
 
 alias c="clear"
+alias rm-empty='find . -mindepth 1 \( -type d -name ".*" -prune \) -o \( -type f -empty -print -delete \)'
 
 alias sb='source ~/.zshrc'
 alias eba="vim ~/.zsh_aliases && sb"

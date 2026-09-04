@@ -27,3 +27,7 @@ Makefile.dev
 Session.vim
 .env-*
 wts/*
+
+**/.claude/settings.local.json
+# .claude/*
+.aider*

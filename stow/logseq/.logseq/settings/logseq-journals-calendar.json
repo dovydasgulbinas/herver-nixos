@@ -1,4 +1,5 @@
 {
+  "disabled": true,
   "showTodayBtn": true,
   "firstDayOfWeek": "2",
   "backgroundColorOfContainerLight": "#ffffff",
@@ -8,6 +9,5 @@
   "hotkeyNextDay": "mod+shift+right",
   "keepOpenOnSelect": true,
   "showWeekNumbers": true,
-  "showIsoWeeknumbers": true,
-  "disabled": false
+  "showIsoWeeknumbers": true
 }

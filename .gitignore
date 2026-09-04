@@ -14,3 +14,4 @@
 /stow/logseq/.logseq/graphs/*
 /stow/logseq/.logseq/settings/logseq-chatgpt-plugin.json
 nvim.log
+.aider*

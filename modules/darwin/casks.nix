@@ -25,6 +25,7 @@ _: [
   # "syncthing-app"
   # "syncthing"
   "logseq"
+  "obsidian"
 
   # Entertainment Tools
   "vlc"

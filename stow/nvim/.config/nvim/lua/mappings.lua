@@ -17,6 +17,93 @@ map(
 
 
 -- yank code snipets and line number
+map("v", "<leader>cc", function()
+  local start_line = vim.fn.line("v")
+  local end_line = vim.fn.line(".")
+  local file = vim.fn.expand("%:t")
+  local lines = vim.fn.getline(start_line, end_line)
+  
+  -- Get the directory relative to the file
+  local file_path = vim.fn.expand("%:p")
+  local dir_path = vim.fn.fnamemodify(file_path, ":h")
+  
+  -- Simple approach: split dir_path and check from root down
+  local rel_dir = ""
+  local dir_parts = {}
+  for p in string.gmatch(dir_path, "[^/]+") do
+    table.insert(dir_parts, p)
+  end
+  
+  -- Build relative paths from longest to shortest and find the first one that exists
+  for len = #dir_parts, 1, -1 do
+    local test_parts = {}
+    for k = 1, len do
+      table.insert(test_parts, dir_parts[k])
+    end
+    local test_path = table.concat(test_parts, "/")
+    if vim.fn.isdirectory(test_path) == 1 then
+      rel_dir = test_path
+      break
+    end
+  end
+  
+  -- Get current buffer number
+  local bufnr = vim.api.nvim_get_current_buf()
+
+  -- Detect language from Treesitter if available
+  local filetype = vim.api.nvim_get_option_value("filetype", { buf = bufnr })
+  
+  -- Only use Treesitter if we have a valid filetype and Treesitter is available
+  local lang = "plain"  -- fallback when Treesitter unavailable
+  if filetype and filetype ~= "" and vim.treesitter and vim.treesitter.get_lang_info then
+    local langinfo = vim.treesitter.get_lang_info(filetype)
+    if langinfo and langinfo.valid then
+      local lang = filetype
+      -- Check if it's a known language we want to mark (simple version)
+      local known_langs = {
+        "c", "python", "javascript", "rust", "typescript", "go", "java", "cpp",
+        "swift", "kotlin", "scala", "php", "ruby", "perl", "elixir", "erlang",
+        "racket", "clojure", "groovy", "tcl", "fsharp", "ocaml", "haskell",
+        "coq", "isabelle", "agda", "lean", "verilog", "systemverilog", "d",
+        "nim", "pike", "scheme", "luau", "lua", "gdscript", "gd", "csharp",
+        "vbnet", "fift", "vhdl", "adlers", "asc", "asm", "basic", "blazor",
+        "cobol", "conf", "csv", "dart", "diff", "dockerfile", "edn",
+        "fortran", "gas", "gcode", "gd", "gdyaml", "glsl", "gmsl", "gradle",
+        "groovy", "haml", "hcl", "html", "ini", "jade", "jenkinsfile",
+        "julia", "json", "jsp", "jsx", "json5", "jsonnet", "jssm", "kt",
+        "lasso", "less", "libreoffice", "llama", "lisp", "llvm", "llvmir",
+        "lua", "makefile", "markdown", "mermaid", "matlab", "ml",
+        "monkey", "mipsasm", "mupad", "nginx", "nim", "ninja", "nosql",
+        "nu", "nunjucks", "oasis", "ocaml", "opal", "org", "pas", "pascal",
+        "patch", "perl", "php", "phpjs", "plantuml", "plaintext", "pom",
+        "pony", "properties", "protobuf", "purescript", "puppet", "r",
+        "rake", "raku", "racket", "renpy", "rest", "rst", "sass", "scala",
+        "scss", "sh", "smali", "smt", "solidity", "sparql", "svelte", "swift",
+        "tcl", "textile", "tiki", "toml", "tsx", "tsv", "twig", "v",
+        "vhd", "vhdl", "vim", "vuln", "webidl", "webpage", "wiki", "wit",
+        "wml", "wsdl", "x86asm", "xml", "xsd", "xsl", "yaml", "yml",
+        "zig", "ziggy"
+      }
+      
+      for _, known in ipairs(known_langs) do
+        if vim.fn.stridx(lang, known) == 0 then
+          break
+        end
+      end
+    end
+  end
+  
+  -- Build the markdown code block
+  local header = string.format("# %s:%d-%d", file, start_line, end_line)
+  
+  -- Combine header and code block
+  local content = header .. "\n\n```" .. lang .. "\n" .. table.concat(lines, "\n") .. "\n\n```\n"
+  
+  vim.fn.setreg("+", content) -- copy to system clipboard
+  vim.notify("📋 Copied: " .. header .. " (" .. lang .. ")", "info")
+end, { desc = "Copy relative file path + line range + code content (markdown)" })
+
+
 map("v", "<leader>cr", function()
   local start_line = vim.fn.line("v")
   local end_line = vim.fn.line(".")
