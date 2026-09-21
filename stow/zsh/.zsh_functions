@@ -50,6 +50,55 @@ git_new_branch() {
 }
 alias new-task="git_new_branch"
 
+# Interactively remove local branches whose latest commit is over a month old.
+# Git does not record branch creation dates, so the tip commit date is used.
+git_cleanup_old_branches() {
+  if ! git rev-parse --git-dir >/dev/null 2>&1; then
+    echo "Error: not inside a Git repository." >&2
+    return 1
+  fi
+
+  local current_branch cutoff
+  local branch_timestamp branch_date branch_name answer
+  local found=0
+
+  current_branch=$(git symbolic-ref --quiet --short HEAD 2>/dev/null || true)
+  cutoff=$(git rev-parse --since='1 month ago') || return 1
+  cutoff=${cutoff#--max-age=}
+
+  while IFS=$'\t' read -r branch_timestamp branch_date branch_name <&3; do
+    [ "$branch_timestamp" -lt "$cutoff" ] || continue
+    [ "$branch_name" != "master" ] || continue
+    [ "$branch_name" != "$current_branch" ] || continue
+
+    found=1
+    printf '%s  %s\n' "$branch_date" "$branch_name"
+    printf 'Delete this branch? [y/N/q] '
+    read -r answer || return 1
+
+    case "$answer" in
+      y|Y|yes|YES|Yes)
+        git branch -d -- "$branch_name"
+        ;;
+      q|Q|quit|QUIT|Quit)
+        echo "Branch cleanup stopped."
+        return 0
+        ;;
+    esac
+  done 3< <(
+    git for-each-ref \
+      --sort=committerdate \
+      --format='%(committerdate:unix)%09%(committerdate:short)%09%(refname:short)' \
+      refs/heads/
+  )
+
+  if [ "$found" -eq 0 ]; then
+    echo "No local branches older than one month."
+  fi
+}
+
+alias gclean-branches='git_cleanup_old_branches'
+
 # Fuzzy search through history
 fzf-history-widget() {
   local selected
