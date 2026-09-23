@@ -18,9 +18,10 @@ def ak_visas(pirmi10: str) -> int:
 
 # print(ak_visas("3930303333"))
 # print(ak_visas("3940218114"))
-print(ak_visas("3940213333"))  # 39402133333
- Mano Super -0 Pasas 
- Mano Super -0 Pasas
+# print(ak_visas("3930420114"))  # 39402133333
+print(ak_visas("3930420114"))  # 39402133333
 
 # POST
- ManoSuper -0 Pasas
+# dovydas.gulbinas+2609-22
+# ManoSuper -0 Pasas
+# ManoSuper -0 Pasas

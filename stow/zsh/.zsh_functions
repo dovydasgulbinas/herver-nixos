@@ -50,6 +50,33 @@ git_new_branch() {
 }
 alias new-task="git_new_branch"
 
+git_checkout_base_and_pull() {
+  local repo_root base_branch
+
+  repo_root=$(git rev-parse --show-toplevel 2>/dev/null) || {
+    echo "Error: not inside a Git repository." >&2
+    return 1
+  }
+
+  cd "$repo_root" || return 1
+
+  if git show-ref --verify --quiet refs/heads/main ||
+     git show-ref --verify --quiet refs/remotes/origin/main; then
+    base_branch="main"
+  elif git show-ref --verify --quiet refs/heads/master ||
+       git show-ref --verify --quiet refs/remotes/origin/master; then
+    base_branch="master"
+  else
+    echo "Error: neither main nor master exists locally or on origin." >&2
+    return 1
+  fi
+
+  git checkout "$base_branch" || return 1
+  git pull origin "$base_branch"
+}
+
+alias ggg='git_checkout_base_and_pull'
+
 # Interactively remove local branches whose latest commit is over a month old.
 # Git does not record branch creation dates, so the tip commit date is used.
 git_cleanup_old_branches() {
