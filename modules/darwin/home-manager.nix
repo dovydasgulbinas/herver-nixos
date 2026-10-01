@@ -32,6 +32,7 @@ in {
       "zbar"
       "weasyprint"
       "esphome"
+      "avivsinai/tap/bitbucket-cli"
       # "msodbcsql18"
       # "mssql-tools18"
     ];

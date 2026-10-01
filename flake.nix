@@ -24,7 +24,11 @@
       flake = false;
     };
     localstack = {
-      url = "github:localstack/localstack";
+      url = "github:localstack/homebrew-tap";
+      flake = false;
+    };
+    avivsinai-tap = {
+      url = "github:avivsinai/homebrew-tap";
       flake = false;
     };
     # homebrew-mssql-release = {
@@ -43,6 +47,7 @@
   outputs = {
     self,
     localstack,
+    avivsinai-tap,
     darwin,
     nix-homebrew,
     homebrew-bundle,
@@ -117,7 +122,8 @@
                   "homebrew/homebrew-core" = homebrew-core;
                   "homebrew/homebrew-cask" = homebrew-cask;
                   "homebrew/homebrew-bundle" = homebrew-bundle;
-                  "localstack/tap" = localstack;
+                  "localstack/homebrew-tap" = localstack;
+                  "avivsinai/homebrew-tap" = avivsinai-tap;
                   # "Microsoft/homebrew-mssql-release" = homebrew-mssql-release;
                 };
                 mutableTaps = false;

@@ -21,6 +21,22 @@
         "type": "github"
       }
     },
+    "avivsinai-tap": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1790771478,
+        "narHash": "sha256-217qBYo4NjHrxZ1c36oQHwQXEylnuCnU7NpNXuUdiJc=",
+        "owner": "avivsinai",
+        "repo": "homebrew-tap",
+        "rev": "4c0b0683fa54e25d7b1f24a82d236c207bb89973",
+        "type": "github"
+      },
+      "original": {
+        "owner": "avivsinai",
+        "repo": "homebrew-tap",
+        "type": "github"
+      }
+    },
     "brew-src": {
       "flake": false,
       "locked": {
@@ -191,16 +207,16 @@
     "localstack": {
       "flake": false,
       "locked": {
-        "lastModified": 1774255919,
-        "narHash": "sha256-WxJDTxibPhNWIvW9vKJib0CvO4h5jXQGm3LEKWbyqoQ=",
+        "lastModified": 1790599914,
+        "narHash": "sha256-vGGBCggU61PXfoYTlAYXSLpfnmPn056+JFdKqT7L1uk=",
         "owner": "localstack",
-        "repo": "localstack",
-        "rev": "8b9a79f05846835cf4dff63ab7eefdde9df83783",
+        "repo": "homebrew-tap",
+        "rev": "3af944bc00f3c1157b7ac848740daf8c4d277e9c",
         "type": "github"
       },
       "original": {
         "owner": "localstack",
-        "repo": "localstack",
+        "repo": "homebrew-tap",
         "type": "github"
       }
     },
@@ -273,6 +289,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "avivsinai-tap": "avivsinai-tap",
         "darwin": "darwin_2",
         "disko": "disko",
         "home-manager": "home-manager_2",
