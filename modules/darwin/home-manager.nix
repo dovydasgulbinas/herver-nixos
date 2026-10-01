@@ -24,6 +24,9 @@ in {
 
   homebrew = {
     enable = true;
+    # Declare nix-homebrew's taps in the Brewfile; otherwise `brew bundle --cleanup`
+    # untaps them, force-uninstalling every cask/formula that came from them.
+    taps = builtins.attrNames config.nix-homebrew.taps;
     casks = pkgs.callPackage ./casks.nix {};
     brews = [
       # Work Specific

@@ -11,10 +11,14 @@ FLAKE_SYSTEM="darwinConfigurations.${SYSTEM_TYPE}.system"
 export NIXPKGS_ALLOW_UNFREE=1
 
 echo "${YELLOW}Starting build...${NC}"
-nix --extra-experimental-features 'nix-command flakes' build .#$FLAKE_SYSTEM $@
+nix --extra-experimental-features 'nix-command flakes' build ".#$FLAKE_SYSTEM" "$@"
 
 echo "${YELLOW}Switching to new generation...${NC}"
-./result/sw/bin/darwin-rebuild switch --flake .#${SYSTEM_TYPE} $@
+# Activate the already-built result as root (re-evaluating the flake as root
+# fails: libgit2 refuses a repo not owned by the current user).
+SYSTEM_PATH="$(readlink -f ./result)"
+sudo nix-env -p /nix/var/nix/profiles/system --set "$SYSTEM_PATH"
+sudo "$SYSTEM_PATH/activate"
 
 echo "${YELLOW}Cleaning up...${NC}"
 unlink ./result
