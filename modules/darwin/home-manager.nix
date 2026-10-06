@@ -87,6 +87,11 @@ in {
 
         stateVersion = "25.05";
       };
+      # Copy (not symlink) apps into ~/Applications/Home Manager Apps so Spotlight indexes them.
+      targets.darwin = {
+        linkApps.enable = false;
+        copyApps.enable = true;
+      };
       programs = {} // import ../shared/home-manager.nix {inherit config pkgs lib;};
 
       # Marked broken Oct 20, 2022 check later to remove this

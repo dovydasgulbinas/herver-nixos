@@ -49,12 +49,11 @@ in {
   # Turn off NIX_PATH warnings now that we're using flakes
   system.checks.verifyNixPath = false;
 
-  # Load configuration that is shared across systems
-  environment.systemPackages = with pkgs;
-    [
-      agenix.packages."${pkgs.stdenv.hostPlatform.system}".default
-    ]
-    ++ (import ../../modules/shared/packages.nix {inherit pkgs;});
+  # Shared packages are installed via home-manager (modules/darwin/packages.nix);
+  # adding them here too duplicates every app in Spotlight.
+  environment.systemPackages = [
+    agenix.packages."${pkgs.stdenv.hostPlatform.system}".default
+  ];
 
   system = {
     stateVersion = 6;
