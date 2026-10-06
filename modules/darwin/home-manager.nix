@@ -100,7 +100,7 @@ in {
     };
   };
 
-  # Fully declarative dock using the latest from Nix Store
+  # Fully declarative dock (Nix apps via home-manager copyApps)
   local = {
     dock = {
       enable = true;
@@ -108,13 +108,13 @@ in {
         {path = "/Applications/Ghostty.app";}
         {path = "/Applications/Firefox.app";}
         {path = "/Applications/Logseq.app";}
-        {path = "${pkgs.keepassxc}/Applications/KeePassXC.app";}
-        {path = "${pkgs.jetbrains.pycharm}/Applications/PyCharm.app";}
+        {path = "${config.users.users.${user}.home}/Applications/Home Manager Apps/KeePassXC.app";}
+        {path = "${config.users.users.${user}.home}/Applications/Home Manager Apps/PyCharm.app";}
         {path = "/System/Applications/Calendar.app";}
         {path = "/System/Applications/Mail.app";}
         {path = "/Applications/Spotify.app";}
         {path = "/Applications/Signal.app";}
-        {path = "/System/Applications/Launchpad.app";}
+        {path = "/System/Applications/Apps.app";}
         {
           path = "${config.users.users.${user}.home}/Documents/";
           section = "others";
