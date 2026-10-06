@@ -105,11 +105,12 @@ in {
     dock = {
       enable = true;
       entries = [
-        {path = "/Applications/Ghostty.app";}
         {path = "/Applications/Firefox.app";}
-        {path = "/Applications/Logseq.app";}
-        {path = "${config.users.users.${user}.home}/Applications/Home Manager Apps/KeePassXC.app";}
+        {path = "/Applications/Obsidian.app";}
+        {path = "/Applications/Ghostty.app";}
+        {path = "/Applications/Claude.app";}
         {path = "${config.users.users.${user}.home}/Applications/Home Manager Apps/PyCharm.app";}
+        {path = "${config.users.users.${user}.home}/Applications/Home Manager Apps/KeePassXC.app";}
         {path = "/System/Applications/Calendar.app";}
         {path = "/System/Applications/Mail.app";}
         {path = "/Applications/Spotify.app";}
@@ -122,11 +123,6 @@ in {
         }
         {
           path = "${config.users.users.${user}.home}/Downloads/";
-          section = "others";
-          options = "--sort dateadded --view fan --display folder";
-        }
-        {
-          path = "${config.users.users.${user}.home}/Downloads/Screenshots";
           section = "others";
           options = "--sort dateadded --view fan --display folder";
         }

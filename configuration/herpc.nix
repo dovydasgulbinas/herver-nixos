@@ -148,7 +148,6 @@
       spotify
       jetbrains.pycharm-professional
       keepassxc
-      logseq
       alacritty
     ];
     openssh.authorizedKeys.keys = [
@@ -328,7 +327,6 @@
   };
 
   nixpkgs.config.permittedInsecurePackages = [
-    "electron-27.3.11" # needed for logseq 0.10.9
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

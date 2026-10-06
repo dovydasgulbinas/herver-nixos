@@ -24,7 +24,6 @@ _: [
   # "onedrive"
   # "syncthing-app"
   # "syncthing"
-  "logseq"
   "obsidian"
 
   # Entertainment Tools
