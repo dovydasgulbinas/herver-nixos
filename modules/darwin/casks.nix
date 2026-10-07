@@ -25,6 +25,7 @@ _: [
   # "syncthing-app"
   # "syncthing"
   "obsidian"
+  "betterdisplay"
 
   # Entertainment Tools
   "vlc"

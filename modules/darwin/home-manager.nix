@@ -50,6 +50,9 @@ in {
     onActivation.cleanup = "zap";
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
+    # Also upgrade casks marked auto_updates (e.g. Signal); otherwise brew
+    # leaves them at the old version and a newer app's data can't be opened.
+    greedyCasks = true;
 
     # These app IDs are from using the mas CLI app
     # mas = mac app store
@@ -85,7 +88,15 @@ in {
           additionalFiles
         ];
 
-        stateVersion = "25.05";
+        # Not the package version (packages come from nixos-unstable regardless).
+        # It pins which home-manager release's defaults to use, so a default that
+        # changes upstream (file locations, data formats) doesn't silently break
+        # existing state. Required; only bump after reading the home-manager
+        # release notes for every release in between.
+        # 25.05 -> 26.05: home-manager no longer installs its own `man` on macOS
+        # (system /usr/bin/man is used). zsh/docker dotDir moves only apply with
+        # xdg.enable, which is off; copyApps is set explicitly below.
+        stateVersion = "26.05";
       };
       # Copy (not symlink) apps into ~/Applications/Home Manager Apps so Spotlight indexes them.
       targets.darwin = {

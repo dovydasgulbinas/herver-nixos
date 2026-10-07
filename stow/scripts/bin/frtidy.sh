@@ -62,6 +62,14 @@ echo "==== Bumping neovim packages ===="
 nvim --headless "+Lazy! update" "+Lazy log" +qa
 
 echo ""
-echo "==== Update and rebuild the system ===="
-nix flake update && sudo nix run .#build-switch
+echo "==== Update flake inputs (nixpkgs, homebrew-cask, homebrew-core, ...) ===="
+nix flake update
+
+echo ""
+echo "==== Rebuild the system ===="
+sudo nix run .#build-switch
+
+echo ""
+echo "==== Upgrade self-updating casks (Signal, Slack, ...) ===="
+brew upgrade --cask --greedy
 popd
