@@ -14,8 +14,14 @@
       url = "github:LnL7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Pin brew newer than nix-homebrew's default so it can parse current homebrew-core.
+    brew-src = {
+      url = "github:Homebrew/brew/7.0.9";
+      flake = false;
+    };
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
+      inputs.brew-src.follows = "brew-src";
     };
     homebrew-bundle = {
       url = "github:homebrew/homebrew-bundle";
@@ -55,6 +61,7 @@
     localstack,
     avivsinai-tap,
     darwin,
+    brew-src,
     nix-homebrew,
     homebrew-bundle,
     homebrew-core,

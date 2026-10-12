@@ -7,4 +7,5 @@ in
     # jetbrains.pycharm-professional
     fswatch
     dockutil
+    postmark-cli
   ]

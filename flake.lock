@@ -23,11 +23,11 @@
     "avivsinai-tap": {
       "flake": false,
       "locked": {
-        "lastModified": 1791529336,
-        "narHash": "sha256-uI8QTr9w8pEK1x352arTV1/J7xNDDr+xxzSmq04+SAI=",
+        "lastModified": 1791542849,
+        "narHash": "sha256-6YyeJBRo03J47P5A+6D/a12U2ToqU4hkzFvNh5C2HUU=",
         "owner": "avivsinai",
         "repo": "homebrew-tap",
-        "rev": "0d2afdd563ccff0344fccf54f7d1bc3c9359af17",
+        "rev": "3396997b6a1d081ad23e586dc31ad4799e5d199f",
         "type": "github"
       },
       "original": {
@@ -39,16 +39,16 @@
     "brew-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1789661079,
-        "narHash": "sha256-geVTQ51PGZ1mLULM5k7wO7qt/6xenOR/YG8X7Q3eCaI=",
+        "lastModified": 1791455121,
+        "narHash": "sha256-+7waf1/I5YZPPZOwGDGqhrw9k3lDdXhdk4nglsQcqyA=",
         "owner": "Homebrew",
         "repo": "brew",
-        "rev": "edb70f031e4170c780799633a1226ff73e1077f4",
+        "rev": "cdc1ca503231b9a96da64526774915d913c3ec9f",
         "type": "github"
       },
       "original": {
         "owner": "Homebrew",
-        "ref": "7.0.4",
+        "ref": "7.0.9",
         "repo": "brew",
         "type": "github"
       }
@@ -133,11 +133,11 @@
     "homebrew-cask": {
       "flake": false,
       "locked": {
-        "lastModified": 1791542075,
-        "narHash": "sha256-qGYVitJlsr4ZZGEfTkIlboT1hfti/ipFdP6gJ76AUWY=",
+        "lastModified": 1791542963,
+        "narHash": "sha256-HF0IOxOGMNqc23AfbogXCI0rvTkq6E6oly0hKwUtF9w=",
         "owner": "homebrew",
         "repo": "homebrew-cask",
-        "rev": "cb2a5a5d61f8fc2093f022378aa9ee8a3ffbd709",
+        "rev": "5162dcf26801c8a398b1621bddeb1743649bd1fe",
         "type": "github"
       },
       "original": {
@@ -180,7 +180,9 @@
     },
     "nix-homebrew": {
       "inputs": {
-        "brew-src": "brew-src"
+        "brew-src": [
+          "brew-src"
+        ]
       },
       "locked": {
         "lastModified": 1789928041,
@@ -216,6 +218,7 @@
       "inputs": {
         "agenix": "agenix",
         "avivsinai-tap": "avivsinai-tap",
+        "brew-src": "brew-src",
         "darwin": "darwin",
         "disko": "disko",
         "home-manager": "home-manager",
