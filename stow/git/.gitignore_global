@@ -31,5 +31,6 @@ wts/*
 **/.claude/settings.local.json
 # .claude/*
 .aider*
+**/.omc/
 .omc/*
 .worktrees/*
