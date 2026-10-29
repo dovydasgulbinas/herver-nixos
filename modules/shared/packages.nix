@@ -129,7 +129,7 @@ with pkgs; [
   # Python packages
   # poetryPlugins.poetry-plugin-export
   python312Packages.python-dotenv
-  python3
+  (python3.withPackages (ps: [ps.tkinter])) # tkinter for IDLE
   uv
   gettext
   basedpyright

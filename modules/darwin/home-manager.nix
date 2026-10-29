@@ -105,6 +105,14 @@ in {
       };
       programs = {} // import ../shared/home-manager.nix {inherit config pkgs lib;};
 
+      # The system nix.gc runs as root and can't see per-user profiles in
+      # ~/.local/state/nix/profiles, so their old generations pin the store forever.
+      nix.gc = {
+        automatic = true;
+        dates = "weekly";
+        options = "--delete-older-than 30d";
+      };
+
       # Marked broken Oct 20, 2022 check later to remove this
       # https://github.com/nix-community/home-manager/issues/3344
       manual.manpages.enable = false;
